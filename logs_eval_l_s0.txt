@@ -1,0 +1,36 @@
+test_id {"greedy": [85.7, 50.0, 1.0], "anchor": [89.1, 69.0, 1.0], "ref": [95.6, 52.6, 1.258], "a_resample": [94.5, 70.3, 1.258], "a_ref": [96.4, 72.1, 1.211], "a_ref_line": [97.4, 71.6, 1.188], "a_ref_noerr": [97.1, 72.1, 1.193], "a_resample_lint": [92.7, 71.4, 1.466], "a_ref_lint": [94.8, 72.7, 1.422]} 79.6s
+<gen>:4: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:4: SyntaxWarning: 'int' object is not subscriptable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+test_ood {"greedy": [50.8, 0.0, 1.0], "anchor": [62.1, 0.0, 1.0], "ref": [85.4, 0.0, 1.988], "a_resample": [75.0, 0.0, 1.962], "a_ref": [86.2, 0.0, 1.796], "a_ref_line": [88.3, 0.0, 1.796], "a_ref_noerr": [85.4, 0.0, 1.758], "a_resample_lint": [65.4, 0.0, 2.767], "a_ref_lint": [74.2, 0.0, 2.679]} 49.4s

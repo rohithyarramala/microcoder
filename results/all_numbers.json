@@ -533,6 +533,44 @@
    "pass_": 83.6
   }
  },
+ "abl_l_s0": {
+  "greedy": {
+   "valid": 85.7,
+   "pass_": 50.0
+  },
+  "anchor": {
+   "valid": 89.1,
+   "pass_": 69.0
+  },
+  "ref": {
+   "valid": 95.6,
+   "pass_": 52.6
+  },
+  "a_resample": {
+   "valid": 94.5,
+   "pass_": 70.3
+  },
+  "a_ref": {
+   "valid": 96.4,
+   "pass_": 72.1
+  },
+  "a_ref_line": {
+   "valid": 97.4,
+   "pass_": 71.6
+  },
+  "a_ref_noerr": {
+   "valid": 97.1,
+   "pass_": 72.1
+  },
+  "a_resample_lint": {
+   "valid": 92.7,
+   "pass_": 71.4
+  },
+  "a_ref_lint": {
+   "valid": 94.8,
+   "pass_": 72.7
+  }
+ },
  "abl_m1_s0_int8": {
   "greedy": {
    "valid": 89.3,
