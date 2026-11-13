@@ -1,0 +1,63 @@
+% MicroCoder paper, IEEE Access template (ieeeaccess.cls, IEEE template 2026-05-13).
+% Build (pdfLaTeX only; the class uses pdfTeX font maps and a spot colour):
+%   cd paper/access && latexmk -pdf main
+% Text is shared with ../main.tex: ../abstract.tex, ../keywords.tex, ../body.tex.
+% Every number comes from ../generated/*.tex, produced by scripts/make_tables.py from results/.
+\documentclass{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{multirow}
+% no xcolor: ieeeaccess.cls already loads `color` with a Pantone spot-colour model, and xcolor clashes with it
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{url}
+\newcommand{\TODO}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+\newcommand{\ieee}{1}
+\newcommand{\tbd}{\textcolor{red}{\textbf{??}}}
+\makeatletter
+\def\input@path{{../}}                                % \input{generated/...}, \input{body} resolve in paper/
+\newcommand{\inputtab}[1]{\@@input ../#1 }
+\makeatother
+\input{generated/numbers}
+
+\begin{document}
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.2024.0429000}
+
+\title{How Small Can a Code Model Be? A Reproducible Study of One-Million-Parameter Python Synthesis with Compiler Feedback on Microcontrollers}
+\author{\uppercase{Rohith Yarramala}\authorrefmark{1}}
+\address[1]{\TODO{department, institution, city, postal code, country} (e-mail: \TODO{e-mail})}
+\tfootnote{Code, data, trained models and the ESP32 firmware: \TODO{public repository URL}.}
+
+\markboth
+{Yarramala: How Small Can a Code Model Be?}
+{Yarramala: How Small Can a Code Model Be?}
+
+\corresp{Corresponding author: Rohith Yarramala (e-mail: \TODO{e-mail}).}
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\begin{keywords}
+\input{keywords}
+\end{keywords}
+
+\titlepgskip=-21pt
+
+\maketitle
+
+\input{body}
+
+\bibliographystyle{IEEEtran}
+\bibliography{../refs}
+
+\begin{IEEEbiographynophoto}{Rohith Yarramala}
+\TODO{short biography: degrees, institution, research interests.}
+\end{IEEEbiographynophoto}
+
+\EOD
+\end{document}

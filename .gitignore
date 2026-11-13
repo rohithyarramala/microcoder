@@ -17,3 +17,13 @@ paper/*.blg
 paper/*.out
 lab_*_log.txt
 .venv/
+paper/*.fls
+paper/*.fdb_latexmk
+paper/access/*.aux
+paper/access/*.log
+paper/access/*.bbl
+paper/access/*.blg
+paper/access/*.out
+paper/access/*.fls
+paper/access/*.fdb_latexmk
+.DS_Store
