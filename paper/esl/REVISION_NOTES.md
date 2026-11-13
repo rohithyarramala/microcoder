@@ -1,5 +1,7 @@
 # ESL letter: fixes to make at the first revision
 
+Manuscript ID **IEEE-ESL-Nov-26-0994**, submitted 13 Nov 2026 (IEEE Author Portal), status Under Review.
+
 Found by the long-paper audit on 13 Nov 2026, after the letter was submitted. Neither changes a number.
 
 1. Section III, "After two initial runs that were evaluated on the test split (reported in the extended
