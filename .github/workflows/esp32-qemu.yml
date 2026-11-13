@@ -33,8 +33,12 @@ jobs:
         run: |
           apt-get update -qq && apt-get install -y -qq libgcrypt20 libglib2.0-0 libpixman-1-0 libsdl2-2.0-0 libslirp0 >/dev/null
           python3 $IDF_PATH/tools/idf_tools.py install qemu-xtensa
-      - name: Build
-        run: . $IDF_PATH/export.sh && cd esp32/firmware && idf.py set-target esp32s3 && idf.py build && idf.py size | tee ../../idf_size_${{ matrix.shard }}.txt
+      - name: Build (QEMU config = board config + quad PSRAM, see esp32/firmware/sdkconfig.qemu)
+        run: |
+          . $IDF_PATH/export.sh && cd esp32/firmware
+          export SDKCONFIG_DEFAULTS="sdkconfig.defaults;sdkconfig.qemu"
+          idf.py set-target esp32s3 && idf.py build && idf.py size | tee ../../idf_size_${{ matrix.shard }}.txt
+          grep -E '^CONFIG_SPIRAM_MODE_(OCT|QUAD)=' sdkconfig; grep -q '^CONFIG_SPIRAM_MODE_QUAD=y' sdkconfig
       - name: Run in QEMU (functional check only)
         run: . $IDF_PATH/export.sh && bash esp32/qemu_run.sh lab_qemu_log_${{ matrix.shard }}.txt 6600
       - uses: actions/upload-artifact@v4
