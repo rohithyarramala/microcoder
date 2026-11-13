@@ -38,7 +38,10 @@ def _same(a, b):
 
 
 def _child(code, fn, tests, w):
-    resource.setrlimit(resource.RLIMIT_AS, (512 << 20, 512 << 20))
+    try:  # RLIMIT_AS is enforced on Linux; macOS rejects it (ValueError), so skip the cap there
+        resource.setrlimit(resource.RLIMIT_AS, (512 << 20, 512 << 20))
+    except (ValueError, OSError):
+        pass
     signal.alarm(2)
     out = []
     try:
@@ -100,7 +103,10 @@ def reference_outputs(code, fn, tests):
 
 
 def _child_asserts(code, setup, asserts, w):
-    resource.setrlimit(resource.RLIMIT_AS, (512 << 20, 512 << 20))
+    try:  # RLIMIT_AS is enforced on Linux; macOS rejects it (ValueError), so skip the cap there
+        resource.setrlimit(resource.RLIMIT_AS, (512 << 20, 512 << 20))
+    except (ValueError, OSError):
+        pass
     signal.alarm(3)
     ok = 0
     try:

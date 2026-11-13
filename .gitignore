@@ -16,3 +16,4 @@ paper/*.bbl
 paper/*.blg
 paper/*.out
 lab_*_log.txt
+.venv/

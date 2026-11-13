@@ -1,0 +1,20 @@
+{
+ "log": "lab_sim_log.txt",
+ "split": "test_id,test_ood",
+ "n_scored": 624,
+ "valid": 511,
+ "passed": 324,
+ "valid_pct": 81.9,
+ "pass_pct": 51.9,
+ "decode_ms_per_token_median": 0.206,
+ "prefill_ms_per_token_median": 0.201,
+ "end_to_end_ms_median": 10.8,
+ "end_to_end_ms_p95": 17.4,
+ "info": {
+  "weights_bytes": "549664",
+  "state_bytes": "626688",
+  "state_in": "PSRAM",
+  "free_internal": "307200",
+  "free_psram": "7761920"
+ }
+}
