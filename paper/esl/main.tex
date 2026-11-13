@@ -1,0 +1,98 @@
+% MicroCoder, IEEE Embedded Systems Letters version (4 pages incl. figures, tables and references).
+% Build: cd paper/esl && latexmk -pdf main
+% Every number comes from ../generated/*.tex, produced by scripts/make_tables.py from results/.
+% The long version is ../access/main.tex (preprint: https://doi.org/10.5281/zenodo.24189966).
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{cite}
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\input{generated/numbers}
+
+\begin{document}
+\title{Million-Parameter Python Code Generation on Microcontrollers: Signature Anchoring and Compiler-Gated Repair}
+\author{Rohith~Yarramala%
+\thanks{R.~Yarramala is with the Robotics and Automation Group, Defence Institute of Advanced Technology (DIAT), Pune 411025, India (e-mail: yarramala.maecas26@diat.ac.in).}%
+\thanks{Code, data, models and firmware: \protect\url{https://github.com/rohithyarramala/microcoder} (archived: \protect\url{https://doi.org/10.5281/zenodo.24187363}). An extended preprint is available at \protect\url{https://doi.org/10.5281/zenodo.24189966}.}}
+\markboth{IEEE Embedded Systems Letters}{Yarramala: Million-Parameter Code Generation on Microcontrollers}
+\maketitle
+
+\begin{abstract}
+Can a code model small enough for microcontroller flash write useful embedded utility functions? We train decoder-only Transformers with 0.53\,M and 1.05\,M parameters on a leak-audited benchmark of IoT-oriented Python tasks and run them with a portable INT8 engine on a PC and in ESP32-S3 firmware. On unseen wordings of known tasks, the 0.53\,M model, which needs \dsmflashtotalbytes{} bytes of flash, passes the unit tests on \seedsSmalltestidanchor\,\% of tasks with \emph{signature anchoring} and \seedsSmalltestidareflint\,\% with compiler-gated repair (mean of \nseeds{} seeds). Repair mainly fixes syntax, is no better than resampling at equal cost, and does not need the error message. On unseen task families accuracy falls to 1--2\,\%: such models are verifiable specialists for a closed catalogue of device functions, not general programmers.
+\end{abstract}
+
+\begin{IEEEkeywords}
+TinyML, code generation, small language models, program repair, microcontrollers.
+\end{IEEEkeywords}
+
+\section{Introduction}
+Code-generating language models~\cite{chen2021codex,li2022alphacode} have billions of parameters, while microcontrollers have megabytes of memory and are often offline~\cite{warden2019tinyml,david2021tflm,lin2020mcunet}. Even ``small'' models such as MobileLLM~\cite{liu2024mobilellm} have hundreds of millions of parameters, but TinyStories~\cite{eldan2023tinystories} showed that a few million parameters suffice for fluent text in a narrow domain. We ask what a code model that fits in microcontroller flash can do, and which inexpensive decoding techniques make it more reliable. A compiler detects syntax errors for free, and feeding its diagnostics back to a model is established for large models~\cite{gupta2017deepfix,yasunaga2020drrepair,chen2024selfdebug}; yet at equal sampling budget, self-repair is often no better than drawing more samples~\cite{olausson2024selfrepair}. We test this at a scale about $10^{4}$ times smaller, where every extra generation costs time and energy on the device.
+
+\textbf{Contributions.} (i) A benchmark of \nfamtrain{} training and \nfamheld{} held-out embedded task families with executable tests and an automated leakage audit. (ii) Transformers of 0.53 and 1.05\,M parameters with an exact flash and RAM budget, deployed through a dependency-free INT8 C engine and ESP-IDF firmware. (iii) An equal-budget comparison of signature anchoring, compiler-gated repair with and without the error message, and resampling, over three seeds. (iv) Negative results reported as such: no generalisation to unseen families or to MBPP~\cite{austin2021mbpp}.
+
+\section{Related Work}
+\textbf{Small and on-device models.} TinyML deploys networks on microcontrollers through quantisation~\cite{jacob2018quant}, specialised runtimes~\cite{david2021tflm} and joint architecture--runtime design~\cite{lin2020mcunet}, with benchmarks for vision and audio~\cite{banbury2021mlperftiny}. For language, narrow high-quality data lets small models punch above their size~\cite{eldan2023tinystories,gunasekar2023textbooks}, but compact models such as TinyLlama~\cite{zhang2024tinyllama} and MobileLLM~\cite{liu2024mobilellm} target phones, and pretrained code models such as CodeT5~\cite{wang2021codet5} still have tens of millions of parameters. We are not aware of code-generation results for models that run from microcontroller flash.
+
+\textbf{Repair from compiler feedback.} DeepFix~\cite{gupta2017deepfix} and DrRepair~\cite{yasunaga2020drrepair} train models to fix compiler errors, Break-It-Fix-It~\cite{yasunaga2021bifi} learns from a model's own mistakes, and Self-Debug~\cite{chen2024selfdebug}, Self-Refine~\cite{madaan2023selfrefine} and Reflexion~\cite{shinn2023reflexion} prompt large models with feedback; see~\cite{legoues2019apr} for program repair in general. Olausson et al.~\cite{olausson2024selfrepair} showed that repair must be compared with resampling at equal cost. We follow that protocol, and we also tested the Break-It-Fix-It idea: on training prompts the model produced only \selfrepairpairs{} syntax error in \selfrepairsamples{} samples, so there is nothing to learn from without leaking test wordings.
+
+\section{Benchmark, Model and Decoding}
+\textbf{Tasks and splits.} A \emph{family} is a parameterised task with four natural-language phrasings, a reference solution and a test-input generator; tasks sample function names, argument names and constants (e.g.\ ADC resolution, filter coefficient, bit index). The 64 families cover sensor/IoT utilities (scaling, filtering, debouncing, checksums, byte packing, bit tests), math, list, string and recursion tasks. With a fixed seed, \nfamheld{} families are held out from training. The \emph{in-family} test split (\ntestid{} tasks) uses phrasing~4 of the training families, which is never trained on; the \emph{out-of-family} split (\ntestood{} tasks) uses the held-out families. Design choices were made on a separate development split (phrasing~3). A script verifies zero exact or 8-gram instruction overlap between training and the in-family test split and zero held-out families in training. A task passes if the program returns the expected value on all five test inputs in a sandbox with a 2\,s CPU limit.
+
+\textbf{Model.} A decoder-only Transformer~\cite{vaswani2017attention} with RMSNorm~\cite{zhang2019rmsnorm}, rotary embeddings~\cite{su2024roformer}, GELU MLP, no biases and tied embeddings~\cite{press2017tying}, and a byte-level BPE tokenizer~\cite{sennrich2016bpe} with 2{,}048 entries. Model S has 3 layers of width 96 (\dsmparams{} parameters) and model M has 4 layers of width 128 (\depparams{} parameters). Training uses \ntraingen{} instruction--code pairs and \ntrainrepair{} synthetic repair triples (instruction, corrupted program, CPython error, correct program), with the loss on answer tokens only, for about 40\,min on two CPU cores.
+
+\textbf{Decoding (at most four generations per task).} \emph{Signature anchoring} (SA) extracts the first \texttt{name(args)} from the request and forces the answer to begin with \texttt{def name(args):}. \emph{Recursive Error-Feedback} (REF) re-prompts the model with the request, the faulty draft and the error message while a gate rejects the program; the gate is \texttt{compile()}, optionally followed by a 120-line static check for names that are read but never bound, which also runs in MicroPython. We compare the full CPython message, a line-only message (roughly what MicroPython reports) and no message, and the equal-budget baseline of~\cite{olausson2024selfrepair}: resample until the gate passes.
+
+\section{Deployment on the ESP32-S3}
+Weights are quantised per output row to INT8 with FP32 scales; activations and the KV cache stay FP32 for the ESP32-S3's single-precision FPU. The C99 engine reads weights in place from flash, does not allocate in the decode loop and includes the tokenizer; it reproduces the reference tokenizer on all 18{,}524 benchmark and corpus strings, and its logits match PyTorch with the same quantised weights to within $10^{-4}$. Running the full benchmark through the INT8 engine changes the SA pass rate of model M from \ablFinalanchorpass{} to \ablIntanchorpass\,\% and of model S from \ablSmallanchorpass{} to \ablSmallintanchorpass\,\%. Built with ESP-IDF v5.4.2, the firmware image with model S and all 624 test prompts is \idfappbytes{} bytes; static internal-RAM use is \idfdiramusedbytes{} of \idfdiramtotalbytes{} bytes, and the KV cache for the 256-token context (\dsmkvcachebytes{} bytes) requires PSRAM, which most ESP32-S3 modules have. The unmodified \texttt{app\_main()}, run on a PC under the same memory budget, passes \dsmhostsimgreedypasspct\,\% of the 624 prompts with SA and greedy decoding, matching PyTorch. A MicroPython module runs the REF loop on the device with MicroPython's own \texttt{compile()} as the gate.
+
+\begin{table}[t]\centering\small
+\caption{Budget per generated token for model S (0.53\,M) and M (1.05\,M). Host: one x86 core, same C engine. ESP32-S3 latency is an analytical estimate, not a measurement.}\label{tab:dep}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrr}\toprule
+ & S & M\\\midrule
+Flash: INT8 model + tokenizer (B) & \dsmflashtotalbytes & \depflashtotalbytes\\
+RAM: state incl.\ KV cache (B) & \dsmstatebytes & \depstatebytes\\
+MACs/token, position 256 & \dsmmacslast & \depmacslast\\
+Host decode (ms/token) & \dsmhostdecodemspertoken & \dephostdecodemspertoken\\
+ESP32-S3 decode, estimate (ms/token) & \estlo--\esthi & --\\
+\bottomrule\end{tabular}\end{table}
+
+Table~\ref{tab:dep} gives the budget. We have not yet measured latency on ESP32-S3 hardware; the estimate assumes 4 cycles per INT8 multiply--accumulate at 240\,MHz plus streaming all weights from external flash at 40\,MB/s per token, and a board run (\texttt{esp32/run\_lab.sh board} in the repository) replaces it with measured latency and on-device accuracy.
+
+\section{Results}
+\begin{table}[t]\centering\small
+\caption{Pass rate (\%), mean\,$\pm$\,s.d.\ over \nseeds{} seeds. ID: in-family (\ntestid{} tasks); OOD: out-of-family (\ntestood{} tasks), model M. ``Gens'': mean generations used (budget 4), model M.}\label{tab:main}
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{lcccr}\toprule
+Strategy & S, ID & M, ID & M, OOD & Gens\\\midrule
+Greedy & \seedsSmalltestidgreedy$\pm$\seedsSmalltestidgreedysd & \testidgreedypass$\pm$\testidgreedypasssd & \testoodgreedypass & \testidgreedygens\\
+SA & \seedsSmalltestidanchor$\pm$\seedsSmalltestidanchorsd & \testidanchorpass$\pm$\testidanchorpasssd & \testoodanchorpass & \testidanchorgens\\
+SA + resample & -- & \testidaresamplepass$\pm$\testidaresamplepasssd & \testoodaresamplepass & \testidaresamplegens\\
+SA + REF, full msg. & \seedsSmalltestidaref$\pm$\seedsSmalltestidarefsd & \testidarefpass$\pm$\testidarefpasssd & \testoodarefpass & \testidarefgens\\
+SA + REF, line only & -- & \testidareflinepass$\pm$\testidareflinepasssd & \testoodareflinepass & \testidareflinegens\\
+SA + REF, no msg. & -- & \testidarefnoerrpass$\pm$\testidarefnoerrpasssd & \testoodarefnoerrpass & \testidarefnoerrgens\\
+SA + REF, two gates & \seedsSmalltestidareflint$\pm$\seedsSmalltestidareflintsd & \testidareflintpass$\pm$\testidareflintpasssd & \testoodareflintpass & \testidareflintgens\\
+\bottomrule\end{tabular}\end{table}
+
+\textbf{Signature anchoring is the largest gain} (Table~\ref{tab:main}). For model M it raises the in-family pass rate from \testidgreedypass{} to \testidanchorpass\,\% at no cost: without it, the model often writes a correct body under a slightly different header, which fails every test.
+
+\textbf{Repair fixes syntax, not behaviour, and the message does not matter.} REF raises syntactic validity from \testidanchorvalid{} to \testidarefvalid\,\% in-family and from \testoodanchorvalid{} to \testoodarefvalid\,\% out-of-family, but the pass rate barely moves. With the full message, a line-only message and no message, SA+REF reaches \testidarefpass, \testidareflinepass{} and \testidarefnoerrpass\,\%; resampling reaches \testidaresamplepass\,\%. All differences are far smaller than the seed spread, which matches the large-model finding of~\cite{olausson2024selfrepair}: the repair prompt helps by giving a second conditioned attempt, not because the model reads the diagnostic. For a device, this means the cheaper line-only message of MicroPython loses nothing.
+
+\textbf{A second free gate helps a little.} Of the \failidtotal{} in-family failures of SA+REF (seed 0), \failidnameerr{} are \texttt{NameError}s that \texttt{compile()} accepts. Gating on \texttt{compile()} plus the name check gives the best result, \testidareflintpass\,\% for model M with \testidareflintgens{} generations on average; the check has no false positives on all 5{,}581 reference solutions. The gain is consistent across seeds but smaller than their spread.
+
+\textbf{Half a megabyte is enough.} Model S is at least as accurate as model M (\seedsSmalltestidanchor\,$\pm$\,\seedsSmalltestidanchorsd\,\% with SA and \seedsSmalltestidareflint\,\% with SA+REF and two gates) and is more stable across seeds; a 3.05\,M model reaches \ablLargeanchorpass\,\% with SA (one seed). For a closed task catalogue, model size is not the bottleneck. Training without the repair triples lowers even greedy accuracy (\ablGenonlygreedypass{} vs.\ \ablFinalgreedypass\,\%, one seed), so repair data also acts as extra supervision. Augmenting instructions with random identifiers \emph{lowered} development-split accuracy, because descriptive names are a strong cue to the intended task.
+
+\textbf{No generalisation beyond the catalogue.} On held-out families every strategy passes 1--2\,\% of tasks, although REF makes most programs compile. On the 500 MBPP test problems it writes valid Python for \mbppgreedyvalid\,\% of them but passes \mbppgreedypassed{}. The model recalls and adapts known tasks; it does not compose new algorithms.
+
+\section{Discussion and Conclusion}
+A model of about half a megabyte can serve as an offline, verifiable generator for a closed catalogue of device functions, such as unit conversions, filters, thresholds, checksums and bit operations, adapted by a technician in the field. At this scale the decoding procedure matters more than error feedback: signature anchoring plus one gated retry captures nearly all of the available accuracy. \emph{Limitations:} the benchmark is synthetic, and \codeoverlapid{} of the \ntestid{} in-family reference solutions also occur in training, so the in-family split tests recognition of known tasks from unseen wording; the seed spread is large; the gates check form, not function; and on-device latency is estimated, not yet measured. Code, data, models, firmware and the scripts that generate every number in this letter are public.
+
+\section*{Acknowledgment}
+\emph{AI disclosure:} The author used Anthropic's Claude, through the Claude Code agent, to write and refactor parts of the software (data generation, training, evaluation, the C engine and the firmware), to run the experiments, and to draft and edit the text of all sections. All reported numbers are produced by the released scripts and inserted automatically from their result files. The author reviewed and verified the code, the results and the text, and takes full responsibility for the content.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+\end{document}

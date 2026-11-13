@@ -27,3 +27,10 @@ paper/access/*.out
 paper/access/*.fls
 paper/access/*.fdb_latexmk
 .DS_Store
+paper/esl/*.aux
+paper/esl/*.log
+paper/esl/*.bbl
+paper/esl/*.blg
+paper/esl/*.fls
+paper/esl/*.fdb_latexmk
+paper/esl/*.out
