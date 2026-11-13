@@ -626,3 +626,4 @@ const char *const mc_prompts[] = {
     "Define count_items(items) returning the length of items computed recursively.",
 };
 const int mc_n_prompts = 624;
+const int mc_prompt_offset = 0;

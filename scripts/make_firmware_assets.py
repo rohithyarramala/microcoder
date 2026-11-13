@@ -23,9 +23,15 @@ for sp in split.split(","):
     tasks += [json.loads(x) for x in open(f"data/{sp}.jsonl")]
 if target == "mp":
     print(f"embedded model {len(mb)} B, tokenizer {len(tb)} B into the MicroPython module"); sys.exit(0)
+# MC_SHARD=k/N embeds only slice k (0-based) of N; the firmware prints global indices via mc_prompt_offset
+off, total = 0, len(tasks)
+if os.environ.get("MC_SHARD"):
+    k, N = map(int, os.environ["MC_SHARD"].split("/"))
+    off, end = k * total // N, (k + 1) * total // N
+    tasks = tasks[off:end]
 lines = ["/* benchmark prompts generated from data/%s.jsonl */" % split, "const char *const mc_prompts[] = {"]
 lines += ["    " + json.dumps(t["instr"]) + "," for t in tasks]
-lines += ["};", "const int mc_n_prompts = %d;" % len(tasks)]
+lines += ["};", "const int mc_n_prompts = %d;" % len(tasks), "const int mc_prompt_offset = %d;" % off]
 open("esp32/firmware/main/prompts.c", "w").write("\n".join(lines) + "\n")
-json.dump(dict(split=split, n=len(tasks)), open("esp32/firmware/main/prompts.json", "w"))
-print(f"embedded model {len(mb)} B, tokenizer {len(tb)} B, {len(tasks)} prompts from {split}")
+json.dump(dict(split=split, n=len(tasks), offset=off, total=total), open("esp32/firmware/main/prompts.json", "w"))
+print(f"embedded model {len(mb)} B, tokenizer {len(tb)} B, {len(tasks)} prompts from {split} (offset {off} of {total})")

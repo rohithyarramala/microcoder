@@ -6,7 +6,8 @@ import json, re, statistics, sys
 sys.path.insert(0, ".")
 from microcoder.sandbox import run_tests, syntax_error
 
-log = open(sys.argv[1], errors="replace").read()
+# ESP-IDF consoles print CRLF by default (CONFIG_NEWLIB_STDOUT_LINE_ENDING_CRLF); normalise before parsing
+log = open(sys.argv[1], errors="replace").read().replace("\r\n", "\n")
 split = sys.argv[2] if len(sys.argv) > 2 else json.load(open("esp32/firmware/main/prompts.json"))["split"]
 tasks = []
 for sp in split.split(","):
