@@ -1,0 +1,11 @@
+{
+  "title": "MicroCoder: code, data, models and ESP32-S3 firmware for \"How Small Can a Code Model Be?\"",
+  "upload_type": "software",
+  "description": "Reproducible study of 0.53-3.05M-parameter Python code models for microcontrollers: IoT-oriented benchmark with executable unit tests and a train/test leakage audit, training and evaluation code, trained checkpoints, a portable INT8 C inference engine and tokenizer, ESP-IDF v5.4.2 firmware for the ESP32-S3 with its host simulation, and the paper sources. Code: MIT. Data, models, results and paper text: CC BY 4.0 (see LICENSE-DATA).",
+  "creators": [
+    {"name": "Yarramala, Rohith", "affiliation": "Defence Institute of Advanced Technology (DIAT), Pune, India"}
+  ],
+  "license": "MIT",
+  "keywords": ["TinyML", "code generation", "small language models", "program repair", "microcontrollers", "ESP32-S3", "edge AI"],
+  "version": "1.0.0"
+}
