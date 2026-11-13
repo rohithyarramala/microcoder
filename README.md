@@ -43,3 +43,7 @@ python scripts/make_tables.py                # device numbers land in results/de
 ```
 
 See `esp32/README.md` for Wokwi, the CI build check and the MicroPython build.
+
+## Licence
+
+Code (Python, C, JavaScript, shell, CI): MIT, see `LICENSE`. Data, trained models, results and paper text: CC BY 4.0, see `LICENSE-DATA` (which also lists third-party material: MBPP, IEEE template files).

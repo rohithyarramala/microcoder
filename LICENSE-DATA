@@ -1,0 +1,18 @@
+Data, trained models and documentation licence
+
+Copyright (c) 2026 Rohith Yarramala
+
+The benchmark data (data/, except data/mbpp.jsonl), trained model checkpoints (ckpt/), results (results/),
+and the paper text and figures (paper/) are licensed under the Creative Commons Attribution 4.0
+International licence (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+You may share and adapt this material for any purpose, provided you give appropriate credit, link to the
+licence, and indicate if changes were made.
+
+Third-party material:
+- data/mbpp.jsonl is the MBPP benchmark (Austin et al., 2021, Google Research), distributed under CC BY 4.0
+  by its authors; it is included unmodified for evaluation only.
+- paper/access/ contains the IEEE Access LaTeX template files (ieeeaccess.cls, IEEEtran.cls, IEEEtran.bst,
+  spotcolor.sty, fonts and logos) distributed by IEEE; they remain under IEEE's own terms.
+
+Source code (Python, C, JavaScript, shell and CI files) is licensed separately under the MIT licence; see LICENSE.
