@@ -1,0 +1,2 @@
++ T='--tok data/tok2048_v1.json --dropout 0.1'
++ python3 -m microcoder.train --name m1_s1 --tok data/tok2048_v1.json --dropout 0.1 --steps 4000 --seed 1

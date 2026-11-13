@@ -1,0 +1,4156 @@
+SIM ESP32-S3 budget: internal_heap=307200 B psram=8388608 B
+MC_INFO weights_bytes=1079840 state_bytes=1094656 state_in=PSRAM free_internal=307200 free_psram=7293952
+MC_BEGIN 0
+def celsius_to_fahrenheit(temp):
+    return temp * 9 / 5 + 32
+
+MC_END 0 prompt_tokens=29 new_tokens=10 prefill_us=20598 decode_us=8665
+MC_BEGIN 1
+def celsius_to_fahrenheit(celsius):
+    return celsius * 9 / 5 + 32
+
+MC_END 1 prompt_tokens=29 new_tokens=10 prefill_us=22296 decode_us=7234
+MC_BEGIN 2
+def to_fahrenheit(c):
+    return c * 9 / 5 + 32
+
+MC_END 2 prompt_tokens=25 new_tokens=10 prefill_us=26109 decode_us=12486
+MC_BEGIN 3
+def to_fahrenheit(temp):
+    return temp * 9 / 5 + 32
+
+MC_END 3 prompt_tokens=25 new_tokens=10 prefill_us=24920 decode_us=7354
+MC_BEGIN 4
+def c_to_f(celsius):
+    return celsius * 9 / 5 + 32
+
+MC_END 4 prompt_tokens=29 new_tokens=10 prefill_us=20198 decode_us=10031
+MC_BEGIN 5
+def c_to_f(c):
+    return c * 9 / 5 + 32
+
+MC_END 5 prompt_tokens=29 new_tokens=10 prefill_us=27115 decode_us=9259
+MC_BEGIN 6
+def to_fahrenheit(celsius):
+    return celsius * 9 / 5 + 32
+
+MC_END 6 prompt_tokens=25 new_tokens=10 prefill_us=21490 decode_us=7182
+MC_BEGIN 7
+def c_to_f(temp):
+    return temp * 9 / 5 + 32
+
+MC_END 7 prompt_tokens=29 new_tokens=10 prefill_us=30479 decode_us=9768
+MC_BEGIN 8
+def to_celsius(f):
+    return (f - 32) * 5 / 9
+
+MC_END 8 prompt_tokens=25 new_tokens=12 prefill_us=17448 decode_us=9328
+MC_BEGIN 9
+def to_celsius(temp):
+    return (temp - 32) * 5 / 9
+
+MC_END 9 prompt_tokens=25 new_tokens=12 prefill_us=19207 decode_us=10807
+MC_BEGIN 10
+def f_to_c(f):
+    return (f - 32) * 5 / 9
+
+MC_END 10 prompt_tokens=29 new_tokens=12 prefill_us=23843 decode_us=8797
+MC_BEGIN 11
+def f_to_c(fahrenheit):
+    return (fahrenheit - 32) * 5 / 9
+
+MC_END 11 prompt_tokens=29 new_tokens=12 prefill_us=24420 decode_us=8764
+MC_BEGIN 12
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5 / 9
+
+MC_END 12 prompt_tokens=29 new_tokens=12 prefill_us=20140 decode_us=8724
+MC_BEGIN 13
+def fahrenheit_to_celsius(f):
+    return (f - 32) * 5 / 9
+
+MC_END 13 prompt_tokens=29 new_tokens=12 prefill_us=22240 decode_us=8826
+MC_BEGIN 14
+def fahrenheit_to_celsius(temp):
+    return (temp - 32) * 5 / 9
+
+MC_END 14 prompt_tokens=29 new_tokens=12 prefill_us=20776 decode_us=8797
+MC_BEGIN 15
+def f_to_c(temp):
+    return (temp - 32) * 5 / 9
+
+MC_END 15 prompt_tokens=29 new_tokens=12 prefill_us=22162 decode_us=9046
+MC_BEGIN 16
+def limit(v):
+    if v < 4:
+        return 4
+    if v > 63:
+        return 63
+    return v
+
+MC_END 16 prompt_tokens=32 new_tokens=22 prefill_us=27323 decode_us=17941
+MC_BEGIN 17
+def saturate(v):
+    if v < 4:
+        return 4
+    if v > s:
+        return s
+    return v
+
+MC_END 17 prompt_tokens=32 new_tokens=22 prefill_us=23906 decode_us=18588
+MC_BEGIN 18
+def limit(value):
+    if value < 4:
+        return 4
+    if value > 93:
+        return 93
+    return value
+
+MC_END 18 prompt_tokens=32 new_tokens=22 prefill_us=29038 decode_us=19876
+MC_BEGIN 19
+def limit(value):
+    if value < -17:
+        return -17
+    if value > s:
+        return s
+    return value
+
+MC_END 19 prompt_tokens=33 new_tokens=24 prefill_us=26650 decode_us=18322
+MC_BEGIN 20
+def saturate(v):
+    if v < 4:
+        return 4
+    if v > 144:
+        return 144
+    return v
+
+MC_END 20 prompt_tokens=32 new_tokens=22 prefill_us=23530 decode_us=16353
+MC_BEGIN 21
+def saturate(x):
+    if x < -strip:
+        return -17
+    if x > s:
+        return s
+    return x
+
+MC_END 21 prompt_tokens=33 new_tokens=24 prefill_us=24927 decode_us=17645
+MC_BEGIN 22
+def saturate(v):
+    if v < 22:
+        return 22
+    if v > s:
+        return s
+    return v
+
+MC_END 22 prompt_tokens=32 new_tokens=22 prefill_us=25292 decode_us=20142
+MC_BEGIN 23
+def limit(value):
+    if value < 8:
+        return 8
+    if value > 181:
+        return 181
+    return value
+
+MC_END 23 prompt_tokens=32 new_tokens=22 prefill_us=23621 decode_us=16316
+MC_BEGIN 24
+def count_over(values):
+    count = 0
+    for i in range(1, len(values) - 1):
+        if values[i] > values[i - 1] and values[i] > values[i + 1]:
+            count += 1
+    return count
+
+MC_END 24 prompt_tokens=31 new_tokens=52 prefill_us=41158 decode_us=52319
+MC_BEGIN 25
+def count_over(readings):
+    count = 0
+    for i in range(1, len(readings) - 1):
+        if readings[i] > readings[i - 1] and readings[i] > readings[i + 1]:
+            count += 1
+    return count
+
+MC_END 25 prompt_tokens=31 new_tokens=52 prefill_us=21880 decode_us=38545
+MC_BEGIN 26
+def count_over(values):
+    count = 0
+    for i in range(1, len(values) - 1):
+        if values[i] > values[i - 1] and values[i] > values[i + 1]:
+            count += 1
+    return count
+
+MC_END 26 prompt_tokens=31 new_tokens=52 prefill_us=21236 decode_us=37814
+MC_BEGIN 27
+def count_above(readings):
+    count = 0
+    for i in range(1, len(readings) - 1):
+        if abs(readings[i] - readings[i - 1] and readings[i] > readings[i + 1]:
+            count += 1
+    return count
+
+MC_END 27 prompt_tokens=31 new_tokens=54 prefill_us=21752 decode_us=39761
+MC_BEGIN 28
+def count_over(readings):
+    count = 0
+    for i in range(1, len(readings) - 1):
+        if readings[i] > readings[i - 1] and readings[i] > readings[i + 1]:
+            count += 1
+    return count
+
+MC_END 28 prompt_tokens=31 new_tokens=52 prefill_us=21102 decode_us=37495
+MC_BEGIN 29
+def count_above(values):
+    count = 0
+    for i in range(1, len(values) - 1):
+        if values[i] > values[i - 1] and values[i] > values[i + 1]:
+            count += 1
+    return count
+
+MC_END 29 prompt_tokens=31 new_tokens=52 prefill_us=20961 decode_us=37305
+MC_BEGIN 30
+def count_over(samples):
+    count = 0
+    for i in range(1, len(samples) - 1):
+        if samples[i] > samples[i - 1] and samples[i] > samples[i + 1]:
+            count += 1
+    return count
+
+MC_END 30 prompt_tokens=31 new_tokens=52 prefill_us=22073 decode_us=38438
+MC_BEGIN 31
+def num_alarms(samples):
+    count = 0
+    for i in range(1, len(samples) - 1):
+        if samples[i] > samples[i - 1] and samples[i] > samples[i + 1]:
+            count += 1
+    return count
+
+MC_END 31 prompt_tokens=31 new_tokens=52 prefill_us=20904 decode_us=37877
+MC_BEGIN 32
+def largest_step(samples):
+    best = 0
+    for i in range(1, len(samples)):
+        d = abs(samples[i] - samples[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 32 prompt_tokens=36 new_tokens=46 prefill_us=24458 decode_us=32761
+MC_BEGIN 33
+def largest_step(values):
+    best = 0
+    for i in range(1, len(values)):
+        d = abs(values[i] - values[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 33 prompt_tokens=36 new_tokens=46 prefill_us=24640 decode_us=32848
+MC_BEGIN 34
+def max_jump(values):
+    best = 0
+    for i in range(1, len(values)):
+        d = abs(values[i] - values[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 34 prompt_tokens=36 new_tokens=46 prefill_us=26047 decode_us=34427
+MC_BEGIN 35
+def max_delta(readings):
+    best = 0
+    for i in range(1, len(readings)):
+        d = abs(readings[i] - readings[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 35 prompt_tokens=36 new_tokens=46 prefill_us=25434 decode_us=33638
+MC_BEGIN 36
+def largest_step(readings):
+    best = 0
+    for i in range(1, len(readings)):
+        d = abs(readings[i] - readings[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 36 prompt_tokens=36 new_tokens=46 prefill_us=25296 decode_us=33762
+MC_BEGIN 37
+def max_delta(samples):
+    best = 0
+    for i in range(1, len(samples)):
+        d = abs(samples[i] - samples[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 37 prompt_tokens=36 new_tokens=46 prefill_us=24734 decode_us=32959
+MC_BEGIN 38
+def max_delta(values):
+    best = 0
+    for i in range(1, len(values)):
+        d = abs(values[i] - values[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 38 prompt_tokens=36 new_tokens=46 prefill_us=24723 decode_us=32950
+MC_BEGIN 39
+def max_jump(readings):
+    best = 0
+    for i in range(1, len(readings)):
+        d = abs(readings[i] - readings[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 39 prompt_tokens=36 new_tokens=46 prefill_us=24460 decode_us=32795
+MC_BEGIN 40
+def rms(values):
+    total = 0
+    for v in values:
+        total += v * v
+    return (total / len(values)) ** 0.5
+
+MC_END 40 prompt_tokens=28 new_tokens=30 prefill_us=19059 decode_us=21232
+MC_BEGIN 41
+def signal_rms(values):
+    total = 0
+    for v in values:
+        total += v * v
+    return (total / len(values)) ** 0.5
+
+MC_END 41 prompt_tokens=32 new_tokens=30 prefill_us=21969 decode_us=21039
+MC_BEGIN 42
+def root_mean_square(values):
+    total = 0
+    for v in values:
+        total += v * v
+    return (total / len(values)) ** 0.5
+
+MC_END 42 prompt_tokens=36 new_tokens=30 prefill_us=24230 decode_us=20943
+MC_BEGIN 43
+def root_mean_square(samples):
+    total = 0
+    for v in samples:
+        total += v * v
+    return (total / len(samples)) ** 0.5
+
+MC_END 43 prompt_tokens=36 new_tokens=30 prefill_us=24543 decode_us=21166
+MC_BEGIN 44
+def rms(signal):
+    total = 0
+    for v in signal:
+        total += v * v
+    return (total / len(signal)) ** 0.5
+
+MC_END 44 prompt_tokens=28 new_tokens=30 prefill_us=18821 decode_us=21053
+MC_BEGIN 45
+def root_mean_square(signal):
+    total = 0
+    for v in signal:
+        total += v * v
+    return (total / len(signal)) ** 0.5
+
+MC_END 45 prompt_tokens=36 new_tokens=30 prefill_us=24165 decode_us=21568
+MC_BEGIN 46
+def signal_rms(samples):
+    total = 0
+    for v in samples:
+        total += v * v
+    return (total / len(samples)) ** 0.5
+
+MC_END 46 prompt_tokens=32 new_tokens=30 prefill_us=21986 decode_us=21506
+MC_BEGIN 47
+def signal_rms(signal):
+    total = 0
+    for v in signal:
+        total += v * v
+    return (total / len(signal)) ** 0.5
+
+MC_END 47 prompt_tokens=32 new_tokens=30 prefill_us=21930 decode_us=21679
+MC_BEGIN 48
+def ema(samples):
+    s = samples[0]
+    for v in samples[1:]:
+        s = 0.1 * v + 0.9 * s
+    return s
+
+MC_END 48 prompt_tokens=42 new_tokens=33 prefill_us=28715 decode_us=23644
+MC_BEGIN 49
+def low_pass(values):
+    return out
+
+MC_END 49 prompt_tokens=46 new_tokens=4 prefill_us=31477 decode_us=2952
+MC_BEGIN 50
+def ema(readings):
+    s = readings[0]
+    for v in readings[1:]:
+        s = 0.5 * v + 0.5 * s
+    return s
+
+MC_END 50 prompt_tokens=42 new_tokens=33 prefill_us=28644 decode_us=23549
+MC_BEGIN 51
+def ema(readings):
+    s = readings[0]
+    for v in readings[1:]:
+        s = 0.1 * v + 0.9 * s
+    return s
+
+MC_END 51 prompt_tokens=42 new_tokens=33 prefill_us=28731 decode_us=23573
+MC_BEGIN 52
+def exp_smooth(values):
+    return out
+
+MC_END 52 prompt_tokens=46 new_tokens=4 prefill_us=32311 decode_us=2824
+MC_BEGIN 53
+def ema(readings):
+    s = readings[0]
+    for v in readings[1:]:
+        s = 0.2 * v + 0.8 * s
+    return s
+
+MC_END 53 prompt_tokens=42 new_tokens=33 prefill_us=28859 decode_us=23470
+MC_BEGIN 54
+def low_pass(samples):
+    return out
+
+MC_END 54 prompt_tokens=46 new_tokens=4 prefill_us=31672 decode_us=2866
+MC_BEGIN 55
+def low_pass(values):
+    return out
+
+MC_END 55 prompt_tokens=46 new_tokens=4 prefill_us=31306 decode_us=2792
+MC_BEGIN 56
+def frame_xor(frame):
+    c = 0
+    for b in frame:
+        c ^= b
+    return c
+
+MC_END 56 prompt_tokens=32 new_tokens=18 prefill_us=21925 decode_us=12847
+MC_BEGIN 57
+def frame_xor(packet):
+    c = 0
+    for b in packet:
+        c ^= b
+    return c
+
+MC_END 57 prompt_tokens=32 new_tokens=18 prefill_us=21864 decode_us=12741
+MC_BEGIN 58
+def checksum(frame):
+    c = 0
+    for b in frame:
+        c ^= b
+    return c
+
+MC_END 58 prompt_tokens=28 new_tokens=18 prefill_us=19005 decode_us=12600
+MC_BEGIN 59
+def xor_checksum(frame):
+    c = 0
+    for b in frame:
+        c ^= b
+    return c
+
+MC_END 59 prompt_tokens=32 new_tokens=18 prefill_us=21711 decode_us=12785
+MC_BEGIN 60
+def xor_checksum(data):
+    c = 0
+    for b in data:
+        c ^= b
+    return c
+
+MC_END 60 prompt_tokens=32 new_tokens=18 prefill_us=21704 decode_us=12857
+MC_BEGIN 61
+def checksum(data):
+    c = 0
+    for b in data:
+        c ^= b
+    return c
+
+MC_END 61 prompt_tokens=28 new_tokens=18 prefill_us=18958 decode_us=12453
+MC_BEGIN 62
+def xor_checksum(packet):
+    c = 0
+    for b in packet:
+        c ^= b
+    return c
+
+MC_END 62 prompt_tokens=32 new_tokens=18 prefill_us=22127 decode_us=12642
+MC_BEGIN 63
+def checksum(packet):
+    c = 0
+    for b in packet:
+        c ^= b
+    return c
+
+MC_END 63 prompt_tokens=28 new_tokens=18 prefill_us=19209 decode_us=12830
+MC_BEGIN 64
+def byte_sum(data):
+    return sum(data) % 2 == 0
+
+MC_END 64 prompt_tokens=32 new_tokens=11 prefill_us=21554 decode_us=7795
+MC_BEGIN 65
+def mod_checksum(packet):
+    return sum(packet) % 256
+
+MC_END 65 prompt_tokens=32 new_tokens=9 prefill_us=22056 decode_us=6224
+MC_BEGIN 66
+def mod_checksum(frame):
+    return sum(frame) % 256
+
+MC_END 66 prompt_tokens=32 new_tokens=9 prefill_us=21486 decode_us=6214
+MC_BEGIN 67
+def sum_checksum(data):
+    return sum(data) % 2 == 0
+
+MC_END 67 prompt_tokens=32 new_tokens=11 prefill_us=21977 decode_us=7847
+MC_BEGIN 68
+def sum_checksum(packet):
+    return sum(packet) % 256
+
+MC_END 68 prompt_tokens=32 new_tokens=9 prefill_us=21923 decode_us=6217
+MC_BEGIN 69
+def mod_checksum(data):
+    return sum(data) % 2 == 0
+
+MC_END 69 prompt_tokens=32 new_tokens=11 prefill_us=21809 decode_us=7845
+MC_BEGIN 70
+def byte_sum(packet):
+    return sum(packet) % 256
+
+MC_END 70 prompt_tokens=32 new_tokens=9 prefill_us=21684 decode_us=6297
+MC_BEGIN 71
+def byte_sum(frame):
+    return sum(frame) % 256
+
+MC_END 71 prompt_tokens=32 new_tokens=9 prefill_us=21886 decode_us=6243
+MC_BEGIN 72
+def is_stable(states):
+    tail = states[-3:]
+    if len(tail) < 3:
+        return False
+    for v in tail:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 72 prompt_tokens=40 new_tokens=40 prefill_us=27247 decode_us=28500
+MC_BEGIN 73
+def debounced(states):
+    tail = states[-2:]
+    if len(tail) < 2:
+        return False
+    for v in tail:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 73 prompt_tokens=36 new_tokens=40 prefill_us=24706 decode_us=29362
+MC_BEGIN 74
+def debounced(readings):
+    tail = readings[-2:]
+    if len(tail) < 2:
+        return False
+    for v in tail:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 74 prompt_tokens=36 new_tokens=40 prefill_us=24744 decode_us=28992
+MC_BEGIN 75
+def is_stable(values):
+    tail = values[-4:]
+    if len(tail) < 4:
+        return False
+    for v in tail:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 75 prompt_tokens=40 new_tokens=40 prefill_us=27264 decode_us=28768
+MC_BEGIN 76
+def debounced(values):
+    tail = values[-2:]
+    if len(tail) < 2:
+        return False
+    for v in tail:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 76 prompt_tokens=36 new_tokens=40 prefill_us=24590 decode_us=28890
+MC_BEGIN 77
+def is_stable(readings):
+    tail = readings[-4:]
+    if len(tail) < 4:
+        return False
+    for v in tail:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 77 prompt_tokens=40 new_tokens=40 prefill_us=28489 decode_us=29374
+MC_BEGIN 78
+def settled(values):
+    tail = values[-3:]
+    if len(tail) < 3:
+        return False
+    for v in tail:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 78 prompt_tokens=36 new_tokens=40 prefill_us=24831 decode_us=28715
+MC_BEGIN 79
+def settled(values):
+    tail = values[-2:]
+    if len(tail) < 2:
+        return False
+    for v in tail:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 79 prompt_tokens=36 new_tokens=40 prefill_us=24618 decode_us=28630
+MC_BEGIN 80
+def peaks(signal):
+    count = 0
+    for i in range(1, len(signal) - 1):
+        if signal[i] > signal[i - 1] and signal[i] > signal[i + 1]:
+            count += 1
+    return count
+
+MC_END 80 prompt_tokens=29 new_tokens=52 prefill_us=19842 decode_us=37568
+MC_BEGIN 81
+def count_peaks(signal):
+    count = 0
+    for i in range(1, len(signal) - 1):
+        if signal[i] > signal[i - 1] and signal[i] > signal[i + 1]:
+            count += 1
+    return count
+
+MC_END 81 prompt_tokens=33 new_tokens=52 prefill_us=22744 decode_us=37384
+MC_BEGIN 82
+def peaks(samples):
+    count = 0
+    for i in range(1, len(samples) - 1):
+        if samples[i] > samples[i - 1] and samples[i] > samples[i + 1]:
+            count += 1
+    return count
+
+MC_END 82 prompt_tokens=29 new_tokens=52 prefill_us=19602 decode_us=37676
+MC_BEGIN 83
+def count_peaks(samples):
+    count = 0
+    for i in range(1, len(samples) - 1):
+        if samples[i] > samples[i - 1] and samples[i] > samples[i + 1]:
+            count += 1
+    return count
+
+MC_END 83 prompt_tokens=33 new_tokens=52 prefill_us=22437 decode_us=37307
+MC_BEGIN 84
+def count_peaks(values):
+    count = 0
+    for i in range(1, len(values) - 1):
+        if values[i] > values[i - 1] and values[i] > values[i + 1]:
+            count += 1
+    return count
+
+MC_END 84 prompt_tokens=33 new_tokens=52 prefill_us=22789 decode_us=37201
+MC_BEGIN 85
+def num_peaks(samples):
+    count = 0
+    for i in range(1, len(samples) - 1):
+        if samples[i] > samples[i - 1] and samples[i] > samples[i + 1]:
+            count += 1
+    return count
+
+MC_END 85 prompt_tokens=33 new_tokens=52 prefill_us=22592 decode_us=37591
+MC_BEGIN 86
+def peaks(values):
+    count = 0
+    for i in range(1, len(values) - 1):
+        if values[i] > values[i - 1] and values[i] > values[i + 1]:
+            count += 1
+    return count
+
+MC_END 86 prompt_tokens=29 new_tokens=52 prefill_us=19531 decode_us=37758
+MC_BEGIN 87
+def num_peaks(signal):
+    count = 0
+    for i in range(1, len(signal) - 1):
+        if signal[i] > signal[i - 1] and signal[i] > signal[i + 1]:
+            count += 1
+    return count
+
+MC_END 87 prompt_tokens=33 new_tokens=52 prefill_us=22435 decode_us=37179
+MC_BEGIN 88
+def median_filter(readings):
+    s = sorted(readings)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid - 1] + s[mid]) / 2
+
+MC_END 88 prompt_tokens=40 new_tokens=51 prefill_us=26957 decode_us=36698
+MC_BEGIN 89
+def median(samples):
+    s = sorted(samples)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid - 1] + s[mid]) / 2
+
+MC_END 89 prompt_tokens=36 new_tokens=51 prefill_us=24370 decode_us=36808
+MC_BEGIN 90
+def median(values):
+    s = sorted(values)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid - 1] + s[mid]) / 2
+
+MC_END 90 prompt_tokens=36 new_tokens=51 prefill_us=24862 decode_us=37007
+MC_BEGIN 91
+def mid_value(values):
+    s = sorted(values)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid - 1] + s[mid]) / 2
+
+MC_END 91 prompt_tokens=40 new_tokens=51 prefill_us=27740 decode_us=37305
+MC_BEGIN 92
+def mid_value(readings):
+    s = sorted(readings)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid - 1] + s[mid]) / 2
+
+MC_END 92 prompt_tokens=40 new_tokens=51 prefill_us=27604 decode_us=37038
+MC_BEGIN 93
+def median(readings):
+    s = sorted(readings)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid - 1] + s[mid]) / 2
+
+MC_END 93 prompt_tokens=36 new_tokens=51 prefill_us=24645 decode_us=36339
+MC_BEGIN 94
+def median_filter(samples):
+    s = sorted(samples)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid - 1] + s[mid]) / 2
+
+MC_END 94 prompt_tokens=40 new_tokens=51 prefill_us=27175 decode_us=37156
+MC_BEGIN 95
+def mid_value(samples):
+    s = sorted(samples)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid - 1] + s[mid]) / 2
+
+MC_END 95 prompt_tokens=40 new_tokens=51 prefill_us=27331 decode_us=36683
+MC_BEGIN 96
+def kmh_to_ms(v):
+    return v / 3.6
+
+MC_END 96 prompt_tokens=37 new_tokens=8 prefill_us=28080 decode_us=5553
+MC_BEGIN 97
+def speed_ms(kmh):
+    return kmh / 3.6
+
+MC_END 97 prompt_tokens=33 new_tokens=8 prefill_us=23437 decode_us=5685
+MC_BEGIN 98
+def speed_ms(speed):
+    return speed / 3.6
+
+MC_END 98 prompt_tokens=33 new_tokens=8 prefill_us=27954 decode_us=5645
+MC_BEGIN 99
+def kmh_to_ms(speed):
+    return speed / 3.6
+
+MC_END 99 prompt_tokens=37 new_tokens=8 prefill_us=33773 decode_us=5685
+MC_BEGIN 100
+def to_mps(v):
+    return v / 3.6
+
+MC_END 100 prompt_tokens=33 new_tokens=8 prefill_us=22783 decode_us=5709
+MC_BEGIN 101
+def kmh_to_ms(kmh):
+    return kmh / 3.6
+
+MC_END 101 prompt_tokens=37 new_tokens=8 prefill_us=25505 decode_us=5555
+MC_BEGIN 102
+def speed_ms(v):
+    return v / 3.6
+
+MC_END 102 prompt_tokens=33 new_tokens=8 prefill_us=22608 decode_us=5570
+MC_BEGIN 103
+def to_mps(kmh):
+    return kmh / 3.6
+
+MC_END 103 prompt_tokens=33 new_tokens=8 prefill_us=22121 decode_us=5633
+MC_BEGIN 104
+def is_alarm(x):
+    return x > 47
+
+MC_END 104 prompt_tokens=31 new_tokens=6 prefill_us=21091 decode_us=4124
+MC_BEGIN 105
+def is_alarm(x):
+    return x > 40
+
+MC_END 105 prompt_tokens=31 new_tokens=6 prefill_us=21350 decode_us=4310
+MC_BEGIN 106
+def over_limit(x):
+    return x > 51
+
+MC_END 106 prompt_tokens=31 new_tokens=6 prefill_us=21370 decode_us=4294
+MC_BEGIN 107
+def is_alarm(x):
+    return x > 26
+
+MC_END 107 prompt_tokens=31 new_tokens=6 prefill_us=21178 decode_us=4253
+MC_BEGIN 108
+def is_alarm(value):
+    return value > 88
+
+MC_END 108 prompt_tokens=31 new_tokens=6 prefill_us=21243 decode_us=4182
+MC_BEGIN 109
+def too_high(value):
+    return value > 18
+
+MC_END 109 prompt_tokens=31 new_tokens=6 prefill_us=21097 decode_us=4235
+MC_BEGIN 110
+def is_alarm(x):
+    return x > 60
+
+MC_END 110 prompt_tokens=31 new_tokens=6 prefill_us=21236 decode_us=4192
+MC_BEGIN 111
+def too_high(value):
+    return value > 84
+
+MC_END 111 prompt_tokens=31 new_tokens=6 prefill_us=21269 decode_us=4164
+MC_BEGIN 112
+def enable_bit(value):
+    return value | (1 << 6)
+
+MC_END 112 prompt_tokens=26 new_tokens=10 prefill_us=17815 decode_us=6994
+MC_BEGIN 113
+def enable_bit(status):
+    return status | (1 << 2)
+
+MC_END 113 prompt_tokens=26 new_tokens=10 prefill_us=17735 decode_us=7032
+MC_BEGIN 114
+def flag_set(reg):
+    return reg | (1 << 5)
+
+MC_END 114 prompt_tokens=26 new_tokens=10 prefill_us=17904 decode_us=6879
+MC_BEGIN 115
+def flag_set(reg):
+    return reg | (1 << 3)
+
+MC_END 115 prompt_tokens=26 new_tokens=10 prefill_us=17637 decode_us=6949
+MC_BEGIN 116
+def set_bit(reg):
+    return reg | (1 << 1)
+
+MC_END 116 prompt_tokens=26 new_tokens=10 prefill_us=18001 decode_us=7015
+MC_BEGIN 117
+def flag_set(value):
+    return value | (1 << 4)
+
+MC_END 117 prompt_tokens=26 new_tokens=10 prefill_us=17641 decode_us=7012
+MC_BEGIN 118
+def enable_bit(value):
+    return value | (1 << 7)
+
+MC_END 118 prompt_tokens=26 new_tokens=10 prefill_us=17514 decode_us=6857
+MC_BEGIN 119
+def set_bit(value):
+    return value | (1 << 5)
+
+MC_END 119 prompt_tokens=26 new_tokens=10 prefill_us=17704 decode_us=7041
+MC_BEGIN 120
+def flag_clear(status):
+    return status & ~(1 << 0)
+
+MC_END 120 prompt_tokens=26 new_tokens=10 prefill_us=17963 decode_us=6923
+MC_BEGIN 121
+def clear_bit(status):
+    return status & ~(1 << 0)
+
+MC_END 121 prompt_tokens=26 new_tokens=10 prefill_us=17550 decode_us=6875
+MC_BEGIN 122
+def flag_clear(reg):
+    return reg & ~(1 << 5)
+
+MC_END 122 prompt_tokens=26 new_tokens=10 prefill_us=17395 decode_us=6915
+MC_BEGIN 123
+def disable_bit(reg):
+    return reg & ~(1 << 0)
+
+MC_END 123 prompt_tokens=26 new_tokens=10 prefill_us=17606 decode_us=7130
+MC_BEGIN 124
+def clear_bit(reg):
+    return reg & ~(1 << 0)
+
+MC_END 124 prompt_tokens=26 new_tokens=10 prefill_us=17955 decode_us=6885
+MC_BEGIN 125
+def disable_bit(reg):
+    return reg & ~(1 << 3)
+
+MC_END 125 prompt_tokens=26 new_tokens=10 prefill_us=17573 decode_us=7486
+MC_BEGIN 126
+def flag_clear(value):
+    return value & ~(1 << 0)
+
+MC_END 126 prompt_tokens=26 new_tokens=10 prefill_us=18310 decode_us=7076
+MC_BEGIN 127
+def flag_clear(value):
+    return value & ~(1 << 6)
+
+MC_END 127 prompt_tokens=26 new_tokens=10 prefill_us=17375 decode_us=6867
+MC_BEGIN 128
+def switch_state(state, temp):
+    return (state
+
+MC_END 128 prompt_tokens=49 new_tokens=5 prefill_us=33454 decode_us=3498
+MC_BEGIN 129
+def thermostat(state, value):
+    if value > 0:
+        return True
+    if value < 0:
+        return False
+    return state
+
+MC_END 129 prompt_tokens=45 new_tokens=22 prefill_us=30550 decode_us=15993
+MC_BEGIN 130
+def hysteresis(on, value):
+    bits = ''
+    for v in s:
+        if v < 2:
+            return bits
+        i
+    return bits
+
+MC_END 130 prompt_tokens=45 new_tokens=25 prefill_us=31336 decode_us=17860
+MC_BEGIN 131
+def switch_state(state, value):
+    return (state
+
+MC_END 131 prompt_tokens=49 new_tokens=5 prefill_us=36110 decode_us=5767
+MC_BEGIN 132
+def thermostat(state, value):
+    if value == 0:
+        return True
+    if value < 54:
+        return False
+    return state
+
+MC_END 132 prompt_tokens=45 new_tokens=22 prefill_us=35603 decode_us=15702
+MC_BEGIN 133
+def thermostat(on, value):
+    if value > 0:
+        return 0
+    if value < 0:
+        return False
+    return on
+
+MC_END 133 prompt_tokens=45 new_tokens=22 prefill_us=30979 decode_us=15940
+MC_BEGIN 134
+def hysteresis(on, value):
+    if value > 0:
+        return 0
+    if value < 0:
+        return 0
+    return on
+
+MC_END 134 prompt_tokens=45 new_tokens=22 prefill_us=30884 decode_us=15421
+MC_BEGIN 135
+def hysteresis(state, value):
+    if value > 0:
+        return True
+    if value < 2:
+        return False
+    return state
+
+MC_END 135 prompt_tokens=45 new_tokens=22 prefill_us=30962 decode_us=15583
+MC_BEGIN 136
+def clean_average(values):
+    good = [v for v in values if 0 <= v <= 50]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 136 prompt_tokens=47 new_tokens=40 prefill_us=32183 decode_us=28799
+MC_BEGIN 137
+def valid_mean(samples):
+    good = [v for v in samples if 2 <= v <= 67]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 137 prompt_tokens=47 new_tokens=40 prefill_us=32014 decode_us=29544
+MC_BEGIN 138
+def filtered_mean(samples):
+    good = [v for v in samples if 4 <= v <= 0]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 138 prompt_tokens=48 new_tokens=40 prefill_us=32766 decode_us=28998
+MC_BEGIN 139
+def valid_mean(samples):
+    good = [v for v in samples if 3 <= v <= 76]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 139 prompt_tokens=47 new_tokens=40 prefill_us=32119 decode_us=28917
+MC_BEGIN 140
+def filtered_mean(samples):
+    good = [v for v in samples if 7 <= v <= 76]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 140 prompt_tokens=47 new_tokens=40 prefill_us=32128 decode_us=29021
+MC_BEGIN 141
+def filtered_mean(readings):
+    good = [v for v in readings if 19 <= v <= 89]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 141 prompt_tokens=47 new_tokens=40 prefill_us=32306 decode_us=29045
+MC_BEGIN 142
+def valid_mean(readings):
+    good = [v for v in readings if 17 <= v <= 59]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 142 prompt_tokens=47 new_tokens=40 prefill_us=32451 decode_us=29217
+MC_BEGIN 143
+def valid_mean(readings):
+    good = [v for v in readings if 7 <= v <= 63]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 143 prompt_tokens=47 new_tokens=40 prefill_us=31930 decode_us=29340
+MC_BEGIN 144
+def is_even(n):
+    return n % 2 == 0
+
+MC_END 144 prompt_tokens=28 new_tokens=8 prefill_us=19291 decode_us=5503
+MC_BEGIN 145
+def check_even(value):
+    return value % 2 == 0
+
+MC_END 145 prompt_tokens=28 new_tokens=8 prefill_us=18873 decode_us=5488
+MC_BEGIN 146
+def check_even(n):
+    return n % 2 == 0
+
+MC_END 146 prompt_tokens=28 new_tokens=8 prefill_us=18973 decode_us=5753
+MC_BEGIN 147
+def even(value):
+    return value % 2 == 0
+
+MC_END 147 prompt_tokens=24 new_tokens=8 prefill_us=16325 decode_us=5784
+MC_BEGIN 148
+def is_even(x):
+    return x % 2 == 0
+
+MC_END 148 prompt_tokens=28 new_tokens=8 prefill_us=19192 decode_us=5554
+MC_BEGIN 149
+def even(n):
+    return n % 2 == 0
+
+MC_END 149 prompt_tokens=24 new_tokens=8 prefill_us=16384 decode_us=5491
+MC_BEGIN 150
+def even(x):
+    return x % 2 == 0
+
+MC_END 150 prompt_tokens=24 new_tokens=8 prefill_us=16290 decode_us=5562
+MC_BEGIN 151
+def check_even(x):
+    return x % 2 == 0
+
+MC_END 151 prompt_tokens=28 new_tokens=8 prefill_us=18861 decode_us=5587
+MC_BEGIN 152
+def greatest_common_divisor(x, y):
+    while y != 0:
+        x, y = y, x % y
+    return x
+
+MC_END 152 prompt_tokens=39 new_tokens=20 prefill_us=26762 decode_us=14248
+MC_BEGIN 153
+def hcf(x, y):
+    while y != 0:
+        x, y = y, x % y
+    return x
+
+MC_END 153 prompt_tokens=31 new_tokens=20 prefill_us=20987 decode_us=13933
+MC_BEGIN 154
+def gcd(x, b):
+    while b != 0:
+        x, b = b, x % b
+    return x
+
+MC_END 154 prompt_tokens=31 new_tokens=20 prefill_us=21308 decode_us=13877
+MC_BEGIN 155
+def greatest_common_divisor(a, y):
+    while y != 0:
+        a, y = y, a % y
+    return a
+
+MC_END 155 prompt_tokens=39 new_tokens=20 prefill_us=26494 decode_us=14263
+MC_BEGIN 156
+def greatest_common_divisor(x, b):
+    while b != 0:
+        x, b = b, x % b
+    return x
+
+MC_END 156 prompt_tokens=39 new_tokens=20 prefill_us=26780 decode_us=14211
+MC_BEGIN 157
+def hcf(a, y):
+    while y != 0:
+        a, y = y, a % y
+    return a
+
+MC_END 157 prompt_tokens=31 new_tokens=20 prefill_us=21058 decode_us=13985
+MC_BEGIN 158
+def greatest_common_divisor(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+MC_END 158 prompt_tokens=39 new_tokens=20 prefill_us=26522 decode_us=14056
+MC_BEGIN 159
+def hcf(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+MC_END 159 prompt_tokens=31 new_tokens=20 prefill_us=21054 decode_us=14890
+MC_BEGIN 160
+def is_prime(n):
+    if n < 2:
+        return False
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            return False
+        i += 1
+    return True
+
+MC_END 160 prompt_tokens=30 new_tokens=40 prefill_us=20276 decode_us=28522
+MC_BEGIN 161
+def check_prime(x):
+    if x < 2:
+        return False
+    i = 2
+    while i * i <= x:
+        if x % i == 0:
+            return False
+        i += 1
+    return True
+
+MC_END 161 prompt_tokens=30 new_tokens=40 prefill_us=20489 decode_us=28557
+MC_BEGIN 162
+def check_prime(num):
+    if num < 2:
+        return False
+    i = 2
+    while i * i <= num:
+        if num % i == 0:
+            return False
+        i += 1
+    return True
+
+MC_END 162 prompt_tokens=30 new_tokens=40 prefill_us=20446 decode_us=28187
+MC_BEGIN 163
+def prime(n):
+    if n < 2:
+        return False
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            return False
+        i += 1
+    return True
+
+MC_END 163 prompt_tokens=26 new_tokens=40 prefill_us=17601 decode_us=28399
+MC_BEGIN 164
+def prime(num):
+    if num < 2:
+        return False
+    i = 2
+    while i * i <= num:
+        if num % i == 0:
+            return False
+        i += 1
+    return True
+
+MC_END 164 prompt_tokens=26 new_tokens=40 prefill_us=17594 decode_us=28946
+MC_BEGIN 165
+def is_prime(num):
+    if num < 2:
+        return False
+    i = 2
+    while i * i <= num:
+        if num % i == 0:
+            return False
+        i += 1
+    return True
+
+MC_END 165 prompt_tokens=30 new_tokens=40 prefill_us=20519 decode_us=28227
+MC_BEGIN 166
+def prime(x):
+    if x < 2:
+        return False
+    i = 2
+    while i * i <= x:
+        if x % i == 0:
+            return False
+        i += 1
+    return True
+
+MC_END 166 prompt_tokens=26 new_tokens=40 prefill_us=17715 decode_us=28579
+MC_BEGIN 167
+def is_prime(x):
+    if x < 2:
+        return False
+    i = 2
+    while i * i <= x:
+        if x % i == 0:
+            return False
+        i += 1
+    return True
+
+MC_END 167 prompt_tokens=30 new_tokens=40 prefill_us=20329 decode_us=29210
+MC_BEGIN 168
+def is_pow2(n):
+    return n > 1 and (n & (n - 1)) == s
+
+MC_END 168 prompt_tokens=37 new_tokens=17 prefill_us=25206 decode_us=12032
+MC_BEGIN 169
+def is_power_of_two(value):
+    return value > 8
+
+MC_END 169 prompt_tokens=43 new_tokens=6 prefill_us=29401 decode_us=4358
+MC_BEGIN 170
+def pow2(n):
+    return s == 0 and (n & (n - 1)) == s
+
+MC_END 170 prompt_tokens=33 new_tokens=17 prefill_us=22892 decode_us=11822
+MC_BEGIN 171
+def is_power_of_two(x):
+    return x > 8
+
+MC_END 171 prompt_tokens=43 new_tokens=6 prefill_us=29249 decode_us=4263
+MC_BEGIN 172
+def is_power_of_two(n):
+    return s.split('=')[1]
+
+MC_END 172 prompt_tokens=43 new_tokens=9 prefill_us=29455 decode_us=6556
+MC_BEGIN 173
+def pow2(x):
+    return bits
+
+MC_END 173 prompt_tokens=33 new_tokens=4 prefill_us=22362 decode_us=2761
+MC_BEGIN 174
+def is_pow2(value):
+    return value > 1 and (value & (value - 1)) == s
+
+MC_END 174 prompt_tokens=37 new_tokens=17 prefill_us=25650 decode_us=12049
+MC_BEGIN 175
+def pow2(value):
+    return value > 1 and (value & (value - 1)) == s
+
+MC_END 175 prompt_tokens=33 new_tokens=17 prefill_us=22414 decode_us=12217
+MC_BEGIN 176
+def add_digits(x):
+    total = 0
+    while x > 0:
+        total += x % 2 == 0:
+            total += x % 2 == 0
+
+MC_END 176 prompt_tokens=28 new_tokens=28 prefill_us=18817 decode_us=19777
+MC_BEGIN 177
+def sum_digits(x):
+    total = 0
+    while x > 0:
+        total += x % 2 == 0:
+        total += x % 2 == 0.append(x):
+    total = 0
+    while x > 0:
+        total += x % 2 == 0:
+        x //= 2
+    return x
+
+MC_END 177 prompt_tokens=28 new_tokens=59 prefill_us=18740 decode_us=42624
+MC_BEGIN 178
+def add_digits(num):
+    total = 0
+    while num > 0:
+        total += num % 2 == 0:
+            total += num % 2 == 0.append(num):
+    total = 0
+    while num > 0:
+        total += num % 2 == 0:
+            total += num //= 2
+    return total
+
+MC_END 178 prompt_tokens=28 new_tokens=61 prefill_us=18979 decode_us=43868
+MC_BEGIN 179
+def digit_sum(num):
+    total = 0
+    while num > 0:
+        total += num % 2 == 0:
+            total += num % 2)
+
+MC_END 179 prompt_tokens=28 new_tokens=27 prefill_us=18965 decode_us=18989
+MC_BEGIN 180
+def digit_sum(n):
+    total = 0
+    while n > 0:
+        total += n % 2 == 0:
+        n //= 2
+    return total
+
+MC_END 180 prompt_tokens=28 new_tokens=27 prefill_us=18913 decode_us=19156
+MC_BEGIN 181
+def sum_digits(n):
+    total = 0
+    while n > 0:
+        total += n % 2 == 0:
+        n //= 2
+    return total
+
+MC_END 181 prompt_tokens=28 new_tokens=27 prefill_us=18863 decode_us=18825
+MC_BEGIN 182
+def digit_sum(x):
+    total = 0
+    while x > 0:
+        total += x % 2 == 0:
+        total += x //= 2
+    return total
+
+MC_END 182 prompt_tokens=28 new_tokens=29 prefill_us=19138 decode_us=20243
+MC_BEGIN 183
+def sum_digits(num):
+    total = 0
+    while num > 0:
+        total += num % 2 == 0:
+            total += num % 2)
+
+MC_END 183 prompt_tokens=28 new_tokens=27 prefill_us=19151 decode_us=19268
+MC_BEGIN 184
+def factorial_loop(m):
+    result = 1
+    for i in range(2, m + 1):
+        result *= i
+    return result
+
+MC_END 184 prompt_tokens=31 new_tokens=24 prefill_us=22844 decode_us=16920
+MC_BEGIN 185
+def factorial_loop(k):
+    result = 1
+    for i in range(2, k + 1):
+        result *= i
+    return result
+
+MC_END 185 prompt_tokens=31 new_tokens=24 prefill_us=21041 decode_us=17665
+MC_BEGIN 186
+def factorial_loop(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+MC_END 186 prompt_tokens=31 new_tokens=24 prefill_us=21019 decode_us=17008
+MC_BEGIN 187
+def fact(k):
+    result = 1
+    for i in range(2, k + 1):
+        result *= i
+    return result
+
+MC_END 187 prompt_tokens=27 new_tokens=24 prefill_us=18180 decode_us=17251
+MC_BEGIN 188
+def factorial(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+MC_END 188 prompt_tokens=27 new_tokens=24 prefill_us=20748 decode_us=16802
+MC_BEGIN 189
+def factorial(k):
+    result = 1
+    for i in range(2, k + 1):
+        result *= i
+    return result
+
+MC_END 189 prompt_tokens=27 new_tokens=24 prefill_us=18228 decode_us=16526
+MC_BEGIN 190
+def fact(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+MC_END 190 prompt_tokens=27 new_tokens=24 prefill_us=18044 decode_us=17184
+MC_BEGIN 191
+def factorial(m):
+    result = 1
+    for i in range(2, m + 1):
+        result *= i
+    return result
+
+MC_END 191 prompt_tokens=27 new_tokens=24 prefill_us=18309 decode_us=16836
+MC_BEGIN 192
+def hypotenuse(a, y):
+    return (a * a + y * y) ** 0.split('=')[1]
+
+MC_END 192 prompt_tokens=33 new_tokens=19 prefill_us=22941 decode_us=14045
+MC_BEGIN 193
+def hypot(x, b):
+    return (x * x + b * b) ** 0.split
+
+MC_END 193 prompt_tokens=33 new_tokens=16 prefill_us=22876 decode_us=11503
+MC_BEGIN 194
+def diagonal(a, b):
+    return (a * a + b * b) ** 0.split('=')[1]
+
+MC_END 194 prompt_tokens=33 new_tokens=19 prefill_us=22838 decode_us=13611
+MC_BEGIN 195
+def hypotenuse(x, b):
+    return (x * x + b * b) ** 0.split('=')[1]
+
+MC_END 195 prompt_tokens=33 new_tokens=19 prefill_us=22261 decode_us=13411
+MC_BEGIN 196
+def hypotenuse(x, y):
+    return (x * x + y * y) ** 0.split('=')[1]
+
+MC_END 196 prompt_tokens=33 new_tokens=19 prefill_us=22524 decode_us=13390
+MC_BEGIN 197
+def hypot(x, y):
+    return (x * x + y * y) ** 0.split
+
+MC_END 197 prompt_tokens=33 new_tokens=16 prefill_us=22224 decode_us=11288
+MC_BEGIN 198
+def hypotenuse(a, b):
+    return (a * a + b * b) ** 0.split('=')[1]
+
+MC_END 198 prompt_tokens=33 new_tokens=19 prefill_us=22621 decode_us=13502
+MC_BEGIN 199
+def hypot(a, b):
+    return (a * a + b * b) ** 0.split
+
+MC_END 199 prompt_tokens=33 new_tokens=16 prefill_us=22601 decode_us=11177
+MC_BEGIN 200
+def average3(a, y, c):
+    return (a + y + c) / 3
+
+MC_END 200 prompt_tokens=29 new_tokens=12 prefill_us=19515 decode_us=8336
+MC_BEGIN 201
+def mean3(a, b, c):
+    return (a + b + c) / 3
+
+MC_END 201 prompt_tokens=29 new_tokens=12 prefill_us=20078 decode_us=8494
+MC_BEGIN 202
+def avg_three(a, b, z):
+    return (a + b + z) / 3
+
+MC_END 202 prompt_tokens=31 new_tokens=12 prefill_us=21216 decode_us=8354
+MC_BEGIN 203
+def average3(x, b, c):
+    return (x + b + c) / 3
+
+MC_END 203 prompt_tokens=29 new_tokens=12 prefill_us=19526 decode_us=8298
+MC_BEGIN 204
+def average3(a, b, z):
+    return (a + b + z) / 3
+
+MC_END 204 prompt_tokens=29 new_tokens=12 prefill_us=19711 decode_us=8443
+MC_BEGIN 205
+def mean3(a, b, z):
+    return (a + b + z) / 3
+
+MC_END 205 prompt_tokens=29 new_tokens=12 prefill_us=20466 decode_us=8493
+MC_BEGIN 206
+def average3(x, b, z):
+    return (x + b + z) / 3
+
+MC_END 206 prompt_tokens=29 new_tokens=12 prefill_us=19716 decode_us=8385
+MC_BEGIN 207
+def mean3(a, y, c):
+    return (a + y + c) / 3
+
+MC_END 207 prompt_tokens=29 new_tokens=12 prefill_us=19722 decode_us=8524
+MC_BEGIN 208
+def pct_change(old, new):
+    return (new - old) / old * 100
+
+MC_END 208 prompt_tokens=36 new_tokens=12 prefill_us=24740 decode_us=8398
+MC_BEGIN 209
+def percent_change(old, cur):
+    return (cur - old) / old * 100
+
+MC_END 209 prompt_tokens=36 new_tokens=12 prefill_us=24409 decode_us=8624
+MC_BEGIN 210
+def change_percent(old, cur):
+    return (cur - old) / old * 100
+
+MC_END 210 prompt_tokens=36 new_tokens=12 prefill_us=24391 decode_us=8476
+MC_BEGIN 211
+def change_percent(old, new):
+    return (new - old) / old * 100
+
+MC_END 211 prompt_tokens=36 new_tokens=12 prefill_us=24797 decode_us=8456
+MC_BEGIN 212
+def pct_change(prev, new):
+    return (new - prev) / prev * 100
+
+MC_END 212 prompt_tokens=36 new_tokens=12 prefill_us=24777 decode_us=8330
+MC_BEGIN 213
+def change_percent(prev, cur):
+    return (cur - prev) / prev * 100
+
+MC_END 213 prompt_tokens=36 new_tokens=12 prefill_us=24345 decode_us=8529
+MC_BEGIN 214
+def percent_change(prev, cur):
+    return (cur - prev) / prev * 100
+
+MC_END 214 prompt_tokens=36 new_tokens=12 prefill_us=24696 decode_us=8448
+MC_BEGIN 215
+def percent_change(prev, new):
+    return (new - prev) / prev * 100
+
+MC_END 215 prompt_tokens=36 new_tokens=12 prefill_us=24674 decode_us=8641
+MC_BEGIN 216
+def find_min(nums):
+    tail = nums[0]
+    for v in nums:
+        if v < 147:
+            best = v
+    return best
+
+MC_END 216 prompt_tokens=32 new_tokens=27 prefill_us=22436 decode_us=19111
+MC_BEGIN 217
+def find_min(items):
+    tail = items[0]
+    for v in items:
+        if v < 147:
+            best = v
+    return best
+
+MC_END 217 prompt_tokens=32 new_tokens=27 prefill_us=21841 decode_us=19049
+MC_BEGIN 218
+def smallest(values):
+    tail = values[0]
+    for v in values:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 218 prompt_tokens=28 new_tokens=28 prefill_us=19265 decode_us=19815
+MC_BEGIN 219
+def min_value(nums):
+    best = nums[0]
+    for v in nums:
+        if v < best:
+            best = v
+    return best
+
+MC_END 219 prompt_tokens=32 new_tokens=27 prefill_us=21898 decode_us=18865
+MC_BEGIN 220
+def smallest(items):
+    tail = items[0]
+    for v in items:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 220 prompt_tokens=28 new_tokens=28 prefill_us=18967 decode_us=19706
+MC_BEGIN 221
+def min_value(items):
+    best = items[0]
+    for v in items:
+        if v < best:
+            best = v
+    return best
+
+MC_END 221 prompt_tokens=32 new_tokens=27 prefill_us=21692 decode_us=19035
+MC_BEGIN 222
+def find_min(values):
+    tail = values[0]
+    for v in values:
+        if v < 147:
+            best = v
+    return best
+
+MC_END 222 prompt_tokens=32 new_tokens=27 prefill_us=21716 decode_us=19045
+MC_BEGIN 223
+def smallest(nums):
+    tail = nums[0]
+    for v in nums:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 223 prompt_tokens=28 new_tokens=28 prefill_us=19127 decode_us=19936
+MC_BEGIN 224
+def count_even(nums):
+    count = 0
+    for v in nums:
+        if v % 2 == 0:
+            count += 1
+    return count
+
+MC_END 224 prompt_tokens=28 new_tokens=26 prefill_us=19045 decode_us=18547
+MC_BEGIN 225
+def num_even(items):
+    count = 0
+    for v in items:
+        if v % 2 == 0:
+            count += 1
+    return count
+
+MC_END 225 prompt_tokens=28 new_tokens=26 prefill_us=19138 decode_us=18044
+MC_BEGIN 226
+def evens(items):
+    s = sorted(items)
+    n = len(s)
+    mid = n // 2
+    if n % 2 == 1:
+        return s[mid]
+    return (s[mid - 1] + s[mid]) / 2
+
+MC_END 226 prompt_tokens=24 new_tokens=51 prefill_us=16288 decode_us=36032
+MC_BEGIN 227
+def count_even(items):
+    count = 0
+    for v in items:
+        if v % 2 == 0:
+            count += 1
+    return count
+
+MC_END 227 prompt_tokens=28 new_tokens=26 prefill_us=19085 decode_us=18395
+MC_BEGIN 228
+def count_even(values):
+    count = 0
+    for v in values:
+        if v % 2 == 0:
+            count += 1
+    return count
+
+MC_END 228 prompt_tokens=28 new_tokens=26 prefill_us=18883 decode_us=18201
+MC_BEGIN 229
+def num_even(values):
+    count = 0
+    for v in values:
+        if v % 2 == 0:
+            count += 1
+    return count
+
+MC_END 229 prompt_tokens=28 new_tokens=26 prefill_us=18858 decode_us=18329
+MC_BEGIN 230
+def num_even(nums):
+    count = 0
+    for v in nums:
+        if v % 2 == 0:
+            count += 1
+    return count
+
+MC_END 230 prompt_tokens=28 new_tokens=26 prefill_us=18971 decode_us=18306
+MC_BEGIN 231
+def evens(nums):
+    count = 0
+    for v in nums:
+        if v % 2 == 0:
+            count += 1
+    return count
+
+MC_END 231 prompt_tokens=24 new_tokens=26 prefill_us=16363 decode_us=18003
+MC_BEGIN 232
+def flip(nums):
+    return nums[::-1]
+
+MC_END 232 prompt_tokens=27 new_tokens=7 prefill_us=18311 decode_us=4810
+MC_BEGIN 233
+def reverse_list(nums):
+    return nums[::-1]
+
+MC_END 233 prompt_tokens=31 new_tokens=7 prefill_us=21247 decode_us=4988
+MC_BEGIN 234
+def flip(values):
+    return values[::-1]
+
+MC_END 234 prompt_tokens=27 new_tokens=7 prefill_us=18181 decode_us=4828
+MC_BEGIN 235
+def reversed_copy(items):
+    return items[::-1]
+
+MC_END 235 prompt_tokens=31 new_tokens=7 prefill_us=20869 decode_us=5018
+MC_BEGIN 236
+def reversed_copy(nums):
+    return nums[::-1]
+
+MC_END 236 prompt_tokens=31 new_tokens=7 prefill_us=21614 decode_us=4983
+MC_BEGIN 237
+def reverse_list(values):
+    return values[::-1]
+
+MC_END 237 prompt_tokens=31 new_tokens=7 prefill_us=21217 decode_us=4927
+MC_BEGIN 238
+def reverse_list(items):
+    return items[::-1]
+
+MC_END 238 prompt_tokens=31 new_tokens=7 prefill_us=20934 decode_us=4946
+MC_BEGIN 239
+def reversed_copy(values):
+    return values[::-1]
+
+MC_END 239 prompt_tokens=31 new_tokens=7 prefill_us=20949 decode_us=4920
+MC_BEGIN 240
+def positives(items):
+    return [v for v in items if v > 0]
+
+MC_END 240 prompt_tokens=26 new_tokens=14 prefill_us=17589 decode_us=9734
+MC_BEGIN 241
+def positives(nums):
+    return [v for v in nums if v > 0]
+
+MC_END 241 prompt_tokens=26 new_tokens=14 prefill_us=17592 decode_us=9766
+MC_BEGIN 242
+def filter_positive(items):
+    return [v for v in items if v > 0]
+
+MC_END 242 prompt_tokens=30 new_tokens=14 prefill_us=20443 decode_us=9680
+MC_BEGIN 243
+def filter_positive(values):
+    return [v for v in values if v > 0]
+
+MC_END 243 prompt_tokens=30 new_tokens=14 prefill_us=20024 decode_us=9742
+MC_BEGIN 244
+def keep_positive(nums):
+    return [v for v in nums if v > 0]
+
+MC_END 244 prompt_tokens=30 new_tokens=14 prefill_us=20320 decode_us=9631
+MC_BEGIN 245
+def positives(values):
+    return [v for v in values if -2 <= v <= 53]
+
+MC_END 245 prompt_tokens=26 new_tokens=17 prefill_us=16934 decode_us=11833
+MC_BEGIN 246
+def filter_positive(nums):
+    return [v for v in nums if v > 0]
+
+MC_END 246 prompt_tokens=30 new_tokens=14 prefill_us=20191 decode_us=9711
+MC_BEGIN 247
+def keep_positive(items):
+    return [v for v in items if v > 0]
+
+MC_END 247 prompt_tokens=30 new_tokens=14 prefill_us=20468 decode_us=9686
+MC_BEGIN 248
+def cumsum(values):
+    out = []
+    total = 0
+    for v in values:
+        total += v
+        out.append(total)
+    return out
+
+MC_END 248 prompt_tokens=24 new_tokens=29 prefill_us=16382 decode_us=20277
+MC_BEGIN 249
+def running_total(items):
+    out = []
+    total = 0
+    for v in items:
+        total += v
+        out.append(total)
+    return out
+
+MC_END 249 prompt_tokens=28 new_tokens=29 prefill_us=19109 decode_us=20222
+MC_BEGIN 250
+def cumsum(items):
+    out = []
+    total = 0
+    for v in items:
+        total += v
+        out.append(total)
+    return out
+
+MC_END 250 prompt_tokens=24 new_tokens=29 prefill_us=16013 decode_us=20133
+MC_BEGIN 251
+def cumulative_sum(values):
+    out = []
+    total = 0
+    for v in values:
+        total += v
+        out.append(total)
+    return out
+
+MC_END 251 prompt_tokens=28 new_tokens=29 prefill_us=18784 decode_us=20027
+MC_BEGIN 252
+def running_total(values):
+    out = []
+    total = 0
+    for v in values:
+        total += v
+        out.append(total)
+    return out
+
+MC_END 252 prompt_tokens=28 new_tokens=29 prefill_us=18351 decode_us=20058
+MC_BEGIN 253
+def cumulative_sum(nums):
+    out = []
+    total = 0
+    for v in nums:
+        total += v
+        out.append(total)
+    return out
+
+MC_END 253 prompt_tokens=28 new_tokens=29 prefill_us=18690 decode_us=19930
+MC_BEGIN 254
+def cumsum(nums):
+    out = []
+    total = 0
+    for v in nums:
+        total += v
+        out.append(total)
+    return out
+
+MC_END 254 prompt_tokens=24 new_tokens=29 prefill_us=15515 decode_us=19873
+MC_BEGIN 255
+def running_total(nums):
+    out = []
+    total = 0
+    for v in nums:
+        total += v
+        out.append(total)
+    return out
+
+MC_END 255 prompt_tokens=28 new_tokens=29 prefill_us=18448 decode_us=20010
+MC_BEGIN 256
+def dot(a, b):
+    total = 0
+    for i in range(len(a)):
+        total += a[i] * b[i]
+    return total
+
+MC_END 256 prompt_tokens=32 new_tokens=30 prefill_us=21514 decode_us=20493
+MC_BEGIN 257
+def dot_product(a, v):
+    total = 0
+    for i in range(len(a)):
+        total += a[i] * v[i]
+    return total
+
+MC_END 257 prompt_tokens=36 new_tokens=30 prefill_us=23200 decode_us=20951
+MC_BEGIN 258
+def inner(x, b):
+    total = 0
+    for i in range(len(x)):
+        total += x[i] * b[i]
+    return total
+
+MC_END 258 prompt_tokens=32 new_tokens=30 prefill_us=21661 decode_us=20800
+MC_BEGIN 259
+def dot_product(x, b):
+    total = 0
+    for i in range(len(x)):
+        total += x[i] * b[i]
+    return total
+
+MC_END 259 prompt_tokens=36 new_tokens=30 prefill_us=23705 decode_us=20481
+MC_BEGIN 260
+def dot_product(u, y):
+    total = 0
+    for i in range(len(u)):
+        total += u[i] * y[i]
+    return total
+
+MC_END 260 prompt_tokens=36 new_tokens=30 prefill_us=23651 decode_us=20616
+MC_BEGIN 261
+def inner(x, v):
+    total = 0
+    for i in range(len(x)):
+        total += x[i] * v[i]
+    return total
+
+MC_END 261 prompt_tokens=32 new_tokens=30 prefill_us=21682 decode_us=21159
+MC_BEGIN 262
+def dot_product(u, b):
+    total = 0
+    for i in range(len(u)):
+        total += u[i] * b[i]
+    return total
+
+MC_END 262 prompt_tokens=36 new_tokens=30 prefill_us=24502 decode_us=20426
+MC_BEGIN 263
+def inner(x, y):
+    total = 0
+    for i in range(len(x)):
+        total += x[i] * y[i]
+    return total
+
+MC_END 263 prompt_tokens=32 new_tokens=30 prefill_us=21660 decode_us=21205
+MC_BEGIN 264
+def multiply_all(nums):
+    return [v * 9 for v in nums]
+
+MC_END 264 prompt_tokens=27 new_tokens=12 prefill_us=18640 decode_us=8352
+MC_BEGIN 265
+def multiply_all(nums):
+    return [v * 7 for v in nums]
+
+MC_END 265 prompt_tokens=27 new_tokens=12 prefill_us=18533 decode_us=8278
+MC_BEGIN 266
+def multiply_all(nums):
+    return [v * 4 for v in nums]
+
+MC_END 266 prompt_tokens=27 new_tokens=12 prefill_us=18336 decode_us=8420
+MC_BEGIN 267
+def scale(items):
+    return [v * 10 for v in items]
+
+MC_END 267 prompt_tokens=23 new_tokens=12 prefill_us=15080 decode_us=8140
+MC_BEGIN 268
+def scale(items):
+    return [v * 8 for v in items]
+
+MC_END 268 prompt_tokens=23 new_tokens=12 prefill_us=15653 decode_us=8473
+MC_BEGIN 269
+def multiply_all(items):
+    return [v * 3 for v in items]
+
+MC_END 269 prompt_tokens=27 new_tokens=12 prefill_us=20816 decode_us=12446
+MC_BEGIN 270
+def scale(items):
+    return [v * 3 for v in items]
+
+MC_END 270 prompt_tokens=23 new_tokens=12 prefill_us=19201 decode_us=10297
+MC_BEGIN 271
+def multiply_all(values):
+    return [v * 10 for v in values]
+
+MC_END 271 prompt_tokens=27 new_tokens=12 prefill_us=20445 decode_us=8173
+MC_BEGIN 272
+def total(nums):
+    total = 0
+    for v in nums:
+        total += v
+    return total
+
+MC_END 272 prompt_tokens=20 new_tokens=18 prefill_us=12238 decode_us=12012
+MC_BEGIN 273
+def add_all(values):
+    return [v * 0
+    for v in values]
+
+MC_END 273 prompt_tokens=24 new_tokens=13 prefill_us=15855 decode_us=8645
+MC_BEGIN 274
+def add_all(nums):
+    return [v * 3 for v in nums]
+
+MC_END 274 prompt_tokens=24 new_tokens=12 prefill_us=14307 decode_us=7291
+MC_BEGIN 275
+def add_all(items):
+    return [v * 3 for v in items]
+
+MC_END 275 prompt_tokens=24 new_tokens=12 prefill_us=15437 decode_us=8079
+MC_BEGIN 276
+def list_sum(items):
+    total = 0
+    for v in items:
+        total += v
+    return total
+
+MC_END 276 prompt_tokens=24 new_tokens=18 prefill_us=15461 decode_us=11900
+MC_BEGIN 277
+def list_sum(nums):
+    total = 0
+    for v in nums:
+        total += v
+    return total
+
+MC_END 277 prompt_tokens=24 new_tokens=18 prefill_us=15937 decode_us=11769
+MC_BEGIN 278
+def list_sum(values):
+    total = 0
+    for v in values:
+        total += v
+    return total
+
+MC_END 278 prompt_tokens=24 new_tokens=18 prefill_us=15590 decode_us=12079
+MC_BEGIN 279
+def total(items):
+    total = 0
+    for v in items:
+        total += v
+    return total
+
+MC_END 279 prompt_tokens=20 new_tokens=18 prefill_us=12498 decode_us=12530
+MC_BEGIN 280
+def num_vowels(s):
+    count = 0
+    for ch in s:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 280 prompt_tokens=27 new_tokens=25 prefill_us=17767 decode_us=16613
+MC_BEGIN 281
+def num_vowels(text):
+    count = 0
+    for ch in text:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 281 prompt_tokens=27 new_tokens=25 prefill_us=17207 decode_us=16258
+MC_BEGIN 282
+def vowels(word):
+    count = 0
+    for ch in word:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 282 prompt_tokens=23 new_tokens=25 prefill_us=14666 decode_us=16471
+MC_BEGIN 283
+def vowels(s):
+    count = 0
+    for ch in s:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 283 prompt_tokens=23 new_tokens=25 prefill_us=14467 decode_us=16520
+MC_BEGIN 284
+def count_vowels(s):
+    count = 0
+    for ch in s:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 284 prompt_tokens=27 new_tokens=25 prefill_us=18624 decode_us=17960
+MC_BEGIN 285
+def count_vowels(word):
+    count = 0
+    for ch in word:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 285 prompt_tokens=27 new_tokens=25 prefill_us=18947 decode_us=17002
+MC_BEGIN 286
+def vowels(text):
+    count = 0
+    for ch in text:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 286 prompt_tokens=23 new_tokens=25 prefill_us=15834 decode_us=17076
+MC_BEGIN 287
+def count_vowels(text):
+    count = 0
+    for ch in text:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 287 prompt_tokens=27 new_tokens=25 prefill_us=17607 decode_us=16708
+MC_BEGIN 288
+def is_palindrome(word):
+    return s == word[::-1]
+
+MC_END 288 prompt_tokens=31 new_tokens=9 prefill_us=19981 decode_us=5767
+MC_BEGIN 289
+def mirror(word):
+    return word == s[::-1]
+
+MC_END 289 prompt_tokens=27 new_tokens=9 prefill_us=18993 decode_us=5964
+MC_BEGIN 290
+def is_palindrome(s):
+    return s == s[::-1]
+
+MC_END 290 prompt_tokens=31 new_tokens=9 prefill_us=19125 decode_us=5941
+MC_BEGIN 291
+def palindrome(word):
+    return word == word[::-1]
+
+MC_END 291 prompt_tokens=27 new_tokens=9 prefill_us=21737 decode_us=6028
+MC_BEGIN 292
+def palindrome(s):
+    return s == s[::-1]
+
+MC_END 292 prompt_tokens=27 new_tokens=9 prefill_us=17740 decode_us=6528
+MC_BEGIN 293
+def mirror(s):
+    return s == s[::-1]
+
+MC_END 293 prompt_tokens=27 new_tokens=9 prefill_us=18144 decode_us=6070
+MC_BEGIN 294
+def palindrome(text):
+    return s == s[::-1]
+
+MC_END 294 prompt_tokens=27 new_tokens=9 prefill_us=18676 decode_us=6251
+MC_BEGIN 295
+def is_palindrome(text):
+    return s == s[::-1]
+
+MC_END 295 prompt_tokens=31 new_tokens=9 prefill_us=22089 decode_us=6073
+MC_BEGIN 296
+def num_words(s):
+    return len(s.split())
+
+MC_END 296 prompt_tokens=25 new_tokens=9 prefill_us=15859 decode_us=5931
+MC_BEGIN 297
+def num_words(line):
+    return len(line.split())
+
+MC_END 297 prompt_tokens=25 new_tokens=9 prefill_us=18504 decode_us=5982
+MC_BEGIN 298
+def count_words(line):
+    return len(line.split())
+
+MC_END 298 prompt_tokens=25 new_tokens=9 prefill_us=16486 decode_us=5638
+MC_BEGIN 299
+def num_words(text):
+    return len(text.split())
+
+MC_END 299 prompt_tokens=25 new_tokens=9 prefill_us=16364 decode_us=6048
+MC_BEGIN 300
+def word_count(line):
+    return len(line.split())
+
+MC_END 300 prompt_tokens=25 new_tokens=9 prefill_us=15954 decode_us=5932
+MC_BEGIN 301
+def word_count(s):
+    return s == s[::-1]
+
+MC_END 301 prompt_tokens=25 new_tokens=9 prefill_us=15322 decode_us=5637
+MC_BEGIN 302
+def count_words(s):
+    return len(s.split())
+
+MC_END 302 prompt_tokens=25 new_tokens=9 prefill_us=16713 decode_us=5770
+MC_BEGIN 303
+def count_words(text):
+    return len(text.split())
+
+MC_END 303 prompt_tokens=25 new_tokens=9 prefill_us=15989 decode_us=6048
+MC_BEGIN 304
+def get_value(line):
+    return line.split('=')[1]
+
+MC_END 304 prompt_tokens=36 new_tokens=9 prefill_us=24382 decode_us=6129
+MC_BEGIN 305
+def parse_value(msg):
+    return msg.split('=')[1]
+
+MC_END 305 prompt_tokens=36 new_tokens=9 prefill_us=23233 decode_us=6247
+MC_BEGIN 306
+def parse_value(line):
+    return line.split('=')[1]
+
+MC_END 306 prompt_tokens=36 new_tokens=9 prefill_us=24801 decode_us=5856
+MC_BEGIN 307
+def get_value(msg):
+    return msg.split('=')[1]
+
+MC_END 307 prompt_tokens=36 new_tokens=9 prefill_us=24397 decode_us=5985
+MC_BEGIN 308
+def kv_value(msg):
+    return msg.split('=')[1]
+
+MC_END 308 prompt_tokens=36 new_tokens=9 prefill_us=22784 decode_us=5964
+MC_BEGIN 309
+def kv_value(s):
+    return s.split('=')[1]
+
+MC_END 309 prompt_tokens=36 new_tokens=9 prefill_us=24096 decode_us=5359
+MC_BEGIN 310
+def parse_value(s):
+    return s.split('=')[1]
+
+MC_END 310 prompt_tokens=36 new_tokens=9 prefill_us=22616 decode_us=6326
+MC_BEGIN 311
+def get_value(s):
+    return s.split('=')[1]
+
+MC_END 311 prompt_tokens=36 new_tokens=9 prefill_us=22001 decode_us=5994
+MC_BEGIN 312
+def tidy(s):
+    return s.split('=')[1]
+
+MC_END 312 prompt_tokens=27 new_tokens=9 prefill_us=17327 decode_us=6135
+MC_BEGIN 313
+def clean(s):
+    return s.split('=')[1]
+
+MC_END 313 prompt_tokens=27 new_tokens=9 prefill_us=16886 decode_us=5252
+MC_BEGIN 314
+def clean(text):
+    return text.split('=')[1]
+
+MC_END 314 prompt_tokens=27 new_tokens=9 prefill_us=17434 decode_us=6015
+MC_BEGIN 315
+def tidy(cmd):
+    return cmd.split('=')[1]
+
+MC_END 315 prompt_tokens=27 new_tokens=9 prefill_us=18575 decode_us=6054
+MC_BEGIN 316
+def normalize(cmd):
+    return cmd.split('=')[1]
+
+MC_END 316 prompt_tokens=27 new_tokens=9 prefill_us=19373 decode_us=5989
+MC_BEGIN 317
+def normalize(text):
+    return text.split('=')[1]
+
+MC_END 317 prompt_tokens=27 new_tokens=9 prefill_us=17271 decode_us=5789
+MC_BEGIN 318
+def normalize(s):
+    return s.split('=')[1]
+
+MC_END 318 prompt_tokens=27 new_tokens=9 prefill_us=19098 decode_us=5599
+MC_BEGIN 319
+def clean(cmd):
+    return cmd.split('=')[1]
+
+MC_END 319 prompt_tokens=27 new_tokens=9 prefill_us=18668 decode_us=6128
+MC_BEGIN 320
+def is_command(s):
+    return s.startswith('$GP')
+
+MC_END 320 prompt_tokens=36 new_tokens=9 prefill_us=24349 decode_us=9300
+MC_BEGIN 321
+def has_prefix(msg):
+    return msg.startswith('AT')
+
+MC_END 321 prompt_tokens=36 new_tokens=9 prefill_us=24472 decode_us=6312
+MC_BEGIN 322
+def is_command(msg):
+    return msg.startswith('OK')
+
+MC_END 322 prompt_tokens=36 new_tokens=9 prefill_us=25142 decode_us=6285
+MC_BEGIN 323
+def starts_with(msg):
+    return msg.startswith('$GP')
+
+MC_END 323 prompt_tokens=36 new_tokens=9 prefill_us=23880 decode_us=5491
+MC_BEGIN 324
+def starts_with(text):
+    return text.startswith('AT')
+
+MC_END 324 prompt_tokens=36 new_tokens=9 prefill_us=23057 decode_us=6358
+MC_BEGIN 325
+def has_prefix(msg):
+    return msg.startswith('GET')
+
+MC_END 325 prompt_tokens=36 new_tokens=9 prefill_us=22121 decode_us=5330
+MC_BEGIN 326
+def starts_with(s):
+    return s.startswith('OK')
+
+MC_END 326 prompt_tokens=36 new_tokens=9 prefill_us=24200 decode_us=6274
+MC_BEGIN 327
+def starts_with(text):
+    return text.startswith('GET')
+
+MC_END 327 prompt_tokens=36 new_tokens=9 prefill_us=21457 decode_us=5476
+MC_BEGIN 328
+def fact_r(n):
+    if n <= 1:
+        return 1
+    return n * fact_r(u, n - 1)
+
+MC_END 328 prompt_tokens=31 new_tokens=24 prefill_us=19651 decode_us=14818
+MC_BEGIN 329
+def rfact(k):
+    if k <= 1:
+        return 1
+    return k * rfact(base, k - 1)
+
+MC_END 329 prompt_tokens=27 new_tokens=22 prefill_us=16798 decode_us=15048
+MC_BEGIN 330
+def factorial_rec(k):
+    if k <= 1:
+        return 1
+    return k * factorial_rec(u, k - 1)
+
+MC_END 330 prompt_tokens=31 new_tokens=24 prefill_us=18155 decode_us=16055
+MC_BEGIN 331
+def fact_r(k):
+    if k <= 1:
+        return 1
+    return k * fact_r(u, k - 1)
+
+MC_END 331 prompt_tokens=31 new_tokens=24 prefill_us=20477 decode_us=16284
+MC_BEGIN 332
+def rfact(m):
+    if m <= 1:
+        return 1
+    return m * rfact(m - 1)
+
+MC_END 332 prompt_tokens=27 new_tokens=20 prefill_us=16768 decode_us=13071
+MC_BEGIN 333
+def fact_r(m):
+    if m <= 1:
+        return 1
+    return m * fact_r(u, m - 1)
+
+MC_END 333 prompt_tokens=31 new_tokens=24 prefill_us=19764 decode_us=14788
+MC_BEGIN 334
+def factorial_rec(n):
+    if n <= 1:
+        return 1
+    return n * factorial_rec(u, n - 1)
+
+MC_END 334 prompt_tokens=31 new_tokens=24 prefill_us=18062 decode_us=16209
+MC_BEGIN 335
+def factorial_rec(m):
+    if m <= 1:
+        return 1
+    return m * factorial_rec(u, m - 1)
+
+MC_END 335 prompt_tokens=31 new_tokens=24 prefill_us=19505 decode_us=14414
+MC_BEGIN 336
+def fibonacci(n):
+    bits = ''
+    while n > fibonacci(n - 1) + bits
+        n //= 2
+    return bits
+
+MC_END 336 prompt_tokens=34 new_tokens=24 prefill_us=20419 decode_us=16159
+MC_BEGIN 337
+def fib(k):
+    bits = ''
+    while k > fib(k - 1) + fib(k % 2) + fib(k - 2)
+
+MC_END 337 prompt_tokens=34 new_tokens=29 prefill_us=21318 decode_us=19639
+MC_BEGIN 338
+def fibo(n):
+    return n > fibo(n - 2)
+
+MC_END 338 prompt_tokens=34 new_tokens=11 prefill_us=22393 decode_us=7744
+MC_BEGIN 339
+def fibonacci(k):
+    bits = ''
+    while k > fibonacci(k - 1) + bits
+        c) + 0
+    return fibonacci(k - 1)
+
+MC_END 339 prompt_tokens=34 new_tokens=30 prefill_us=22410 decode_us=20996
+MC_BEGIN 340
+def fibo(m):
+    return m + y * 2)
+
+MC_END 340 prompt_tokens=34 new_tokens=9 prefill_us=21987 decode_us=5847
+MC_BEGIN 341
+def fibonacci(m):
+    bits = ''
+    while m > fibonacci(m - 1) + bits
+        m //= 2
+    return m + bits
+        m, m
+    return bits
+
+MC_END 341 prompt_tokens=34 new_tokens=33 prefill_us=22109 decode_us=22222
+MC_BEGIN 342
+def fib(m):
+    return s.split('=')[1]
+
+MC_END 342 prompt_tokens=34 new_tokens=9 prefill_us=20823 decode_us=6731
+MC_BEGIN 343
+def fibo(k):
+    return fibo(k - 2)
+
+MC_END 343 prompt_tokens=34 new_tokens=9 prefill_us=20520 decode_us=5727
+MC_BEGIN 344
+def pow_rec(b, exp):
+    if exp == 0:
+        return 1
+    return b * pow_rec(b, exp - 1)
+
+MC_END 344 prompt_tokens=34 new_tokens=24 prefill_us=21755 decode_us=14577
+MC_BEGIN 345
+def power(x, e):
+    return (x * power(x, e - 1)
+
+MC_END 345 prompt_tokens=30 new_tokens=14 prefill_us=19011 decode_us=9227
+MC_BEGIN 346
+def power(base, exp):
+    return (base * power(base, exp - 1)
+
+MC_END 346 prompt_tokens=30 new_tokens=14 prefill_us=18104 decode_us=9190
+MC_BEGIN 347
+def pow_rec(b, n):
+    if n == 0:
+        return 1
+    return b * pow_rec(b, n - 1)
+
+MC_END 347 prompt_tokens=34 new_tokens=24 prefill_us=21684 decode_us=16153
+MC_BEGIN 348
+def pow_rec(x, exp):
+    if exp == 0:
+        return 1
+    return x * pow_rec(x, exp - 1)
+
+MC_END 348 prompt_tokens=34 new_tokens=24 prefill_us=21984 decode_us=15701
+MC_BEGIN 349
+def raise_to(base, exp):
+    return (base * raise_to(base, exp - 1)
+
+MC_END 349 prompt_tokens=34 new_tokens=16 prefill_us=22070 decode_us=10137
+MC_BEGIN 350
+def raise_to(b, exp):
+    return (b * raise_to(b, exp - 1)
+
+MC_END 350 prompt_tokens=34 new_tokens=16 prefill_us=21567 decode_us=10100
+MC_BEGIN 351
+def power(x, n):
+    return (x * power(x, n - 1)
+
+MC_END 351 prompt_tokens=30 new_tokens=14 prefill_us=19791 decode_us=11148
+MC_BEGIN 352
+def digits_total(num):
+    if num < 10:
+        return num
+    return num % 10 + digits_total(num // 10)
+
+MC_END 352 prompt_tokens=29 new_tokens=24 prefill_us=19924 decode_us=16165
+MC_BEGIN 353
+def digits_total(x):
+    bits = ''
+    while x > 0:
+        bits = str(x % 10) + bits
+        x //= 10
+    return bits
+
+MC_END 353 prompt_tokens=29 new_tokens=29 prefill_us=19216 decode_us=20375
+MC_BEGIN 354
+def rsum_digits(n):
+    bits = ''
+    while n > 0:
+        bits = str(n % 2) + bits
+        n //= 2
+    return bits
+
+MC_END 354 prompt_tokens=29 new_tokens=29 prefill_us=20164 decode_us=21042
+MC_BEGIN 355
+def digits_total(n):
+    bits = ''
+    while n > 0:
+        bits = str(n % 10) + bits
+        n //= 10
+    return bits
+
+MC_END 355 prompt_tokens=29 new_tokens=29 prefill_us=19802 decode_us=20387
+MC_BEGIN 356
+def rsum_digits(num):
+    bits = ''
+    while num > 0:
+        bits = str(num % 10) + bits
+        num //= 10
+    return bits
+
+MC_END 356 prompt_tokens=29 new_tokens=29 prefill_us=19706 decode_us=20842
+MC_BEGIN 357
+def rsum_digits(x):
+    bits = ''
+    while x > 0:
+        bits = str(x % 10) + bits
+        x //= 10
+    return bits
+
+MC_END 357 prompt_tokens=29 new_tokens=29 prefill_us=19583 decode_us=20477
+MC_BEGIN 358
+def digit_sum_rec(num):
+    if num < 10:
+        return num
+    return num % 10 + digit_sum_rec(num // 10)
+
+MC_END 358 prompt_tokens=33 new_tokens=26 prefill_us=22247 decode_us=18292
+MC_BEGIN 359
+def digit_sum_rec(n):
+    if n < 2:
+        return n
+    return n % 2 * 10 + digit_sum_rec(n // 2)
+
+MC_END 359 prompt_tokens=33 new_tokens=28 prefill_us=22569 decode_us=19773
+MC_BEGIN 360
+def to_binary(x):
+    bits = ''
+    while x > 0:
+        bits = str(x % 2) + bits
+        x //= 2
+    return bits
+
+MC_END 360 prompt_tokens=26 new_tokens=29 prefill_us=18067 decode_us=20858
+MC_BEGIN 361
+def to_binary(n):
+    bits = ''
+    while n > 0:
+        bits = str(n % 2) + bits
+        n //= 2
+    return bits
+
+MC_END 361 prompt_tokens=26 new_tokens=29 prefill_us=17646 decode_us=20447
+MC_BEGIN 362
+def bin_str(n):
+    bits = ''
+    while n > 0:
+        bits = str(n % 2) + bits
+        n //= 2
+    return bits
+
+MC_END 362 prompt_tokens=26 new_tokens=29 prefill_us=17800 decode_us=20622
+MC_BEGIN 363
+def to_binary(value):
+    bits = ''
+    while value > 0:
+        bits = str(value % 2) + bits
+        value //= 2
+    return bits
+
+MC_END 363 prompt_tokens=26 new_tokens=29 prefill_us=17473 decode_us=20437
+MC_BEGIN 364
+def bin_str(value):
+    bits = ''
+    while value > 0:
+        bits = str(value % 2) + bits
+        value //= 2
+    return bits
+
+MC_END 364 prompt_tokens=26 new_tokens=29 prefill_us=18373 decode_us=21288
+MC_BEGIN 365
+def binary_string(x):
+    bits = ''
+    while x > 0:
+        bits = str(x % 2) + bits
+        x //= 2
+    return bits
+
+MC_END 365 prompt_tokens=26 new_tokens=29 prefill_us=17880 decode_us=20255
+MC_BEGIN 366
+def binary_string(value):
+    bits = ''
+    while value > 0:
+        bits = str(value % 2) + bits
+        value //= 2
+    return bits
+
+MC_END 366 prompt_tokens=26 new_tokens=29 prefill_us=18879 decode_us=20283
+MC_BEGIN 367
+def bin_str(x):
+    bits = ''
+    while x > 0:
+        bits = str(x % 2) + bits
+        x //= 2
+    return bits
+
+MC_END 367 prompt_tokens=26 new_tokens=29 prefill_us=17417 decode_us=21382
+MC_BEGIN 368
+def triangular(m):
+    return m + y == 0
+
+MC_END 368 prompt_tokens=25 new_tokens=8 prefill_us=18153 decode_us=6594
+MC_BEGIN 369
+def triangle_number(m):
+    if m == 0:
+        return 0
+    return m + triangle_number(m - 1)
+
+MC_END 369 prompt_tokens=29 new_tokens=22 prefill_us=21020 decode_us=16206
+MC_BEGIN 370
+def tri(n):
+    return n > tri(n - 1)
+
+MC_END 370 prompt_tokens=25 new_tokens=11 prefill_us=17229 decode_us=7609
+MC_BEGIN 371
+def triangular(k):
+    return k + triangular(k) / 2)
+
+MC_END 371 prompt_tokens=25 new_tokens=12 prefill_us=17102 decode_us=8405
+MC_BEGIN 372
+def triangle_number(n):
+    if n == 0:
+        return 0
+    return n + triangle_number(n - 1)
+
+MC_END 372 prompt_tokens=29 new_tokens=22 prefill_us=19737 decode_us=15655
+MC_BEGIN 373
+def tri(k):
+    return k + tri(k - 1)
+
+MC_END 373 prompt_tokens=25 new_tokens=11 prefill_us=16796 decode_us=7727
+MC_BEGIN 374
+def triangular(n):
+    return n + triangular(n - 1)
+
+MC_END 374 prompt_tokens=25 new_tokens=11 prefill_us=16978 decode_us=8733
+MC_BEGIN 375
+def tri(m):
+    return return m + tri(m - 1)
+
+MC_END 375 prompt_tokens=25 new_tokens=12 prefill_us=18389 decode_us=8364
+MC_BEGIN 376
+def gcd_rec(a, b):
+    if b == 0:
+        return a
+    return gcd_rec(b, a % b)
+
+MC_END 376 prompt_tokens=26 new_tokens=22 prefill_us=17838 decode_us=15457
+MC_BEGIN 377
+def euclid(a, b):
+    if b == 0:
+        return a
+    return euclid(b, a % b)
+
+MC_END 377 prompt_tokens=22 new_tokens=20 prefill_us=14959 decode_us=15218
+MC_BEGIN 378
+def euclid(x, b):
+    if b == 0:
+        return x
+    return euclid(b, x % b)
+
+MC_END 378 prompt_tokens=22 new_tokens=20 prefill_us=15076 decode_us=13843
+MC_BEGIN 379
+def gcd_rec(x, b):
+    if b == 0:
+        return x
+    return gcd_rec(b, x % b)
+
+MC_END 379 prompt_tokens=26 new_tokens=22 prefill_us=17741 decode_us=15343
+MC_BEGIN 380
+def rgcd(a, b):
+    if b == 0:
+        return a
+    return rgcd(b, a % b)
+
+MC_END 380 prompt_tokens=22 new_tokens=20 prefill_us=14995 decode_us=14180
+MC_BEGIN 381
+def euclid(x, y):
+    if y == 0:
+        return x
+    return euclid(y, x % y)
+
+MC_END 381 prompt_tokens=22 new_tokens=20 prefill_us=14857 decode_us=14159
+MC_BEGIN 382
+def rgcd(x, b):
+    if b == 0:
+        return x
+    return rgcd(b, x % b)
+
+MC_END 382 prompt_tokens=22 new_tokens=20 prefill_us=14786 decode_us=14103
+MC_BEGIN 383
+def gcd_rec(x, y):
+    if y == 0:
+        return x
+    return gcd_rec(y, x % y)
+
+MC_END 383 prompt_tokens=26 new_tokens=22 prefill_us=18052 decode_us=15597
+MC_BEGIN 384
+def raw_to_voltage(raw):
+    return a % 2 == 0
+
+MC_END 384 prompt_tokens=63 new_tokens=8 prefill_us=44206 decode_us=5803
+MC_BEGIN 385
+def adc_to_volts(reading):
+    return reading > 10
+
+MC_END 385 prompt_tokens=58 new_tokens=6 prefill_us=41082 decode_us=4516
+MC_BEGIN 386
+def adc_volts(raw):
+    return a % 2 == 0
+
+MC_END 386 prompt_tokens=61 new_tokens=8 prefill_us=42713 decode_us=5722
+MC_BEGIN 387
+def adc_to_volts(reading):
+    return reading > 12
+
+MC_END 387 prompt_tokens=60 new_tokens=6 prefill_us=41362 decode_us=4404
+MC_BEGIN 388
+def raw_to_voltage(raw):
+    return a % 2 == 0
+
+MC_END 388 prompt_tokens=65 new_tokens=8 prefill_us=45716 decode_us=5879
+MC_BEGIN 389
+def adc_to_volts(reading):
+    return reading > 3.split())
+
+MC_END 389 prompt_tokens=58 new_tokens=9 prefill_us=40042 decode_us=6590
+MC_BEGIN 390
+def adc_to_volts(reading):
+    return reading > 3.split())
+
+MC_END 390 prompt_tokens=58 new_tokens=9 prefill_us=39763 decode_us=6719
+MC_BEGIN 391
+def adc_to_volts(reading):
+    return reading > values[0]
+
+MC_END 391 prompt_tokens=60 new_tokens=9 prefill_us=41722 decode_us=6469
+MC_BEGIN 392
+def adc_to_volts(raw):
+    return a % 2 == 0
+
+MC_END 392 prompt_tokens=65 new_tokens=8 prefill_us=45357 decode_us=5735
+MC_BEGIN 393
+def raw_to_voltage(raw):
+    return a % 2 == 0
+
+MC_END 393 prompt_tokens=63 new_tokens=8 prefill_us=45387 decode_us=5666
+MC_BEGIN 394
+def raw_to_voltage(reading):
+    return (a * a + y * y) ** 0.split('=')[1]
+
+MC_END 394 prompt_tokens=66 new_tokens=19 prefill_us=46538 decode_us=14075
+MC_BEGIN 395
+def adc_to_volts(raw):
+    return a % 2 == 0
+
+MC_END 395 prompt_tokens=65 new_tokens=8 prefill_us=44761 decode_us=5674
+MC_BEGIN 396
+def adc_volts(adc):
+    return c * 5 / 5 + y
+
+MC_END 396 prompt_tokens=60 new_tokens=10 prefill_us=41449 decode_us=7360
+MC_BEGIN 397
+def adc_volts(reading):
+    return (a * a + y * v + s
+
+MC_END 397 prompt_tokens=62 new_tokens=13 prefill_us=42959 decode_us=9307
+MC_BEGIN 398
+def adc_volts(reading):
+    return reading > 8 for v in items if v > 8]
+
+MC_END 398 prompt_tokens=56 new_tokens=15 prefill_us=38648 decode_us=10823
+MC_BEGIN 399
+def window_mean(values):
+    tail = values[0]
+    for v in values:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 399 prompt_tokens=33 new_tokens=28 prefill_us=22257 decode_us=19764
+MC_BEGIN 400
+def smooth(readings):
+    tail = readings[0]
+    for v in readings:
+        if v != tail[0]:
+            return False
+    return True
+
+MC_END 400 prompt_tokens=28 new_tokens=28 prefill_us=18968 decode_us=20664
+MC_BEGIN 401
+def moving_average(values):
+    good = [v for v in values if 2 <= v <= 43]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 401 prompt_tokens=29 new_tokens=40 prefill_us=20579 decode_us=28904
+MC_BEGIN 402
+def window_mean(samples):
+    good = [v for v in samples if 0 <= v <= f]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 402 prompt_tokens=41 new_tokens=40 prefill_us=28191 decode_us=29513
+MC_BEGIN 403
+def smooth(values):
+    return [v * 7 for v in values]
+
+MC_END 403 prompt_tokens=33 new_tokens=12 prefill_us=22936 decode_us=8570
+MC_BEGIN 404
+def window_mean(readings):
+    return reading > 7[::-1]
+
+MC_END 404 prompt_tokens=38 new_tokens=9 prefill_us=26467 decode_us=6340
+MC_BEGIN 405
+def window_mean(samples):
+    good = [v for v in samples if 2 <= v <= f]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 405 prompt_tokens=41 new_tokens=40 prefill_us=28883 decode_us=29273
+MC_BEGIN 406
+def window_mean(samples):
+    good = [v for v in samples if 4 <= v <= f]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 406 prompt_tokens=41 new_tokens=40 prefill_us=28216 decode_us=28766
+MC_BEGIN 407
+def moving_average(samples):
+    good = [v for v in samples if 2 <= v <= 43]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 407 prompt_tokens=32 new_tokens=40 prefill_us=22909 decode_us=29033
+MC_BEGIN 408
+def smooth(samples):
+    s = samples[0]
+    for v in samples:
+        if v < 5:
+            s = v
+    return False
+    return s
+
+MC_END 408 prompt_tokens=33 new_tokens=30 prefill_us=22779 decode_us=21271
+MC_BEGIN 409
+def moving_average(samples):
+    s = samples[0]
+    for v in samples[1:]:
+        s = 0.3 * v + 0.7 * s
+    return s
+
+MC_END 409 prompt_tokens=34 new_tokens=33 prefill_us=23270 decode_us=23611
+MC_BEGIN 410
+def moving_average(values):
+    good = [v for v in values if 5 <= v <= 5]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 410 prompt_tokens=32 new_tokens=40 prefill_us=21796 decode_us=29089
+MC_BEGIN 411
+def moving_average(samples):
+    good = [v for v in samples if 2 <= v <= 43]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 411 prompt_tokens=29 new_tokens=40 prefill_us=19888 decode_us=28521
+MC_BEGIN 412
+def smooth(samples):
+    tail = samples[0]
+    for v in samples:
+        if v < 5:
+            best = v
+    return best
+
+MC_END 412 prompt_tokens=25 new_tokens=27 prefill_us=18059 decode_us=19423
+MC_BEGIN 413
+def moving_average(values):
+    s = values[0]
+    for v in values:
+        if v != tail[0]:
+            return False
+    return s
+
+MC_END 413 prompt_tokens=34 new_tokens=28 prefill_us=24383 decode_us=20300
+MC_BEGIN 414
+def remap(x):
+    return x > 100
+
+MC_END 414 prompt_tokens=39 new_tokens=6 prefill_us=26536 decode_us=4252
+MC_BEGIN 415
+def rescale(value):
+    return value > 100
+
+MC_END 415 prompt_tokens=40 new_tokens=6 prefill_us=27368 decode_us=4164
+MC_BEGIN 416
+def rescale(v):
+    return v / 2 == 0
+
+MC_END 416 prompt_tokens=47 new_tokens=8 prefill_us=32332 decode_us=5805
+MC_BEGIN 417
+def rescale(x):
+    return x + y * 100
+
+MC_END 417 prompt_tokens=41 new_tokens=8 prefill_us=28312 decode_us=5688
+MC_BEGIN 418
+def map_range(value):
+    return value | (1 << 7)
+
+MC_END 418 prompt_tokens=44 new_tokens=10 prefill_us=29951 decode_us=7107
+MC_BEGIN 419
+def remap(x):
+    return (x * x + y * 100
+
+MC_END 419 prompt_tokens=37 new_tokens=11 prefill_us=25175 decode_us=7803
+MC_BEGIN 420
+def map_range(v):
+    return v != s:
+        return s
+    return v / len(v + s[0]
+
+MC_END 420 prompt_tokens=46 new_tokens=22 prefill_us=31477 decode_us=15574
+MC_BEGIN 421
+def remap(x):
+    return x > 25
+
+MC_END 421 prompt_tokens=45 new_tokens=6 prefill_us=30464 decode_us=4230
+MC_BEGIN 422
+def rescale(v):
+    return v /50) /50]
+
+MC_END 422 prompt_tokens=41 new_tokens=10 prefill_us=29306 decode_us=7076
+MC_BEGIN 423
+def remap(v):
+    return m + y * 100
+
+MC_END 423 prompt_tokens=40 new_tokens=8 prefill_us=27353 decode_us=5590
+MC_BEGIN 424
+def rescale(v):
+    return v / 3.split())
+
+MC_END 424 prompt_tokens=40 new_tokens=9 prefill_us=27408 decode_us=6429
+MC_BEGIN 425
+def map_range(x):
+    return x > 100
+
+MC_END 425 prompt_tokens=46 new_tokens=6 prefill_us=32725 decode_us=4313
+MC_BEGIN 426
+def map_range(x):
+    return x > 83
+
+MC_END 426 prompt_tokens=45 new_tokens=6 prefill_us=31225 decode_us=4331
+MC_BEGIN 427
+def remap(value):
+    return value > 100
+
+MC_END 427 prompt_tokens=41 new_tokens=6 prefill_us=27797 decode_us=4240
+MC_BEGIN 428
+def remap(x):
+    return x > 25
+
+MC_END 428 prompt_tokens=44 new_tokens=6 prefill_us=30181 decode_us=4262
+MC_BEGIN 429
+def battery_percent(voltage):
+    return (a * a + y * b) ** 0.8 * 100
+
+MC_END 429 prompt_tokens=70 new_tokens=18 prefill_us=48742 decode_us=13205
+MC_BEGIN 430
+def battery_percent(volts):
+    return (cur - 1)) == 0
+
+MC_END 430 prompt_tokens=76 new_tokens=10 prefill_us=53241 decode_us=7299
+MC_BEGIN 431
+def battery_percent(volts):
+    return v / 3.3 * 100
+
+MC_END 431 prompt_tokens=74 new_tokens=10 prefill_us=51295 decode_us=7170
+MC_BEGIN 432
+def battery_level(voltage):
+    return line.split('=')[1]
+
+MC_END 432 prompt_tokens=71 new_tokens=9 prefill_us=49139 decode_us=6797
+MC_BEGIN 433
+def battery_level(voltage):
+    return line.3 * 100
+
+MC_END 433 prompt_tokens=71 new_tokens=8 prefill_us=49440 decode_us=5960
+MC_BEGIN 434
+def battery_percent(v):
+    return a + y * 100
+
+MC_END 434 prompt_tokens=65 new_tokens=8 prefill_us=45280 decode_us=5764
+MC_BEGIN 435
+def battery_percent(v):
+    return v / 3.3 * b) ** 0.3
+
+MC_END 435 prompt_tokens=67 new_tokens=15 prefill_us=46326 decode_us=10886
+MC_BEGIN 436
+def battery_level(v):
+    return a + b * 100
+
+MC_END 436 prompt_tokens=63 new_tokens=8 prefill_us=43316 decode_us=5831
+MC_BEGIN 437
+def battery_percent(volts):
+    return (cur - 1)) == 0
+
+MC_END 437 prompt_tokens=76 new_tokens=10 prefill_us=53294 decode_us=7544
+MC_BEGIN 438
+def soc(v):
+    return (a * a + 0.8 * 100
+
+MC_END 438 prompt_tokens=59 new_tokens=13 prefill_us=40361 decode_us=9510
+MC_BEGIN 439
+def battery_percent(volts):
+    return (cur - 1)) == 0
+
+MC_END 439 prompt_tokens=67 new_tokens=10 prefill_us=46047 decode_us=7364
+MC_BEGIN 440
+def battery_level(voltage):
+    return (a * a + y * b) ** 0.split('=')[1]
+
+MC_END 440 prompt_tokens=72 new_tokens=19 prefill_us=50707 decode_us=14111
+MC_BEGIN 441
+def soc(volts):
+    return (v * s[0]
+    return (v * v + s[0]
+
+MC_END 441 prompt_tokens=61 new_tokens=21 prefill_us=42143 decode_us=15301
+MC_BEGIN 442
+def battery_level(voltage):
+    return a % 2 == 0
+
+MC_END 442 prompt_tokens=79 new_tokens=8 prefill_us=55341 decode_us=5994
+MC_BEGIN 443
+def soc(v):
+    return (v * return (v * s[0]
+
+MC_END 443 prompt_tokens=52 new_tokens=14 prefill_us=35948 decode_us=10088
+MC_BEGIN 444
+def join_bytes(lo, high):
+    return (n - 1)) == 0
+
+MC_END 444 prompt_tokens=62 new_tokens=10 prefill_us=43072 decode_us=7601
+MC_BEGIN 445
+def word(low, hi):
+    return (new - 1)) == 0
+
+MC_END 445 prompt_tokens=42 new_tokens=10 prefill_us=30006 decode_us=7219
+MC_BEGIN 446
+def to_u16(low, high):
+    return (new - 1)) == 0
+
+MC_END 446 prompt_tokens=51 new_tokens=10 prefill_us=35783 decode_us=7233
+MC_BEGIN 447
+def join_bytes(low, hi):
+    return (s[i]
+
+MC_END 447 prompt_tokens=56 new_tokens=8 prefill_us=38519 decode_us=5778
+MC_BEGIN 448
+def join_bytes(lo, hi):
+    return (n - 1)) == 0
+
+MC_END 448 prompt_tokens=62 new_tokens=10 prefill_us=43024 decode_us=7959
+MC_BEGIN 449
+def to_u16(low, hi):
+    return (n - 1)) == 0
+
+MC_END 449 prompt_tokens=55 new_tokens=10 prefill_us=38887 decode_us=7949
+MC_BEGIN 450
+def to_u16(lo, hi):
+    return (1 * x + 1]:
+            return 1)) == 0
+
+MC_END 450 prompt_tokens=47 new_tokens=16 prefill_us=33289 decode_us=12448
+MC_BEGIN 451
+def word(lo, high):
+    return (1 * a + 1]:
+            return 1)
+
+MC_END 451 prompt_tokens=41 new_tokens=14 prefill_us=29434 decode_us=9785
+MC_BEGIN 452
+def word(lo, hi):
+    return (new - 1)) == 0
+
+MC_END 452 prompt_tokens=41 new_tokens=10 prefill_us=29206 decode_us=7088
+MC_BEGIN 453
+def to_u16(low, high):
+    return (cur - 1)) == 0
+
+MC_END 453 prompt_tokens=48 new_tokens=10 prefill_us=33963 decode_us=7207
+MC_BEGIN 454
+def join_bytes(lo, hi):
+    return (s[i]
+
+MC_END 454 prompt_tokens=55 new_tokens=8 prefill_us=38453 decode_us=6234
+MC_BEGIN 455
+def to_u16(low, hi):
+    return (new - 1)) == 0
+
+MC_END 455 prompt_tokens=48 new_tokens=10 prefill_us=33379 decode_us=7175
+MC_BEGIN 456
+def to_u16(low, hi):
+    return (prefix(u, n & (1 << 0)
+
+MC_END 456 prompt_tokens=48 new_tokens=15 prefill_us=34245 decode_us=10744
+MC_BEGIN 457
+def word(lo, high):
+    return (cur - 1)) == 0
+
+MC_END 457 prompt_tokens=41 new_tokens=10 prefill_us=28859 decode_us=7344
+MC_BEGIN 458
+def join_bytes(low, high):
+    return (n - 1)) == 0
+
+MC_END 458 prompt_tokens=63 new_tokens=10 prefill_us=43780 decode_us=7441
+MC_BEGIN 459
+def flag_on(reg):
+    return reg & ~(1 << 6)
+
+MC_END 459 prompt_tokens=33 new_tokens=10 prefill_us=23145 decode_us=7129
+MC_BEGIN 460
+def bit_is_set(status):
+    return status | (1 << 2)
+
+MC_END 460 prompt_tokens=37 new_tokens=10 prefill_us=25506 decode_us=6960
+MC_BEGIN 461
+def flag_on(value):
+    return value & ~(1 << 7)
+
+MC_END 461 prompt_tokens=33 new_tokens=10 prefill_us=22815 decode_us=6903
+MC_BEGIN 462
+def flag_on(value):
+    if value > 4:
+        return 4
+    return value
+
+MC_END 462 prompt_tokens=27 new_tokens=13 prefill_us=18278 decode_us=9494
+MC_BEGIN 463
+def flag_on(reg):
+    return reg | (1 << 7)
+
+MC_END 463 prompt_tokens=29 new_tokens=10 prefill_us=20941 decode_us=8408
+MC_BEGIN 464
+def flag_on(value):
+    return value | (1 << 2)
+
+MC_END 464 prompt_tokens=29 new_tokens=10 prefill_us=19704 decode_us=7005
+MC_BEGIN 465
+def test_bit(value):
+    return value | (1 << 6)
+
+MC_END 465 prompt_tokens=30 new_tokens=10 prefill_us=22811 decode_us=7304
+MC_BEGIN 466
+def flag_on(status):
+    return status & ~(1 << 6)
+
+MC_END 466 prompt_tokens=33 new_tokens=10 prefill_us=36181 decode_us=8185
+MC_BEGIN 467
+def flag_on(reg):
+    if reg & ~(1 << 4)
+
+MC_END 467 prompt_tokens=27 new_tokens=10 prefill_us=19512 decode_us=7140
+MC_BEGIN 468
+def test_bit(reg):
+    return reg | (1 << 2)
+
+MC_END 468 prompt_tokens=35 new_tokens=10 prefill_us=23914 decode_us=7127
+MC_BEGIN 469
+def test_bit(reg):
+    return reg & ~(1 << 1)
+
+MC_END 469 prompt_tokens=30 new_tokens=10 prefill_us=20428 decode_us=7325
+MC_BEGIN 470
+def test_bit(status):
+    return status | (1 << 6)
+
+MC_END 470 prompt_tokens=30 new_tokens=10 prefill_us=21631 decode_us=7205
+MC_BEGIN 471
+def bit_is_set(status):
+    return status | (1 << 6)
+
+MC_END 471 prompt_tokens=37 new_tokens=10 prefill_us=26324 decode_us=7151
+MC_BEGIN 472
+def flag_on(status):
+    return status | (1 << 4)
+
+MC_END 472 prompt_tokens=29 new_tokens=10 prefill_us=22266 decode_us=7363
+MC_BEGIN 473
+def flag_on(status):
+    return status & ~(1 << 0)
+
+MC_END 473 prompt_tokens=33 new_tokens=10 prefill_us=23179 decode_us=7449
+MC_BEGIN 474
+def sum_of_squares(m):
+    total = 0
+    for v in s:
+        total += m + 0.5
+
+MC_END 474 prompt_tokens=40 new_tokens=19 prefill_us=28314 decode_us=14119
+MC_BEGIN 475
+def sum_squares(n):
+    total = 0
+    for n > 0:
+        total += n % 2 == 0
+        n //= 2
+    return total
+
+MC_END 475 prompt_tokens=33 new_tokens=26 prefill_us=32105 decode_us=19157
+MC_BEGIN 476
+def sum_of_squares(m):
+    return m + 1 << 2)
+
+MC_END 476 prompt_tokens=37 new_tokens=9 prefill_us=25541 decode_us=6571
+MC_BEGIN 477
+def square_sum(n):
+    return n > 0
+    return 0
+    return n % i == 0
+
+MC_END 477 prompt_tokens=27 new_tokens=16 prefill_us=18596 decode_us=11064
+MC_BEGIN 478
+def sum_squares(m):
+    return m + 1]:
+        return m
+    return m + y * 100
+
+MC_END 478 prompt_tokens=29 new_tokens=17 prefill_us=20495 decode_us=12995
+MC_BEGIN 479
+def square_sum(m):
+    return m > 0.5
+
+MC_END 479 prompt_tokens=27 new_tokens=8 prefill_us=20876 decode_us=5490
+MC_BEGIN 480
+def sum_squares(n):
+    return n > 0 and (n & (n - 1)) == 0
+
+MC_END 480 prompt_tokens=33 new_tokens=17 prefill_us=23151 decode_us=12321
+MC_BEGIN 481
+def sum_squares(n):
+    total = 0
+    for n > 0:
+        total += n % 2 == 0:
+            total += 1
+    return total
+
+MC_END 481 prompt_tokens=36 new_tokens=27 prefill_us=25001 decode_us=19828
+MC_BEGIN 482
+def sum_of_squares(k):
+    total = 0
+    for v in s:
+        total += v * v
+    return (total / len(k - 1)
+
+MC_END 482 prompt_tokens=40 new_tokens=28 prefill_us=27474 decode_us=20133
+MC_BEGIN 483
+def square_sum(n):
+    return n > 0 and (n & (n - 1)) == 0
+
+MC_END 483 prompt_tokens=31 new_tokens=17 prefill_us=21134 decode_us=12015
+MC_BEGIN 484
+def square_sum(m):
+    return m > 0 and (m & (m - 1)) == 0
+
+MC_END 484 prompt_tokens=31 new_tokens=17 prefill_us=21949 decode_us=11942
+MC_BEGIN 485
+def sum_squares(k):
+    return k > 0 and (s)
+
+MC_END 485 prompt_tokens=33 new_tokens=10 prefill_us=23171 decode_us=7244
+MC_BEGIN 486
+def square_sum(k):
+    if k == 0:
+        return 0
+    return k + triangle_sum(k - 1)
+
+MC_END 486 prompt_tokens=31 new_tokens=22 prefill_us=21338 decode_us=16189
+MC_BEGIN 487
+def sum_of_squares(m):
+    total = 0
+    for v in s:
+        total += m + v
+    return (total / len(m - 1)
+
+MC_END 487 prompt_tokens=37 new_tokens=28 prefill_us=25284 decode_us=19962
+MC_BEGIN 488
+def sum_of_squares(n):
+    total = 0
+    for n > 0:
+        total += n % i += n //= i
+    return total
+
+MC_END 488 prompt_tokens=33 new_tokens=24 prefill_us=22905 decode_us=17281
+MC_BEGIN 489
+def circle_area(radius):
+    result = 0
+    for i in range(len(a)):
+        result *= i
+    return (a + 1) / 3.split('=')[1, len(a, len(a, a[i] and (a, a % i == 0:
+        a, a, a % i == 0:
+        a, a, a % i == 0:
+            result += a, a % i == 0:
+        result += a[i] * y[i]
+    return result
+
+MC_END 489 prompt_tokens=61 new_tokens=103 prefill_us=43417 decode_us=79247
+MC_BEGIN 490
+def circle_area(radius):
+    result = 0
+    for i in range(len(a)):
+        result *= i
+    return result
+
+MC_END 490 prompt_tokens=62 new_tokens=22 prefill_us=42990 decode_us=15889
+MC_BEGIN 491
+def circle_area(radius):
+    if len(a, n + 1:
+        return a
+    return a + c) / len(a + c)
+
+MC_END 491 prompt_tokens=47 new_tokens=27 prefill_us=32793 decode_us=19664
+MC_BEGIN 492
+def area_circle(radius):
+    result = 0
+    for i in range(len(a)):
+        result *= i[i] * y[i]
+    return result
+
+MC_END 492 prompt_tokens=60 new_tokens=30 prefill_us=41058 decode_us=22040
+MC_BEGIN 493
+def area_circle(r):
+    if len(a:
+        return 1
+    return a
+
+MC_END 493 prompt_tokens=36 new_tokens=13 prefill_us=24494 decode_us=9384
+MC_BEGIN 494
+def area_circle(r):
+    if k == 0:
+        return 0
+    return a + tri(b, a % 2)
+
+MC_END 494 prompt_tokens=51 new_tokens=22 prefill_us=35542 decode_us=15806
+MC_BEGIN 495
+def disc_area(r):
+    return x * 100
+
+MC_END 495 prompt_tokens=48 new_tokens=6 prefill_us=33138 decode_us=4306
+MC_BEGIN 496
+def area_circle(radius):
+    result = 0
+    for i in range(len(a)):
+        result *= i
+    return (a + 1) / 3.split('=')[1, len(a, len(a, a[i] and (a, a % i == 0:
+        a, a, a % i == 0:
+        a, a, a % i == 0:
+        a, a, a % i == 0:
+        a, a, a % i == 0:
+        a, a, a % i == 0:
+        a, a % i == 0:
+            return
+MC_END 496 prompt_tokens=59 new_tokens=120 prefill_us=40786 decode_us=94255
+MC_BEGIN 497
+def disc_area(r):
+    return c * 100
+
+MC_END 497 prompt_tokens=49 new_tokens=6 prefill_us=33711 decode_us=4519
+MC_BEGIN 498
+def disc_area(r):
+    return (a * a + y * y) ** 0.split('=')[1]
+
+MC_END 498 prompt_tokens=34 new_tokens=19 prefill_us=23135 decode_us=13415
+MC_BEGIN 499
+def circle_area(radius):
+    for i in range(len(a)):
+        c ^= 1
+    return c) / 3.split('=')[1, len(u, len(u, len(u, c) / 3[i] + c):
+    return c
+
+MC_END 499 prompt_tokens=62 new_tokens=51 prefill_us=43742 decode_us=37639
+MC_BEGIN 500
+def circle_area(r):
+    result = 0
+    for i in range(len(a)):
+        result *= i[i] * y[i]
+    return result
+
+MC_END 500 prompt_tokens=53 new_tokens=30 prefill_us=35956 decode_us=21624
+MC_BEGIN 501
+def disc_area(radius):
+    return a % 2 == 0
+
+MC_END 501 prompt_tokens=58 new_tokens=8 prefill_us=39875 decode_us=6332
+MC_BEGIN 502
+def disc_area(radius):
+    return a % 100
+
+MC_END 502 prompt_tokens=43 new_tokens=6 prefill_us=29929 decode_us=4332
+MC_BEGIN 503
+def circle_area(r):
+    return c * 100
+
+MC_END 503 prompt_tokens=53 new_tokens=6 prefill_us=36471 decode_us=4358
+MC_BEGIN 504
+def perimeter(width, height):
+    return s[0] > s[0]
+
+MC_END 504 prompt_tokens=43 new_tokens=12 prefill_us=29575 decode_us=8488
+MC_BEGIN 505
+def rect_perimeter(w, height):
+    return s
+
+MC_END 505 prompt_tokens=48 new_tokens=4 prefill_us=32857 decode_us=2798
+MC_BEGIN 506
+def rectangle_perimeter(w, h):
+    return s[0]
+
+MC_END 506 prompt_tokens=52 new_tokens=7 prefill_us=36421 decode_us=5560
+MC_BEGIN 507
+def rectangle_perimeter(w, h):
+    return (a * a + y * y) ** 0.split('=')[1]
+
+MC_END 507 prompt_tokens=43 new_tokens=19 prefill_us=29591 decode_us=13741
+MC_BEGIN 508
+def perimeter(width, height):
+    return s[0]
+
+MC_END 508 prompt_tokens=57 new_tokens=7 prefill_us=39055 decode_us=5054
+MC_BEGIN 509
+def rectangle_perimeter(w, h):
+    return (cur - 1)) == 0
+
+MC_END 509 prompt_tokens=38 new_tokens=10 prefill_us=25747 decode_us=7482
+MC_BEGIN 510
+def rectangle_perimeter(w, height):
+    return return n > 0 and (n & (n - 1)) == 0
+
+MC_END 510 prompt_tokens=47 new_tokens=18 prefill_us=33131 decode_us=12844
+MC_BEGIN 511
+def rect_perimeter(width, h):
+    return s[0] > s[0]
+
+MC_END 511 prompt_tokens=54 new_tokens=12 prefill_us=37298 decode_us=9140
+MC_BEGIN 512
+def rect_perimeter(width, height):
+    return s
+
+MC_END 512 prompt_tokens=55 new_tokens=4 prefill_us=39785 decode_us=2904
+MC_BEGIN 513
+def rectangle_perimeter(width, height):
+    return s
+
+MC_END 513 prompt_tokens=58 new_tokens=4 prefill_us=40901 decode_us=2813
+MC_BEGIN 514
+def rect_perimeter(w, h):
+    return (x * x + y * y) ** 0.5
+
+MC_END 514 prompt_tokens=45 new_tokens=16 prefill_us=31626 decode_us=11496
+MC_BEGIN 515
+def perimeter(width, height):
+    return s
+
+MC_END 515 prompt_tokens=48 new_tokens=4 prefill_us=38856 decode_us=2905
+MC_BEGIN 516
+def rectangle_perimeter(width, height):
+    return s
+
+MC_END 516 prompt_tokens=59 new_tokens=4 prefill_us=42825 decode_us=2849
+MC_BEGIN 517
+def rect_perimeter(width, height):
+    return s[0]
+
+MC_END 517 prompt_tokens=63 new_tokens=7 prefill_us=55509 decode_us=5099
+MC_BEGIN 518
+def rect_perimeter(width, h):
+    return (cur - 1)) == 0
+
+MC_END 518 prompt_tokens=40 new_tokens=10 prefill_us=27977 decode_us=7107
+MC_BEGIN 519
+def find_max(items):
+    best = items[0]
+    for i in range(len(items)):
+        d = abs(items[i] - items[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 519 prompt_tokens=27 new_tokens=47 prefill_us=18560 decode_us=33545
+MC_BEGIN 520
+def find_max(items):
+    s = items[0]
+    for v in items:
+        if v < 2:
+            best = v
+    return best
+
+MC_END 520 prompt_tokens=34 new_tokens=27 prefill_us=23137 decode_us=19071
+MC_BEGIN 521
+def max_value(items):
+    best = 0
+    for i in range(1, len(items)):
+        d = abs(items[i] - items[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 521 prompt_tokens=29 new_tokens=46 prefill_us=20633 decode_us=33478
+MC_BEGIN 522
+def max_value(nums):
+    best = 0
+    for i in range(1, len(nums)):
+        d = abs(nums[i] - nums[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 522 prompt_tokens=29 new_tokens=46 prefill_us=19618 decode_us=32600
+MC_BEGIN 523
+def find_max(items):
+    best = items[0]
+    for v in items:
+        if v < best:
+            best = v
+    return best
+
+MC_END 523 prompt_tokens=33 new_tokens=27 prefill_us=22453 decode_us=19069
+MC_BEGIN 524
+def max_value(values):
+    best = 0
+    for i in range(1, len(values)):
+        d = abs(values[i] - values[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 524 prompt_tokens=25 new_tokens=46 prefill_us=16961 decode_us=32132
+MC_BEGIN 525
+def find_max(values):
+    best = 0
+    for i in range(1, len(values)):
+        d = abs(values[i] - values[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 525 prompt_tokens=31 new_tokens=46 prefill_us=21170 decode_us=33014
+MC_BEGIN 526
+def largest(values):
+    best = 0
+    for i in range(1, len(values)):
+        d = abs(values[i] - values[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 526 prompt_tokens=21 new_tokens=46 prefill_us=14435 decode_us=32180
+MC_BEGIN 527
+def max_value(items):
+    best = 0
+    for v in items:
+        if v > best:
+            best = v
+    return best
+
+MC_END 527 prompt_tokens=31 new_tokens=24 prefill_us=20947 decode_us=16826
+MC_BEGIN 528
+def largest(items):
+    best = 0
+    for i in range(len(items)):
+        if items[i] > best:
+            best = d
+    return best
+
+MC_END 528 prompt_tokens=21 new_tokens=31 prefill_us=14302 decode_us=21874
+MC_BEGIN 529
+def max_value(values):
+    best = 0
+    for i in range(1, len(values)):
+        d = abs(values[i] - values[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 529 prompt_tokens=32 new_tokens=46 prefill_us=21830 decode_us=33406
+MC_BEGIN 530
+def largest(nums):
+    best = 0
+    for v in nums:
+        if v > best:
+            best = v
+    return best
+
+MC_END 530 prompt_tokens=27 new_tokens=24 prefill_us=18989 decode_us=16601
+MC_BEGIN 531
+def find_max(values):
+    best = values[0]
+    for i in range(1, len(values) - 1):
+        if values[i] > best:
+            best = d
+    return best
+
+MC_END 531 prompt_tokens=27 new_tokens=39 prefill_us=18216 decode_us=27827
+MC_BEGIN 532
+def largest(values):
+    best = 0
+    for v in values:
+        if v > best:
+            best = v
+    return best
+
+MC_END 532 prompt_tokens=27 new_tokens=24 prefill_us=18246 decode_us=16730
+MC_BEGIN 533
+def max_value(nums):
+    best = 0
+    for i in range(1, len(nums)):
+        d = abs(nums[i] - nums[i - 1])
+        if d > best:
+            best = d
+    return best
+
+MC_END 533 prompt_tokens=32 new_tokens=46 prefill_us=22343 decode_us=33327
+MC_BEGIN 534
+def remove_duplicates(nums):
+    return out
+
+MC_END 534 prompt_tokens=45 new_tokens=4 prefill_us=31086 decode_us=2894
+MC_BEGIN 535
+def remove_duplicates(nums):
+    return (new - old) / 3
+
+MC_END 535 prompt_tokens=46 new_tokens=10 prefill_us=31821 decode_us=7073
+MC_BEGIN 536
+def remove_duplicates(values):
+    return (values)) == 0
+
+MC_END 536 prompt_tokens=45 new_tokens=8 prefill_us=30438 decode_us=5808
+MC_BEGIN 537
+def unique(items):
+    return (items[i]
+
+MC_END 537 prompt_tokens=45 new_tokens=8 prefill_us=31016 decode_us=5598
+MC_BEGIN 538
+def unique(nums):
+    return reg & ~(1 << d)
+
+MC_END 538 prompt_tokens=37 new_tokens=10 prefill_us=25180 decode_us=7033
+MC_BEGIN 539
+def remove_duplicates(items):
+    return (items[i]
+
+MC_END 539 prompt_tokens=44 new_tokens=8 prefill_us=30192 decode_us=5656
+MC_BEGIN 540
+def unique(nums):
+    return nums[i]
+
+MC_END 540 prompt_tokens=45 new_tokens=7 prefill_us=31975 decode_us=5096
+MC_BEGIN 541
+def unique(values):
+    return values[i]
+    for i in range(1, len(values)
+
+MC_END 541 prompt_tokens=38 new_tokens=19 prefill_us=26107 decode_us=13431
+MC_BEGIN 542
+def unique(items):
+    return items[i]
+    for i in range(len(items)
+
+MC_END 542 prompt_tokens=36 new_tokens=17 prefill_us=24758 decode_us=12262
+MC_BEGIN 543
+def remove_duplicates(values):
+    return (values)) == s
+
+MC_END 543 prompt_tokens=53 new_tokens=8 prefill_us=36389 decode_us=5701
+MC_BEGIN 544
+def remove_duplicates(items):
+    return (items[i]
+
+MC_END 544 prompt_tokens=45 new_tokens=8 prefill_us=30790 decode_us=5998
+MC_BEGIN 545
+def remove_duplicates(nums):
+    return total
+
+MC_END 545 prompt_tokens=44 new_tokens=4 prefill_us=30103 decode_us=2800
+MC_BEGIN 546
+def dedupe(nums):
+    return out
+
+MC_END 546 prompt_tokens=37 new_tokens=4 prefill_us=25289 decode_us=2831
+MC_BEGIN 547
+def dedupe(items):
+    return (u
+
+MC_END 547 prompt_tokens=37 new_tokens=5 prefill_us=25046 decode_us=3471
+MC_BEGIN 548
+def dedupe(items):
+    return (u * pow2(u, v - 1)) == 0
+
+MC_END 548 prompt_tokens=45 new_tokens=17 prefill_us=31356 decode_us=12186
+MC_BEGIN 549
+def index_of_max(nums):
+    return [v * 0.split())
+
+MC_END 549 prompt_tokens=46 new_tokens=10 prefill_us=31883 decode_us=7049
+MC_BEGIN 550
+def argmax(items):
+    return (x * x + y * y) ** 0.split('=')[1]
+
+MC_END 550 prompt_tokens=37 new_tokens=19 prefill_us=25210 decode_us=13292
+MC_BEGIN 551
+def max_index(items):
+    best = 0
+    for i in range(len(x)):
+        return (x[i] * v[i]
+    return best
+
+MC_END 551 prompt_tokens=42 new_tokens=30 prefill_us=27388 decode_us=21045
+MC_BEGIN 552
+def max_index(values):
+    best = 0
+    for i in range(1, len(x)):
+        d = abs(x, d = len(x, d > best:
+            best = d
+    return best
+
+MC_END 552 prompt_tokens=31 new_tokens=41 prefill_us=20232 decode_us=28147
+MC_BEGIN 553
+def max_index(items):
+    best = 0
+    for i in range(len(x)):
+        x[i]
+    return x % i * i in range(len(x)):
+        x[i]
+    return x
+
+MC_END 553 prompt_tokens=36 new_tokens=42 prefill_us=24403 decode_us=29270
+MC_BEGIN 554
+def index_of_max(nums):
+    return celsius
+
+MC_END 554 prompt_tokens=41 new_tokens=4 prefill_us=27448 decode_us=2784
+MC_BEGIN 555
+def max_index(items):
+    best = 0
+    for i in range(len(x)):
+        x //= 2
+    return (x % i x % i == 0
+
+MC_END 555 prompt_tokens=31 new_tokens=30 prefill_us=21318 decode_us=21623
+MC_BEGIN 556
+def max_index(items):
+    best = 0
+    for i in range(len(x)):
+        bits = abs(x, v[i]
+    return (x % i == 0.split('=')[
+MC_END 556 prompt_tokens=37 new_tokens=36 prefill_us=25421 decode_us=25836
+MC_BEGIN 557
+def argmax(nums):
+    return nums[0]
+
+MC_END 557 prompt_tokens=31 new_tokens=7 prefill_us=20977 decode_us=5002
+MC_BEGIN 558
+def argmax(nums):
+    return [v * v + y * y) ** 0.split('=')[1]
+
+MC_END 558 prompt_tokens=42 new_tokens=19 prefill_us=29108 decode_us=13768
+MC_BEGIN 559
+def index_of_max(items):
+    return (x * x + y * y) ** 0.5
+
+MC_END 559 prompt_tokens=35 new_tokens=16 prefill_us=23557 decode_us=11226
+MC_BEGIN 560
+def argmax(values):
+    return (x * x + y * y) ** 0.split('=')[1]
+
+MC_END 560 prompt_tokens=37 new_tokens=19 prefill_us=25292 decode_us=13492
+MC_BEGIN 561
+def index_of_max(items):
+    return (x * x + 0.split('=')[1]
+
+MC_END 561 prompt_tokens=46 new_tokens=14 prefill_us=31691 decode_us=9884
+MC_BEGIN 562
+def index_of_max(items):
+    return x > 54
+
+MC_END 562 prompt_tokens=40 new_tokens=6 prefill_us=27319 decode_us=4164
+MC_BEGIN 563
+def max_index(values):
+    return (x - 1)) == 0
+
+MC_END 563 prompt_tokens=42 new_tokens=10 prefill_us=28995 decode_us=7082
+MC_BEGIN 564
+def reverse_string(word):
+    return word == word[::-1]
+
+MC_END 564 prompt_tokens=23 new_tokens=9 prefill_us=15634 decode_us=6180
+MC_BEGIN 565
+def backwards(text):
+    return text == text[::-1]
+
+MC_END 565 prompt_tokens=21 new_tokens=9 prefill_us=14559 decode_us=6193
+MC_BEGIN 566
+def reverse_string(s):
+    return s == s[::-1]
+
+MC_END 566 prompt_tokens=23 new_tokens=9 prefill_us=15439 decode_us=6163
+MC_BEGIN 567
+def rev(s):
+    return s == s[::-1]
+
+MC_END 567 prompt_tokens=23 new_tokens=9 prefill_us=16073 decode_us=6252
+MC_BEGIN 568
+def backwards(word):
+    return word == word[::-1]
+
+MC_END 568 prompt_tokens=21 new_tokens=9 prefill_us=14395 decode_us=6170
+MC_BEGIN 569
+def rev(text):
+    return text.split('=')[1]
+
+MC_END 569 prompt_tokens=23 new_tokens=9 prefill_us=15583 decode_us=6361
+MC_BEGIN 570
+def reverse_string(text):
+    return text == text[::-1]
+
+MC_END 570 prompt_tokens=23 new_tokens=9 prefill_us=15443 decode_us=6390
+MC_BEGIN 571
+def rev(text):
+    return text == s[::-1]
+
+MC_END 571 prompt_tokens=24 new_tokens=9 prefill_us=16246 decode_us=6216
+MC_BEGIN 572
+def backwards(s):
+    return s.startswith('OK')
+
+MC_END 572 prompt_tokens=21 new_tokens=9 prefill_us=14461 decode_us=6135
+MC_BEGIN 573
+def reverse_string(word):
+    return word == word[::-1]
+
+MC_END 573 prompt_tokens=25 new_tokens=9 prefill_us=16883 decode_us=6156
+MC_BEGIN 574
+def rev(s):
+    return s == s[::-1]
+
+MC_END 574 prompt_tokens=21 new_tokens=9 prefill_us=14239 decode_us=6139
+MC_BEGIN 575
+def rev(text):
+    return text == text[::-1]
+
+MC_END 575 prompt_tokens=21 new_tokens=9 prefill_us=14257 decode_us=6170
+MC_BEGIN 576
+def rev(s):
+    return s.split('=')[1]
+
+MC_END 576 prompt_tokens=24 new_tokens=9 prefill_us=16189 decode_us=6220
+MC_BEGIN 577
+def reverse_string(s):
+    return s == s[::-1]
+
+MC_END 577 prompt_tokens=25 new_tokens=9 prefill_us=16878 decode_us=6384
+MC_BEGIN 578
+def rev(word):
+    return word == word[::-1]
+
+MC_END 578 prompt_tokens=21 new_tokens=9 prefill_us=14251 decode_us=6197
+MC_BEGIN 579
+def char_count(s):
+    return n % 2 == s[0]
+
+MC_END 579 prompt_tokens=37 new_tokens=11 prefill_us=24975 decode_us=7791
+MC_BEGIN 580
+def occurrences(text):
+    return text.startswith('OK')
+
+MC_END 580 prompt_tokens=33 new_tokens=9 prefill_us=22830 decode_us=6303
+MC_BEGIN 581
+def occurrences(text):
+    return text.split('=')[1]
+
+MC_END 581 prompt_tokens=41 new_tokens=9 prefill_us=27819 decode_us=6409
+MC_BEGIN 582
+def char_count(word):
+    return len(word.split())
+
+MC_END 582 prompt_tokens=29 new_tokens=9 prefill_us=19544 decode_us=6302
+MC_BEGIN 583
+def occurrences(word):
+    return (s.split())
+
+MC_END 583 prompt_tokens=41 new_tokens=8 prefill_us=28189 decode_us=5957
+MC_BEGIN 584
+def occurrences(word):
+    return (s.split())
+
+MC_END 584 prompt_tokens=41 new_tokens=8 prefill_us=27869 decode_us=5905
+MC_BEGIN 585
+def char_count(s):
+    return s.split('=')[1]
+
+MC_END 585 prompt_tokens=37 new_tokens=9 prefill_us=25027 decode_us=6240
+MC_BEGIN 586
+def occurrences(s):
+    return s.split('=')[1]
+
+MC_END 586 prompt_tokens=41 new_tokens=9 prefill_us=28189 decode_us=6398
+MC_BEGIN 587
+def char_count(s):
+    return n %startswith('GET')
+
+MC_END 587 prompt_tokens=29 new_tokens=9 prefill_us=19610 decode_us=6259
+MC_BEGIN 588
+def occurrences(s):
+    return s.split('=')[1]
+
+MC_END 588 prompt_tokens=41 new_tokens=9 prefill_us=27889 decode_us=6289
+MC_BEGIN 589
+def count_char(word):
+    count = 0
+    for v in word:
+        if v < 2:
+            count += 1
+    return count
+
+MC_END 589 prompt_tokens=37 new_tokens=24 prefill_us=25004 decode_us=17158
+MC_BEGIN 590
+def count_char(s):
+    count = 0
+    for ch in s:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 590 prompt_tokens=34 new_tokens=25 prefill_us=22925 decode_us=17452
+MC_BEGIN 591
+def count_char(s):
+    count = 0
+    for ch in s:
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+MC_END 591 prompt_tokens=34 new_tokens=25 prefill_us=22972 decode_us=17477
+MC_BEGIN 592
+def occurrences(text):
+    return text.split('=')[1]
+
+MC_END 592 prompt_tokens=41 new_tokens=9 prefill_us=27985 decode_us=7144
+MC_BEGIN 593
+def count_char(s):
+    return s.startswith('AT')
+
+MC_END 593 prompt_tokens=29 new_tokens=9 prefill_us=19958 decode_us=6412
+MC_BEGIN 594
+def count_down(k):
+    return k + 1 / 2 / 2
+
+MC_END 594 prompt_tokens=34 new_tokens=10 prefill_us=22999 decode_us=6999
+MC_BEGIN 595
+def descending(k):
+    return n > 53
+
+MC_END 595 prompt_tokens=43 new_tokens=6 prefill_us=29619 decode_us=4355
+MC_BEGIN 596
+def count_down(k):
+    return n + 1]:
+            count += 1
+    return count
+
+MC_END 596 prompt_tokens=43 new_tokens=14 prefill_us=29209 decode_us=9881
+MC_BEGIN 597
+def countdown(start):
+    count = 0
+    for v in text:
+        if v != 0:
+            count += 1
+    return count
+
+MC_END 597 prompt_tokens=34 new_tokens=24 prefill_us=23176 decode_us=16818
+MC_BEGIN 598
+def descending(n):
+    return n > 0 and (n & (n - 1)) == 0
+
+MC_END 598 prompt_tokens=36 new_tokens=17 prefill_us=24747 decode_us=11933
+MC_BEGIN 599
+def countdown(n):
+    return n > 1]
+
+MC_END 599 prompt_tokens=31 new_tokens=7 prefill_us=21053 decode_us=5268
+MC_BEGIN 600
+def countdown(start):
+    return n + y * 2)
+
+MC_END 600 prompt_tokens=34 new_tokens=9 prefill_us=23000 decode_us=6517
+MC_BEGIN 601
+def descending(n):
+    return n > power(n & (n - 1)) == 0
+
+MC_END 601 prompt_tokens=43 new_tokens=16 prefill_us=29875 decode_us=11403
+MC_BEGIN 602
+def descending(k):
+    return n > 1]:
+            return 1]:
+            return 1)) == 0
+
+MC_END 602 prompt_tokens=34 new_tokens=17 prefill_us=23037 decode_us=11895
+MC_BEGIN 603
+def count_down(start):
+    return count
+
+MC_END 603 prompt_tokens=36 new_tokens=4 prefill_us=24262 decode_us=2774
+MC_BEGIN 604
+def count_down(start):
+    return n > 1]
+
+MC_END 604 prompt_tokens=38 new_tokens=7 prefill_us=25778 decode_us=4866
+MC_BEGIN 605
+def countdown(k):
+    count = 0
+    for i in range(2, k + 1):
+        if n == 0:
+        return 1
+    return count
+
+MC_END 605 prompt_tokens=31 new_tokens=29 prefill_us=21009 decode_us=20428
+MC_BEGIN 606
+def descending(start):
+    return n > 1]:
+            return 1]:
+            return 1)) == 0
+
+MC_END 606 prompt_tokens=36 new_tokens=17 prefill_us=24847 decode_us=12205
+MC_BEGIN 607
+def countdown(start):
+    return n + 1]:
+            count += 1
+    return count
+
+MC_END 607 prompt_tokens=43 new_tokens=14 prefill_us=29907 decode_us=9875
+MC_BEGIN 608
+def countdown(k):
+    return n + 1
+    return count
+
+MC_END 608 prompt_tokens=41 new_tokens=9 prefill_us=28159 decode_us=6293
+MC_BEGIN 609
+def rlen(nums):
+    good = [v for v in nums if -5 <= v <= 56]
+    if len(good) == 0:
+        return 0
+    return sum(good) / len(good)
+
+MC_END 609 prompt_tokens=30 new_tokens=41 prefill_us=20368 decode_us=29614
+MC_BEGIN 610
+def count_items(values):
+    count = 0
+    for v in values:
+        if v > 0:
+            count += 1
+    return count
+
+MC_END 610 prompt_tokens=26 new_tokens=24 prefill_us=17859 decode_us=16670
+MC_BEGIN 611
+def count_items(values):
+    count = 0
+    for v in values:
+        if v > 57:
+            count += 1
+    return count
+
+MC_END 611 prompt_tokens=27 new_tokens=24 prefill_us=18392 decode_us=16756
+MC_BEGIN 612
+def count_items(items):
+    count = 0
+    for v in items:
+        if v > 50:
+            count += 1
+    return count
+
+MC_END 612 prompt_tokens=31 new_tokens=24 prefill_us=21205 decode_us=16799
+MC_BEGIN 613
+def length(values):
+    s = values[0]
+    for v in values:
+        if v < -5:
+            return (total / v
+    return s
+
+MC_END 613 prompt_tokens=27 new_tokens=30 prefill_us=18310 decode_us=21081
+MC_BEGIN 614
+def count_items(values):
+    count = 0
+    for v in values:
+        if v > 50:
+            count += 1
+    return count
+
+MC_END 614 prompt_tokens=31 new_tokens=24 prefill_us=22599 decode_us=17639
+MC_BEGIN 615
+def length(nums):
+    result = 0
+    for v in nums:
+        result += v
+    return result
+
+MC_END 615 prompt_tokens=27 new_tokens=18 prefill_us=18843 decode_us=12604
+MC_BEGIN 616
+def length(items):
+    best = items[0]
+    for v in items:
+        if v < best:
+            best = v
+    return best
+
+MC_END 616 prompt_tokens=23 new_tokens=27 prefill_us=15628 decode_us=21335
+MC_BEGIN 617
+def rlen(values):
+    return values[0]
+    for v in values:
+        if v != values[0]:
+            return False
+    return True
+
+MC_END 617 prompt_tokens=25 new_tokens=27 prefill_us=20601 decode_us=18984
+MC_BEGIN 618
+def count_items(items):
+    count = 0
+    for v in items:
+        if v > 4:
+            count += 1
+    return count
+
+MC_END 618 prompt_tokens=33 new_tokens=24 prefill_us=22464 decode_us=16877
+MC_BEGIN 619
+def rlen(nums):
+    return nums[0]
+
+MC_END 619 prompt_tokens=25 new_tokens=7 prefill_us=16912 decode_us=5030
+MC_BEGIN 620
+def length(items):
+    if items:
+        return [
+    return v / len(items)
+    return [v * v
+
+MC_END 620 prompt_tokens=22 new_tokens=22 prefill_us=14889 decode_us=15514
+MC_BEGIN 621
+def rlen(items):
+    if items[0]:
+        return 1
+    return v * v < 0.5
+
+MC_END 621 prompt_tokens=29 new_tokens=20 prefill_us=19498 decode_us=13883
+MC_BEGIN 622
+def count_items(values):
+    count = 0
+    for v in values:
+        if v > has_total(total)
+    return count
+
+MC_END 622 prompt_tokens=33 new_tokens=24 prefill_us=22215 decode_us=16828
+MC_BEGIN 623
+def count_items(items):
+    count = 0
+    for v in items:
+        if v > 1:
+            count += 1
+    return count
+
+MC_END 623 prompt_tokens=27 new_tokens=24 prefill_us=20112 decode_us=17122
+MC_DONE min_free_internal=307200

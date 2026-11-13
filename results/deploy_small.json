@@ -1,0 +1,20 @@
+{
+ "params": 529056,
+ "fp32_bytes": 2116224,
+ "int8_model_bytes": 549664,
+ "tokenizer_bytes": 38840,
+ "flash_total_bytes": 588504,
+ "state_bytes": 626688,
+ "kv_cache_bytes": 589824,
+ "activation_bytes": 36864,
+ "macs_first": 528960,
+ "macs_middle": 602112,
+ "macs_last": 675840,
+ "host_decode_ms_per_token": 0.373,
+ "host_prefill_ms_per_token": 0.354,
+ "host_end_to_end_ms_median": 19.1,
+ "host_sim_greedy_valid_pct": 81.9,
+ "host_sim_greedy_pass_pct": 51.9,
+ "host_sim_n": 624,
+ "host_cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz"
+}

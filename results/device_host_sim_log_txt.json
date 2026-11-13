@@ -1,0 +1,20 @@
+{
+ "log": "results/host_sim_log.txt",
+ "split": "test_id,test_ood",
+ "n_scored": 624,
+ "valid": 512,
+ "passed": 275,
+ "valid_pct": 82.1,
+ "pass_pct": 44.1,
+ "decode_ms_per_token_median": 0.708,
+ "prefill_ms_per_token_median": 0.684,
+ "end_to_end_ms_median": 36.1,
+ "end_to_end_ms_p95": 60.5,
+ "info": {
+  "weights_bytes": "1079840",
+  "state_bytes": "1094656",
+  "state_in": "PSRAM",
+  "free_internal": "307200",
+  "free_psram": "7293952"
+ }
+}

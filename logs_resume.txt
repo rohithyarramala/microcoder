@@ -1,0 +1,28 @@
++ T='--tok data/tok2048_final.json --dropout 0.1'
++ gcc -O2 -shared -fPIC -o esp32/engine/libmicrocoder.so esp32/engine/microcoder.c esp32/engine/host_api.c -lm
++ python3 -m microcoder.export ckpt/m1_s0.pt export/m1_s0
++ python3 scripts/test_engine.py ckpt/m1_s0.pt export/m1_s0
++ python3 scripts/deploy_stats.py ckpt/m1_s0.pt
++ python3 -W ignore -m microcoder.evaluate ckpt/m1_s0.pt --splits mbpp --methods greedy,anchor,a_resample,a_ref,a_ref_lint --out m1_s0_mbpp
++ python3 -W ignore -m microcoder.evaluate ckpt/m1_s0.pt --engine export/m1_s0/model.bin --out m1_s0_int8
++ python3 scripts/make_tables.py
++ echo STAGE1_DONE
+STAGE1_DONE
++ for s in 1 2
++ python3 -m microcoder.train --name s_s1 --tok data/tok2048_final.json --dropout 0.1 --d 96 --layers 3 --heads 4 --steps 4000 --seed 1
++ ev s_s1
++ python3 -W ignore -m microcoder.evaluate ckpt/s_s1.pt
++ for s in 1 2
++ python3 -m microcoder.train --name s_s2 --tok data/tok2048_final.json --dropout 0.1 --d 96 --layers 3 --heads 4 --steps 4000 --seed 2
++ ev s_s2
++ python3 -W ignore -m microcoder.evaluate ckpt/s_s2.pt
++ python3 -W ignore -m microcoder.evaluate ckpt/v0_m1_s0.pt --methods a_resample_lint,a_ref_lint --out v0_lint
++ python3 scripts/merge_summary.py v0_m1_s0 v0_lint
+merged v0_lint into v0_m1_s0
++ python3 -W ignore -m microcoder.evaluate ckpt/v1_m1_s0.pt --methods a_resample_lint,a_ref_lint --out v1_lint
++ python3 scripts/merge_summary.py v1_m1_s0 v1_lint
+merged v1_lint into v1_m1_s0
++ python3 scripts/make_tables.py
++ echo STAGE2_DONE
+STAGE2_DONE
++ python3 -m microcoder.train --name m1n_s0 --tok data/tok2048_final.json --dropout 0.1 --steps 4000 --seed 0 --mix gen+repair+name

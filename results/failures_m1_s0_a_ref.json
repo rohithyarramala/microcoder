@@ -1,0 +1,193 @@
+{
+ "test_id": {
+  "counts": {
+   "pass": 276,
+   "partly correct values": 20,
+   "runtime:NameError": 28,
+   "runtime exception": 43,
+   "wrong values": 23,
+   "syntax error": 22,
+   "runtime:TypeError": 3,
+   "runtime:IndexError": 8,
+   "runtime:RecursionError": 4
+  },
+  "examples": {
+   "partly correct values": [
+    {
+     "family": "clamp",
+     "instr": "Implement limit(v) to saturate v so it stays within [-49, 63].",
+     "code": "def limit(v):\n    if v < 4:\n        return 4\n    if v > 63:\n        return 63\n    return v\n",
+     "ref": "def limit(v):\n    if v < -49:\n        return -49\n    if v > 63:\n        return 63\n    return v\n"
+    },
+    {
+     "family": "clamp",
+     "instr": "Implement limit(value) to saturate value so it stays within [33, 93].",
+     "code": "def limit(value):\n    if value < 4:\n        return 4\n    if value > 93:\n        return 93\n    return value\n",
+     "ref": "def limit(value):\n    if value < 33:\n        return 33\n    if value > 93:\n        return 93\n    return value\n"
+    },
+    {
+     "family": "clamp",
+     "instr": "Implement saturate(v) to saturate v so it stays within [-33, 144].",
+     "code": "def saturate(v):\n    if v < 4:\n        return 4\n    if v > 144:\n        return 144\n    return v\n",
+     "ref": "def saturate(v):\n    if v < -33:\n        return -33\n    if v > 144:\n        return 144\n    return v\n"
+    }
+   ],
+   "runtime exception": [
+    {
+     "family": "clamp",
+     "instr": "Implement saturate(v) to saturate v so it stays within [46, 56].",
+     "code": "def saturate(v):\n    if v < 4:\n        return 4\n    if v > s:\n        return s\n    return v\n",
+     "ref": "def saturate(v):\n    if v < 46:\n        return 46\n    if v > 56:\n        return 56\n    return v\n"
+    },
+    {
+     "family": "clamp",
+     "instr": "Implement limit(value) to saturate value so it stays within [-40, -25].",
+     "code": "def limit(value):\n    if value < -17:\n        return -17\n    if value > s:\n        return s\n    return value\n",
+     "ref": "def limit(value):\n    if value < -40:\n        return -40\n    if value > -25:\n        return -25\n    return value\n"
+    },
+    {
+     "family": "clamp",
+     "instr": "Implement saturate(v) to saturate v so it stays within [22, 42].",
+     "code": "def saturate(v):\n    if v < 22:\n        return 22\n    if v > s:\n        return s\n    return v\n",
+     "ref": "def saturate(v):\n    if v < 22:\n        return 22\n    if v > 42:\n        return 42\n    return v\n"
+    }
+   ],
+   "wrong values": [
+    {
+     "family": "clamp",
+     "instr": "Implement saturate(x) to saturate x so it stays within [-45, -25].",
+     "code": "def saturate(x):\n    if x < -17:\n        return -17\n    if x > 0:\n        return 0\n    return x\n",
+     "ref": "def saturate(x):\n    if x < -45:\n        return -45\n    if x > -25:\n        return -25\n    return x\n"
+    },
+    {
+     "family": "count_above",
+     "instr": "Implement count_over(values) to count elements of values strictly larger than 17.",
+     "code": "def count_over(values):\n    count = 0\n    for i in range(1, len(values) - 1):\n        if values[i] > values[i - 1] and values[i] > values[i + 1]:\n            count += 1\n    return count\n",
+     "ref": "def count_over(values):\n    count = 0\n    for v in values:\n        if v > 17:\n            count += 1\n    return count\n"
+    },
+    {
+     "family": "count_above",
+     "instr": "Implement count_over(readings) to count elements of readings strictly larger than 51.",
+     "code": "def count_over(readings):\n    count = 0\n    for i in range(1, len(readings) - 1):\n        if readings[i] > readings[i - 1] and readings[i] > readings[i + 1]:\n            count += 1\n    return count\n",
+     "ref": "def count_over(readings):\n    count = 0\n    for v in readings:\n        if v > 51:\n            count += 1\n    return count\n"
+    }
+   ],
+   "syntax error": [
+    {
+     "family": "digit_sum",
+     "instr": "Implement add_digits(x) to compute the digit sum of x.",
+     "code": "def add_digits(x):\n    total = 0\n    while x > 0:\n        total += x % 2 == 0:\n            total += x % 2 == 0\n    return total\n",
+     "ref": "def add_digits(x):\n    total = 0\n    while x > 0:\n        total += x % 10\n        x //= 10\n    return total\n"
+    },
+    {
+     "family": "digit_sum",
+     "instr": "Implement sum_digits(x) to compute the digit sum of x.",
+     "code": "def sum_digits(x):\n    total = 0\n    while x > 0:\n        total += x % 2 == 0:\n            total += x % 2 == 0\n    return total\n",
+     "ref": "def sum_digits(x):\n    total = 0\n    while x > 0:\n        total += x % 10\n        x //= 10\n    return total\n"
+    },
+    {
+     "family": "digit_sum",
+     "instr": "Implement add_digits(num) to compute the digit sum of num.",
+     "code": "def add_digits(num):\n    total = 0\n    while num > 0:\n        total += num % 2 == 0:\n            total += num % 2 == 0.append(num):\n    total = 0\n    while num > 0:\n        total += num % 2 == 0.append(num // 2\n    total = 0\n    while num > 0:\n        total += num % 2 == 0.append(num // 2\n    total = 0\n    return total\n",
+     "ref": "def add_digits(num):\n    total = 0\n    while num > 0:\n        total += num % 10\n        num //= 10\n    return total\n"
+    }
+   ]
+  }
+ },
+ "test_ood": {
+  "counts": {
+   "runtime:NameError": 95,
+   "runtime exception": 110,
+   "wrong values": 71,
+   "syntax error": 43,
+   "runtime:TypeError": 3,
+   "partly correct values": 13,
+   "runtime:UnboundLocalError": 3,
+   "pass": 3,
+   "runtime:AttributeError": 1,
+   "runtime:IndexError": 8
+  },
+  "examples": {
+   "runtime exception": [
+    {
+     "family": "adc_to_volts",
+     "instr": "Create raw_to_voltage(raw): scale the raw 12-bit ADC count raw into volts (reference 3.3 V).",
+     "code": "def raw_to_voltage(raw):\n    return a % 2 == 0\n",
+     "ref": "def raw_to_voltage(raw):\n    return raw * 3.3 / 4095\n"
+    },
+    {
+     "family": "adc_to_volts",
+     "instr": "Write a function adc_volts(raw) that converts a 12-bit ADC reading raw to volts with a 5.0 V reference.",
+     "code": "def adc_volts(raw):\n    return a % 2 == 0\n",
+     "ref": "def adc_volts(raw):\n    return raw * 5.0 / 4095\n"
+    },
+    {
+     "family": "adc_to_volts",
+     "instr": "Define raw_to_voltage(raw) returning the voltage for a 8-bit ADC value raw when the reference is 5.0 V.",
+     "code": "def raw_to_voltage(raw):\n    return a % 2 == 0\n",
+     "ref": "def raw_to_voltage(raw):\n    return raw * 5.0 / 255\n"
+    }
+   ],
+   "wrong values": [
+    {
+     "family": "adc_to_volts",
+     "instr": "Create adc_to_volts(reading): scale the raw 10-bit ADC count reading into volts (reference 5.0 V).",
+     "code": "def adc_to_volts(reading):\n    return reading > 10\n",
+     "ref": "def adc_to_volts(reading):\n    return reading * 5.0 / 1023\n"
+    },
+    {
+     "family": "adc_to_volts",
+     "instr": "Define adc_to_volts(reading) returning the voltage for a 12-bit ADC value reading when the reference is 1.8 V.",
+     "code": "def adc_to_volts(reading):\n    return reading > 12\n",
+     "ref": "def adc_to_volts(reading):\n    return reading * 1.8 / 4095\n"
+    },
+    {
+     "family": "adc_to_volts",
+     "instr": "Create adc_to_volts(reading): scale the raw 12-bit ADC count reading into volts (reference 3.3 V).",
+     "code": "def adc_to_volts(reading):\n    return reading > 3\n",
+     "ref": "def adc_to_volts(reading):\n    return reading * 3.3 / 4095\n"
+    }
+   ],
+   "syntax error": [
+    {
+     "family": "adc_to_volts",
+     "instr": "Create adc_to_volts(reading): scale the raw 16-bit ADC count reading into volts (reference 3.3 V).",
+     "code": "def adc_to_volts(reading):\n    return reading > 3.split())\n",
+     "ref": "def adc_to_volts(reading):\n    return reading * 3.3 / 65535\n"
+    },
+    {
+     "family": "adc_to_volts",
+     "instr": "Implement raw_to_voltage(reading) to turn a 16-bit analog reading reading into a voltage, reference voltage 5.0 V.",
+     "code": "def raw_to_voltage(reading):\n    return (a * a + y * y) ** 0.split('=')[1]\n",
+     "ref": "def raw_to_voltage(reading):\n    return reading * 5.0 / 65535\n"
+    },
+    {
+     "family": "adc_to_volts",
+     "instr": "Write a function adc_volts(reading) that converts a 8-bit ADC reading reading to volts with a 1.8 V reference.",
+     "code": "def adc_volts(reading):\n    return reading > 8 for v in items if v > 8]\n",
+     "ref": "def adc_volts(reading):\n    return reading * 1.8 / 255\n"
+    }
+   ],
+   "partly correct values": [
+    {
+     "family": "moving_avg",
+     "instr": "Implement moving_average(samples) to smooth samples by averaging its last 7 entries.",
+     "code": "def moving_average(samples):\n    s = samples[0]\n    for v in samples[1:]:\n        s = 0.3 * v + 0.7 * s\n    return s\n",
+     "ref": "def moving_average(samples):\n    window = samples[-7:]\n    return sum(window) / len(window)\n"
+    },
+    {
+     "family": "sum_squares",
+     "instr": "Create sum_squares(m): add up i squared for i from 1 through m.",
+     "code": "def sum_squares(m):\n    total = 0\n    for i in range(2, m + 1):\n        total += m + 1\n    return total\n",
+     "ref": "def sum_squares(m):\n    total = 0\n    for i in range(1, m + 1):\n        total += i * i\n    return total\n"
+    },
+    {
+     "family": "list_max",
+     "instr": "Create find_max(items): scan items and keep the biggest value seen.",
+     "code": "def find_max(items):\n    best = items[0]\n    for i in range(len(items)):\n        d = abs(items[i] - items[i - 1])\n        if d > best:\n            best = d\n    return best\n",
+     "ref": "def find_max(items):\n    best = items[0]\n    for v in items:\n        if v > best:\n            best = v\n    return best\n"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,44 @@
+gen=7664 repair=39434
+params 1049728
+step 0 loss 7.6400 1s
+step 100 loss 1.4132 43s
+step 200 loss 0.2751 86s
+step 300 loss 0.0993 131s
+step 400 loss 0.0621 176s
+step 500 loss 0.0566 224s
+step 600 loss 0.0488 269s
+step 700 loss 0.0214 311s
+step 800 loss 0.0153 355s
+step 900 loss 0.0152 399s
+step 1000 loss 0.0113 446s
+step 1100 loss 0.0074 492s
+step 1200 loss 0.0137 539s
+step 1300 loss 0.0060 586s
+step 1400 loss 0.0091 634s
+step 1500 loss 0.0141 680s
+step 1600 loss 0.0062 723s
+step 1700 loss 0.0077 764s
+step 1800 loss 0.0210 814s
+step 1900 loss 0.0020 857s
+step 2000 loss 0.0015 904s
+step 2100 loss 0.0044 950s
+step 2200 loss 0.0033 998s
+step 2300 loss 0.0043 1045s
+step 2400 loss 0.0029 1093s
+step 2500 loss 0.0002 1140s
+step 2600 loss 0.0015 1190s
+step 2700 loss 0.0016 1236s
+step 2800 loss 0.0018 1283s
+step 2900 loss 0.0005 1341s
+step 3000 loss 0.0001 1394s
+step 3100 loss 0.0002 1441s
+step 3200 loss 0.0001 1489s
+step 3300 loss 0.0005 1536s
+step 3400 loss 0.0001 1579s
+step 3500 loss 0.0000 1626s
+step 3600 loss 0.0001 1675s
+step 3700 loss 0.0002 1719s
+step 3800 loss 0.0000 1766s
+step 3900 loss 0.0001 1810s
+step 3999 loss 0.0001 1854s
+saved m1_s2 1854s

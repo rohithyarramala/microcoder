@@ -1,0 +1,5 @@
+# Wokwi simulator config (VS Code "Wokwi Simulator" extension or wokwi-cli).
+[wokwi]
+version = 1
+firmware = "build/flasher_args.json"
+elf = "build/microcoder_bench.elf"

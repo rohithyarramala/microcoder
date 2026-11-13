@@ -1,0 +1,3 @@
+tokenizer parity: 18524/18524 identical
+max |C - torch(int8 weights)| = 1.430511474609375e-05
+max |C - torch(fp32)|         = 0.19383716583251953  argmax agreement: 0.96875

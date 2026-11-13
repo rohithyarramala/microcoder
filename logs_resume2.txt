@@ -1,0 +1,130 @@
++ T='--tok data/tok2048_final.json --dropout 0.1'
++ python3 -m microcoder.export ckpt/s_s0.pt export/s_s0
++ python3 -W ignore -m microcoder.evaluate ckpt/s_s0.pt --engine export/s_s0/model.bin --out s_s0_int8
++ mkdir -p results/deploy_small
++ python3 scripts/deploy_stats.py ckpt/s_s0.pt
++ cp results/deploy.json results/deploy_small.json
++ cp results/host_sim_log.txt results/host_sim_log_small.txt
++ python3 scripts/deploy_stats.py ckpt/m1_s0.pt
++ python3 -c '
+import sys; sys.path.insert(0,'\''.'\'')
+from microcoder.dataset import build
+print(build('\''data_deploy'\'', draws_per_family=1200, seed=0, aug=False, deploy=True))'
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+<gen>:2: SyntaxWarning: 'int' object is not callable; perhaps you missed a comma?
+{'train_families': ['adc_to_volts', 'c_to_f', 'f_to_c', 'moving_avg', 'clamp', 'map_range', 'count_above', 'max_delta', 'rms', 'ema', 'xor_checksum', 'sum_checksum', 'is_stable', 'count_peaks', 'battery_pct', 'median', 'kmh_to_ms', 'over_limit', 'bytes_to_u16', 'bit_is_set', 'set_bit', 'clear_bit', 'hysteresis', 'mean_in_range', 'sum_squares', 'is_even', 'gcd', 'is_prime', 'is_pow2', 'digit_sum', 'factorial_iter', 'circle_area', 'rect_perimeter', 'hypotenuse', 'avg3', 'pct_change', 'list_max', 'list_min', 'count_even', 'reverse_list', 'positives', 'cumsum', 'dedupe', 'argmax', 'dot', 'scale_list', 'list_sum', 'count_vowels', 'reverse_str', 'is_palindrome', 'count_words', 'count_char', 'kv_value', 'normalize', 'starts_with', 'factorial_rec', 'fib_rec', 'power_rec', 'digit_sum_rec', 'countdown', 'to_binary', 'triangular', 'gcd_rec', 'list_len_rec'], 'heldout_families': [], 'n_train_gen': 11077, 'n_train_repair': 56439, 'n_test_id': 0, 'n_test_ood': 0}
++ python3 -m microcoder.train --name deploy --data data_deploy --tok data/tok2048_final.json --dropout 0.1 --d 96 --layers 3 --heads 4 --steps 4000 --seed 0
++ python3 scripts/build_web_demo.py ckpt/deploy.pt
+wrote app/web/playground.html 799849 bytes
++ python3 scripts/make_tables.py
++ echo STAGE_A_DONE
+STAGE_A_DONE
++ python3 -m microcoder.train --name m1n_s0 --tok data/tok2048_final.json --dropout 0.1 --steps 4000 --seed 0 --mix gen+repair+name
++ ev m1n_s0
++ python3 -W ignore -m microcoder.evaluate ckpt/m1n_s0.pt
++ python3 scripts/make_tables.py
++ echo STAGE_B_DONE
+STAGE_B_DONE
++ python3 -m microcoder.train --name l_s0 --tok data/tok2048_final.json --dropout 0.1 --d 192 --layers 6 --heads 6 --steps 3000 --seed 0

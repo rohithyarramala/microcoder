@@ -1,0 +1,118 @@
+{
+ "ckpt": "ckpt/m1_s0.pt",
+ "n_params": 1049728,
+ "engine": false,
+ "splits": {
+  "mbpp": {
+   "n": 500,
+   "seconds": 91.2,
+   "methods": {
+    "greedy": {
+     "valid": 239,
+     "valid_pct": 47.8,
+     "valid_ci": [
+      43.5,
+      52.2
+     ],
+     "passed": 0,
+     "pass_pct": 0.0,
+     "pass_ci": [
+      0.0,
+      0.8
+     ],
+     "mean_gens": 1.0,
+     "by_cat": {
+      "mbpp": [
+       0,
+       500
+      ]
+     }
+    },
+    "anchor": {
+     "valid": 237,
+     "valid_pct": 47.4,
+     "valid_ci": [
+      43.1,
+      51.8
+     ],
+     "passed": 0,
+     "pass_pct": 0.0,
+     "pass_ci": [
+      0.0,
+      0.8
+     ],
+     "mean_gens": 1.0,
+     "by_cat": {
+      "mbpp": [
+       0,
+       500
+      ]
+     }
+    },
+    "a_resample": {
+     "valid": 314,
+     "valid_pct": 62.8,
+     "valid_ci": [
+      58.5,
+      66.9
+     ],
+     "passed": 0,
+     "pass_pct": 0.0,
+     "pass_ci": [
+      0.0,
+      0.8
+     ],
+     "mean_gens": 2.382,
+     "by_cat": {
+      "mbpp": [
+       0,
+       500
+      ]
+     }
+    },
+    "a_ref": {
+     "valid": 348,
+     "valid_pct": 69.6,
+     "valid_ci": [
+      65.4,
+      73.5
+     ],
+     "passed": 0,
+     "pass_pct": 0.0,
+     "pass_ci": [
+      0.0,
+      0.8
+     ],
+     "mean_gens": 2.22,
+     "by_cat": {
+      "mbpp": [
+       0,
+       500
+      ]
+     }
+    },
+    "a_ref_lint": {
+     "valid": 320,
+     "valid_pct": 64.0,
+     "valid_ci": [
+      59.7,
+      68.1
+     ],
+     "passed": 0,
+     "pass_pct": 0.0,
+     "pass_ci": [
+      0.0,
+      0.8
+     ],
+     "mean_gens": 2.782,
+     "by_cat": {
+      "mbpp": [
+       0,
+       500
+      ]
+     }
+    }
+   }
+  }
+ }
+}

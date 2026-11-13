@@ -1,0 +1,192 @@
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30
++ grep -q EXTRA_DONE logs_extra.txt
++ sleep 30

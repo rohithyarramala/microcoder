@@ -1,0 +1,18 @@
+{
+ "test_id": {
+  "n": 384,
+  "unique_instructions": 384,
+  "exact_instruction_overlap": 0,
+  "tasks_sharing_any_8gram_with_train": 0,
+  "reference_code_identical_to_a_train_example": 355,
+  "family_seen_in_training": 384
+ },
+ "test_ood": {
+  "n": 240,
+  "unique_instructions": 240,
+  "exact_instruction_overlap": 0,
+  "tasks_sharing_any_8gram_with_train": 4,
+  "reference_code_identical_to_a_train_example": 0,
+  "family_seen_in_training": 0
+ }
+}

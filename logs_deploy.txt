@@ -1,0 +1,21 @@
+embedded model 1079840 B, tokenizer 38840 B, 624 prompts from test_id,test_ood
+{
+ "params": 1049728,
+ "fp32_bytes": 4198912,
+ "int8_model_bytes": 1079840,
+ "tokenizer_bytes": 38840,
+ "flash_total_bytes": 1118680,
+ "state_bytes": 1094656,
+ "kv_cache_bytes": 1048576,
+ "activation_bytes": 46080,
+ "macs_first": 1049600,
+ "macs_middle": 1179648,
+ "macs_last": 1310720,
+ "host_decode_ms_per_token": 0.708,
+ "host_prefill_ms_per_token": 0.684,
+ "host_end_to_end_ms_median": 36.1,
+ "host_sim_greedy_valid_pct": 82.1,
+ "host_sim_greedy_pass_pct": 44.1,
+ "host_sim_n": 624,
+ "host_cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz"
+}

@@ -1,0 +1,685 @@
+{
+ "ckpt": "ckpt/m1_s2.pt",
+ "n_params": 1049728,
+ "engine": false,
+ "splits": {
+  "test_id": {
+   "n": 384,
+   "seconds": 87.7,
+   "methods": {
+    "greedy": {
+     "valid": 376,
+     "valid_pct": 97.9,
+     "valid_ci": [
+      95.9,
+      98.9
+     ],
+     "passed": 316,
+     "pass_pct": 82.3,
+     "pass_ci": [
+      78.2,
+      85.8
+     ],
+     "mean_gens": 1.0,
+     "by_cat": {
+      "list": [
+       64,
+       64
+      ],
+      "math": [
+       54,
+       72
+      ],
+      "recursion": [
+       52,
+       56
+      ],
+      "sensor": [
+       113,
+       144
+      ],
+      "string": [
+       33,
+       48
+      ]
+     }
+    },
+    "anchor": {
+     "valid": 379,
+     "valid_pct": 98.7,
+     "valid_ci": [
+      97.0,
+      99.4
+     ],
+     "passed": 326,
+     "pass_pct": 84.9,
+     "pass_ci": [
+      81.0,
+      88.1
+     ],
+     "mean_gens": 1.0,
+     "by_cat": {
+      "list": [
+       64,
+       64
+      ],
+      "math": [
+       57,
+       72
+      ],
+      "recursion": [
+       52,
+       56
+      ],
+      "sensor": [
+       117,
+       144
+      ],
+      "string": [
+       36,
+       48
+      ]
+     }
+    },
+    "ref": {
+     "valid": 381,
+     "valid_pct": 99.2,
+     "valid_ci": [
+      97.7,
+      99.7
+     ],
+     "passed": 319,
+     "pass_pct": 83.1,
+     "pass_ci": [
+      79.0,
+      86.5
+     ],
+     "mean_gens": 1.044,
+     "by_cat": {
+      "list": [
+       64,
+       64
+      ],
+      "math": [
+       56,
+       72
+      ],
+      "recursion": [
+       52,
+       56
+      ],
+      "sensor": [
+       113,
+       144
+      ],
+      "string": [
+       34,
+       48
+      ]
+     }
+    },
+    "a_resample": {
+     "valid": 383,
+     "valid_pct": 99.7,
+     "valid_ci": [
+      98.5,
+      100.0
+     ],
+     "passed": 327,
+     "pass_pct": 85.2,
+     "pass_ci": [
+      81.3,
+      88.4
+     ],
+     "mean_gens": 1.023,
+     "by_cat": {
+      "list": [
+       64,
+       64
+      ],
+      "math": [
+       58,
+       72
+      ],
+      "recursion": [
+       52,
+       56
+      ],
+      "sensor": [
+       117,
+       144
+      ],
+      "string": [
+       36,
+       48
+      ]
+     }
+    },
+    "a_ref": {
+     "valid": 382,
+     "valid_pct": 99.5,
+     "valid_ci": [
+      98.1,
+      99.9
+     ],
+     "passed": 328,
+     "pass_pct": 85.4,
+     "pass_ci": [
+      81.5,
+      88.6
+     ],
+     "mean_gens": 1.029,
+     "by_cat": {
+      "list": [
+       64,
+       64
+      ],
+      "math": [
+       59,
+       72
+      ],
+      "recursion": [
+       52,
+       56
+      ],
+      "sensor": [
+       117,
+       144
+      ],
+      "string": [
+       36,
+       48
+      ]
+     }
+    },
+    "a_ref_line": {
+     "valid": 382,
+     "valid_pct": 99.5,
+     "valid_ci": [
+      98.1,
+      99.9
+     ],
+     "passed": 328,
+     "pass_pct": 85.4,
+     "pass_ci": [
+      81.5,
+      88.6
+     ],
+     "mean_gens": 1.026,
+     "by_cat": {
+      "list": [
+       64,
+       64
+      ],
+      "math": [
+       59,
+       72
+      ],
+      "recursion": [
+       52,
+       56
+      ],
+      "sensor": [
+       117,
+       144
+      ],
+      "string": [
+       36,
+       48
+      ]
+     }
+    },
+    "a_ref_noerr": {
+     "valid": 382,
+     "valid_pct": 99.5,
+     "valid_ci": [
+      98.1,
+      99.9
+     ],
+     "passed": 328,
+     "pass_pct": 85.4,
+     "pass_ci": [
+      81.5,
+      88.6
+     ],
+     "mean_gens": 1.026,
+     "by_cat": {
+      "list": [
+       64,
+       64
+      ],
+      "math": [
+       59,
+       72
+      ],
+      "recursion": [
+       52,
+       56
+      ],
+      "sensor": [
+       117,
+       144
+      ],
+      "string": [
+       36,
+       48
+      ]
+     }
+    },
+    "a_resample_lint": {
+     "valid": 383,
+     "valid_pct": 99.7,
+     "valid_ci": [
+      98.5,
+      100.0
+     ],
+     "passed": 327,
+     "pass_pct": 85.2,
+     "pass_ci": [
+      81.3,
+      88.4
+     ],
+     "mean_gens": 1.138,
+     "by_cat": {
+      "list": [
+       64,
+       64
+      ],
+      "math": [
+       58,
+       72
+      ],
+      "recursion": [
+       52,
+       56
+      ],
+      "sensor": [
+       117,
+       144
+      ],
+      "string": [
+       36,
+       48
+      ]
+     }
+    },
+    "a_ref_lint": {
+     "valid": 380,
+     "valid_pct": 99.0,
+     "valid_ci": [
+      97.4,
+      99.6
+     ],
+     "passed": 329,
+     "pass_pct": 85.7,
+     "pass_ci": [
+      81.8,
+      88.8
+     ],
+     "mean_gens": 1.135,
+     "by_cat": {
+      "list": [
+       64,
+       64
+      ],
+      "math": [
+       59,
+       72
+      ],
+      "recursion": [
+       53,
+       56
+      ],
+      "sensor": [
+       117,
+       144
+      ],
+      "string": [
+       36,
+       48
+      ]
+     }
+    }
+   }
+  },
+  "test_ood": {
+   "n": 240,
+   "seconds": 60.5,
+   "methods": {
+    "greedy": {
+     "valid": 196,
+     "valid_pct": 81.7,
+     "valid_ci": [
+      76.3,
+      86.1
+     ],
+     "passed": 2,
+     "pass_pct": 0.8,
+     "pass_ci": [
+      0.2,
+      3.0
+     ],
+     "mean_gens": 1.0,
+     "by_cat": {
+      "list": [
+       2,
+       45
+      ],
+      "math": [
+       0,
+       45
+      ],
+      "recursion": [
+       0,
+       30
+      ],
+      "sensor": [
+       0,
+       90
+      ],
+      "string": [
+       0,
+       30
+      ]
+     }
+    },
+    "anchor": {
+     "valid": 194,
+     "valid_pct": 80.8,
+     "valid_ci": [
+      75.4,
+      85.3
+     ],
+     "passed": 4,
+     "pass_pct": 1.7,
+     "pass_ci": [
+      0.6,
+      4.2
+     ],
+     "mean_gens": 1.0,
+     "by_cat": {
+      "list": [
+       4,
+       45
+      ],
+      "math": [
+       0,
+       45
+      ],
+      "recursion": [
+       0,
+       30
+      ],
+      "sensor": [
+       0,
+       90
+      ],
+      "string": [
+       0,
+       30
+      ]
+     }
+    },
+    "ref": {
+     "valid": 229,
+     "valid_pct": 95.4,
+     "valid_ci": [
+      92.0,
+      97.4
+     ],
+     "passed": 2,
+     "pass_pct": 0.8,
+     "pass_ci": [
+      0.2,
+      3.0
+     ],
+     "mean_gens": 1.308,
+     "by_cat": {
+      "list": [
+       2,
+       45
+      ],
+      "math": [
+       0,
+       45
+      ],
+      "recursion": [
+       0,
+       30
+      ],
+      "sensor": [
+       0,
+       90
+      ],
+      "string": [
+       0,
+       30
+      ]
+     }
+    },
+    "a_resample": {
+     "valid": 216,
+     "valid_pct": 90.0,
+     "valid_ci": [
+      85.6,
+      93.2
+     ],
+     "passed": 5,
+     "pass_pct": 2.1,
+     "pass_ci": [
+      0.9,
+      4.8
+     ],
+     "mean_gens": 1.442,
+     "by_cat": {
+      "list": [
+       5,
+       45
+      ],
+      "math": [
+       0,
+       45
+      ],
+      "recursion": [
+       0,
+       30
+      ],
+      "sensor": [
+       0,
+       90
+      ],
+      "string": [
+       0,
+       30
+      ]
+     }
+    },
+    "a_ref": {
+     "valid": 223,
+     "valid_pct": 92.9,
+     "valid_ci": [
+      89.0,
+      95.5
+     ],
+     "passed": 4,
+     "pass_pct": 1.7,
+     "pass_ci": [
+      0.6,
+      4.2
+     ],
+     "mean_gens": 1.371,
+     "by_cat": {
+      "list": [
+       4,
+       45
+      ],
+      "math": [
+       0,
+       45
+      ],
+      "recursion": [
+       0,
+       30
+      ],
+      "sensor": [
+       0,
+       90
+      ],
+      "string": [
+       0,
+       30
+      ]
+     }
+    },
+    "a_ref_line": {
+     "valid": 226,
+     "valid_pct": 94.2,
+     "valid_ci": [
+      90.4,
+      96.5
+     ],
+     "passed": 4,
+     "pass_pct": 1.7,
+     "pass_ci": [
+      0.6,
+      4.2
+     ],
+     "mean_gens": 1.371,
+     "by_cat": {
+      "list": [
+       4,
+       45
+      ],
+      "math": [
+       0,
+       45
+      ],
+      "recursion": [
+       0,
+       30
+      ],
+      "sensor": [
+       0,
+       90
+      ],
+      "string": [
+       0,
+       30
+      ]
+     }
+    },
+    "a_ref_noerr": {
+     "valid": 224,
+     "valid_pct": 93.3,
+     "valid_ci": [
+      89.4,
+      95.9
+     ],
+     "passed": 5,
+     "pass_pct": 2.1,
+     "pass_ci": [
+      0.9,
+      4.8
+     ],
+     "mean_gens": 1.363,
+     "by_cat": {
+      "list": [
+       5,
+       45
+      ],
+      "math": [
+       0,
+       45
+      ],
+      "recursion": [
+       0,
+       30
+      ],
+      "sensor": [
+       0,
+       90
+      ],
+      "string": [
+       0,
+       30
+      ]
+     }
+    },
+    "a_resample_lint": {
+     "valid": 194,
+     "valid_pct": 80.8,
+     "valid_ci": [
+      75.4,
+      85.3
+     ],
+     "passed": 5,
+     "pass_pct": 2.1,
+     "pass_ci": [
+      0.9,
+      4.8
+     ],
+     "mean_gens": 2.6,
+     "by_cat": {
+      "list": [
+       5,
+       45
+      ],
+      "math": [
+       0,
+       45
+      ],
+      "recursion": [
+       0,
+       30
+      ],
+      "sensor": [
+       0,
+       90
+      ],
+      "string": [
+       0,
+       30
+      ]
+     }
+    },
+    "a_ref_lint": {
+     "valid": 209,
+     "valid_pct": 87.1,
+     "valid_ci": [
+      82.2,
+      90.7
+     ],
+     "passed": 4,
+     "pass_pct": 1.7,
+     "pass_ci": [
+      0.6,
+      4.2
+     ],
+     "mean_gens": 2.621,
+     "by_cat": {
+      "list": [
+       4,
+       45
+      ],
+      "math": [
+       0,
+       45
+      ],
+      "recursion": [
+       0,
+       30
+      ],
+      "sensor": [
+       0,
+       90
+      ],
+      "string": [
+       0,
+       30
+      ]
+     }
+    }
+   }
+  }
+ }
+}
