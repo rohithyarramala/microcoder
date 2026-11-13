@@ -48,7 +48,7 @@ See `esp32/README.md` for Wokwi, the CI build check and the MicroPython build.
 
 Version 1.0.0 (the code, data and models behind the paper's numbers) is archived on Zenodo: https://doi.org/10.5281/zenodo.24187363 (all versions: https://doi.org/10.5281/zenodo.24187362).
 
-Paper preprint (PDF): https://doi.org/10.5281/zenodo.24189966
+Paper preprint (PDF): https://doi.org/10.5281/zenodo.24193772 (v2, corrected after an audit of every claim; all versions: https://doi.org/10.5281/zenodo.24189965).
 
 ## Licence
 
