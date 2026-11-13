@@ -1,33 +1,42 @@
 # Builds the ESP32-S3 firmware with ESP-IDF in GitHub's cloud and runs it in Espressif QEMU.
 # No board needed. This checks that the firmware builds and that the chip-side code produces the same
 # programs/accuracy as the paper. QEMU timing is NOT hardware timing: do not report it as latency.
+# Manual trigger only (a full run is ~1 h of Actions minutes): gh workflow run esp32-qemu
 name: esp32-qemu
-on: [workflow_dispatch, push]
+on: [workflow_dispatch]
 jobs:
   qemu:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     container: espressif/idf:v5.4.2
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v4
-      - name: Python deps
-        run: pip install --break-system-packages torch tokenizers numpy --index-url https://download.pytorch.org/whl/cpu || pip install torch tokenizers numpy
-      - name: Embed model + prompts (0.53M model, all 624 test prompts)
-        run: python3 scripts/make_firmware_assets.py ckpt/s_s0.pt test_id,test_ood
-      - name: Install QEMU
-        run: python3 $IDF_PATH/tools/idf_tools.py install qemu-xtensa
-      - name: Build
-        shell: bash
-        run: . $IDF_PATH/export.sh && cd esp32/firmware && idf.py set-target esp32s3 && idf.py build
-      - name: Run in QEMU
-        shell: bash
+      - name: Python deps (into the ESP-IDF Python env; the image has no bare pip)
         run: |
-          . $IDF_PATH/export.sh && cd esp32/firmware
-          timeout 5400 idf.py qemu monitor --no-reset 2>&1 | tee ../../lab_qemu_log.txt | grep -m1 MC_DONE || true
+          . $IDF_PATH/export.sh
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install tokenizers numpy
+      - name: Embed model + prompts (0.53M model, all 624 test prompts)
+        run: . $IDF_PATH/export.sh && python scripts/make_firmware_assets.py ckpt/s_s0.pt test_id,test_ood
+      - name: Install QEMU (+ its shared libraries)
+        run: |
+          apt-get update -qq && apt-get install -y -qq libgcrypt20 libglib2.0-0 libpixman-1-0 libsdl2-2.0-0 libslirp0 >/dev/null
+          python3 $IDF_PATH/tools/idf_tools.py install qemu-xtensa
+      - name: Build
+        run: . $IDF_PATH/export.sh && cd esp32/firmware && idf.py set-target esp32s3 && idf.py build && idf.py size | tee ../../idf_size.txt
+      - name: Run in QEMU (functional check only)
+        run: . $IDF_PATH/export.sh && bash esp32/qemu_run.sh lab_qemu_log.txt 5400
       - name: Score
-        run: python3 scripts/score_device_log.py lab_qemu_log.txt test_id,test_ood
+        if: always()
+        run: . $IDF_PATH/export.sh && python scripts/score_device_log.py lab_qemu_log.txt test_id,test_ood
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: qemu-log
           path: |
             lab_qemu_log.txt
+            idf_size.txt
             results/device_*.json
