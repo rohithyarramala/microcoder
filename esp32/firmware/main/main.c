@@ -19,7 +19,6 @@ extern const uint8_t mc_tok_blob[];
 extern const unsigned int mc_tok_blob_len;
 extern const char *const mc_prompts[];
 extern const int mc_n_prompts;
-extern const int mc_prompt_offset;   /* global index of mc_prompts[0] (non-zero only for sharded runs) */
 
 static int ids[256], out[256];
 
@@ -61,13 +60,13 @@ void app_main(void) {
         int n = 0;
         ids[n++] = t.sp_q;
         int k = mc_tok_encode(&t, mc_prompts[i], ids + n, 250 - n);
-        if (k < 0) { printf("MC_SKIP %d\n", i + mc_prompt_offset); continue; }
+        if (k < 0) { printf("MC_SKIP %d\n", i); continue; }
         n += k;
         ids[n++] = t.sp_c;
         char pre[256];
         if (signature_prefix(mc_prompts[i], pre, sizeof pre) > 0) {
             int kp = mc_tok_encode(&t, pre, ids + n, 250 - n);
-            if (kp < 0) { printf("MC_SKIP %d\n", i + mc_prompt_offset); continue; }
+            if (kp < 0) { printf("MC_SKIP %d\n", i); continue; }
             n += kp;
         }
         int64_t t0 = esp_timer_get_time();
@@ -83,10 +82,10 @@ void app_main(void) {
             lg = mc_forward(&m, &s, best, pos++);
         }
         int64_t t2 = esp_timer_get_time();
-        printf("MC_BEGIN %d\n%s", i + mc_prompt_offset, pre);
+        printf("MC_BEGIN %d\n%s", i, pre);
         for (int j = 0; j < cnt; j++) { int L; const uint8_t *b = mc_tok_piece(&t, out[j], &L); fwrite(b, 1, L, stdout); }
         printf("\nMC_END %d prompt_tokens=%d new_tokens=%d prefill_us=%lld decode_us=%lld\n",
-               i + mc_prompt_offset, n, cnt, (long long)(t1 - t0), (long long)(t2 - t1));
+               i, n, cnt, (long long)(t1 - t0), (long long)(t2 - t1));
     }
     printf("MC_DONE min_free_internal=%u\n", (unsigned)heap_caps_get_minimum_free_size(MALLOC_CAP_INTERNAL));
 }

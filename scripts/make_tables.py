@@ -2,6 +2,7 @@
 
 python scripts/make_tables.py   ->  paper/generated/{numbers.tex, tab_*.tex}, results/all_numbers.json
 """
+import re
 import glob, json, math, os, statistics, sys
 sys.path.insert(0, ".")
 from microcoder.model import Config, param_breakdown
@@ -207,6 +208,23 @@ if os.path.exists("results/deploy_small.json"):
     hi = lo + d["int8_model_bytes"] / FLASH_BPS * 1e3          # + streaming all weights from flash each token
     mac("estlo", f"{lo:.0f}"); mac("esthi", f"{hi:.0f}")
     allnum["esp32_estimate_ms_per_token"] = dict(lo=lo, hi=hi, cyc_per_mac=CYC_PER_MAC, f_cpu=F_CPU, flash_Bps=FLASH_BPS)
+# ESP-IDF build footprint (board config) from `idf.py size`, saved by the esp32-build CI workflow
+idf = "results/idf_size_esp32s3_v5.4.2.txt"
+if os.path.exists(idf):
+    t = open(idf, encoding="utf-8").read()
+    def row(name):
+        m = re.search(r"\u2502\s*" + re.escape(name) + r"\s*\u2502\s*(\d+)\s*\u2502\s*([\d.]*)\s*\u2502\s*(\d*)\s*\u2502\s*(\d*)\s*\u2502", t)
+        return m.groups() if m else None
+    app = int(re.search(r"binary size (0x[0-9a-f]+) bytes", t).group(1), 16)
+    part = int(re.search(r"Smallest app partition is (0x[0-9a-f]+) bytes", t).group(1), 16)
+    fd, fc, dr, ir = row("Flash Data"), row("Flash Code"), row("DIRAM"), row("IRAM")
+    sz = dict(app_bytes=app, app_partition_bytes=part, flash_data_bytes=int(fd[0]), flash_code_bytes=int(fc[0]),
+              diram_used_bytes=int(dr[0]), diram_total_bytes=int(dr[3]), iram_used_bytes=int(ir[0]), iram_total_bytes=int(ir[3]))
+    allnum["idf_size_esp32s3"] = sz
+    for k, v in sz.items():
+        mac("idf" + k.replace("_", ""), f"{v:,}")
+    mac("idfapppct", f"{100 * app / part:.0f}")
+    mac("idfdirampct", f"{100 * sz['diram_used_bytes'] / sz['diram_total_bytes']:.1f}")
 dev = sorted(glob.glob("results/device_*.json"))
 for p in dev:
     allnum[os.path.basename(p)] = json.load(open(p))

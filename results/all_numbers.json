@@ -812,6 +812,16 @@
   "f_cpu": 240000000.0,
   "flash_Bps": 40000000.0
  },
+ "idf_size_esp32s3": {
+  "app_bytes": 870176,
+  "app_partition_bytes": 3145728,
+  "flash_data_bytes": 682200,
+  "flash_code_bytes": 119912,
+  "diram_used_bytes": 55871,
+  "diram_total_bytes": 341760,
+  "iram_used_bytes": 16383,
+  "iram_total_bytes": 16384
+ },
  "device_host_sim_log_txt.json": {
   "log": "results/host_sim_log.txt",
   "split": "test_id,test_ood",

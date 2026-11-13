@@ -1,0 +1,50 @@
+# ESP32-S3 firmware check without a board: build with ESP-IDF v5.4.2 (board config, octal PSRAM), record
+# `idf.py size`, and run the same app_main() in the host simulation, scored with the paper's unit tests.
+# Espressif QEMU is NOT used: the QEMU bundled with ESP-IDF v5.4.2 (esp-develop-9.0.0-20240606) fails the
+# ESP32-S3 PSRAM ID read in both octal and quad mode, so ESP-IDF aborts before app_main() (runs 43367472743,
+# 43369867011). Host-sim timing is not hardware timing: never report it as latency.
+# Manual trigger only: gh workflow run esp32-build
+name: esp32-build
+on: [workflow_dispatch]
+jobs:
+  build-and-sim:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    container: espressif/idf:v5.4.2
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python deps (into the ESP-IDF Python env; the image has no bare pip)
+        run: |
+          . $IDF_PATH/export.sh
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install tokenizers numpy
+      - name: Embed model + prompts (0.53M model, all 624 test prompts)
+        run: . $IDF_PATH/export.sh && python scripts/make_firmware_assets.py ckpt/s_s0.pt test_id,test_ood
+      - name: ESP-IDF build + size (ESP32-S3)
+        run: |
+          . $IDF_PATH/export.sh && cd esp32/firmware
+          idf.py set-target esp32s3 && idf.py build
+          idf.py size | tee ../../idf_size_esp32s3_v5.4.2.txt
+      - name: Host simulation of the firmware (must give 51.9% on 624)
+        run: |
+          . $IDF_PATH/export.sh
+          command -v cc || (apt-get update -qq && apt-get install -y -qq build-essential >/dev/null)
+          make -C esp32/host_sim
+          ./esp32/host_sim/sim > lab_sim_log.txt
+          python scripts/score_device_log.py lab_sim_log.txt test_id,test_ood | tee sim_score.json
+          python - <<'EOF'
+          import json; r = json.load(open("sim_score.json"))
+          assert r["n_scored"] == 624 and r["pass_pct"] == 51.9, r
+          print("host sim OK:", r["pass_pct"], "% on", r["n_scored"])
+          EOF
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: esp32-build
+          path: |
+            idf_size_esp32s3_v5.4.2.txt
+            lab_sim_log.txt
+            sim_score.json

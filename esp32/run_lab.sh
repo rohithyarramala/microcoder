@@ -2,7 +2,7 @@
 # One-shot ESP32 lab runner. Run from the repository root:
 #
 #   bash esp32/run_lab.sh sim            # host simulation only (needs gcc)
-#   bash esp32/run_lab.sh qemu           # ESP-IDF build + Espressif QEMU (functional check)
+#   bash esp32/run_lab.sh build          # ESP-IDF build + idf.py size only (no board needed)
 #   bash esp32/run_lab.sh board /dev/ttyACM0   # real ESP32-S3: build, flash, capture log
 #
 # Every mode ends by scoring the log with the paper's unit tests.
@@ -31,14 +31,11 @@ case "$MODE" in
     ./esp32/host_sim/sim > lab_sim_log.txt
     python3 scripts/score_device_log.py lab_sim_log.txt "$SPLIT"
     ;;
-  qemu)
+  build)
     need_idf
-    python3 "$IDF_PATH/tools/idf_tools.py" install qemu-xtensa
-    . "$IDF_PATH/export.sh"
-    ( cd esp32/firmware && idf.py set-target esp32s3 && idf.py build )
-    # QEMU timing is NOT cycle-accurate: use this mode to check functionality only.
-    ( cd esp32/firmware && timeout 3600 idf.py qemu monitor ) | tee lab_qemu_log.txt || true
-    python3 scripts/score_device_log.py lab_qemu_log.txt "$SPLIT"
+    ( cd esp32/firmware && idf.py set-target esp32s3 && idf.py build && idf.py size )
+    # Espressif QEMU is not supported for this firmware: the QEMU bundled with ESP-IDF v5.4.2 fails the
+    # ESP32-S3 PSRAM ID read (octal and quad), so ESP-IDF aborts before app_main(). Use `sim` for function.
     ;;
   board)
     PORT=${2:?serial port, e.g. /dev/ttyACM0 or COM5}
@@ -59,5 +56,5 @@ with open("lab_board_log.txt", "w") as f:
 EOF
     python3 scripts/score_device_log.py lab_board_log.txt "$SPLIT"
     ;;
-  *) echo "usage: $0 sim|qemu|board <port>"; exit 1 ;;
+  *) echo "usage: $0 sim|build|board <port>"; exit 1 ;;
 esac

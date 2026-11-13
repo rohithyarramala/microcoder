@@ -42,4 +42,4 @@ pip install pyserial && bash esp32/run_lab.sh board /dev/ttyACM0   # ESP32-S3 bo
 python scripts/make_tables.py                # device numbers land in results/device_*.json
 ```
 
-See `esp32/README.md` for Wokwi, QEMU and the MicroPython build.
+See `esp32/README.md` for Wokwi, the CI build check and the MicroPython build.

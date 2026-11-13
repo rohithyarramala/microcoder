@@ -1,6 +1,0 @@
-# QEMU-only override (layered on sdkconfig.defaults by .github/workflows/esp32-qemu.yml).
-# The QEMU that ESP-IDF v5.4.2 installs (esp-develop-9.0.0-20240606) emulates quad SPI PSRAM up to 4 MB and
-# has no octal PSRAM model, so the octal board config aborts at boot ("PSRAM ID read error"). Real boards
-# keep CONFIG_SPIRAM_MODE_OCT from sdkconfig.defaults. Model, engine and prompts are unchanged.
-# CONFIG_SPIRAM_MODE_OCT is not set
-CONFIG_SPIRAM_MODE_QUAD=y
